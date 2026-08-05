@@ -670,7 +670,7 @@ Nylon (polyamide) is one of the toughest FDM materials available — excellent i
 Carbon fiber reinforced nylon. The stiffest, strongest readily-printable FDM material short of continuous fiber systems. Combines nylon's toughness with CF's stiffness and heat resistance. Requires hardened nozzle, immediate pre-print drying, and (on Bambu) AMS HT. All brands in this catalog offer PA-CF in black only.
 
 - **Bambu Lab** — 1 color (Black). AMS HT required. Tier A.
-- **SUNLU** — 1 color (Black), 2 catalog entries at different confirmed heat-resistance specs depending on source (209°C per 3DJake vs 175°C per SUNLU's own store page — worth double-checking against the actual spool label). Tier B.
+- **SUNLU** — 1 color (Black), 2 catalog entries: PA6-CF (209°C heat resistance, confirmed via 3DJake and SUNLU's own store) and PA12-CF (175°C heat resistance, confirmed via SUNLU's own store). Sanity-checked 2026-07-30 — these aren't conflicting reports about the same material, they're two different nylon grades (PA6 vs PA12) that naturally have different heat resistance; both figures check out against manufacturer sources. Tier B.
 - **Polymaker** — 1 color (Black). Line existence confirmed; individual specs estimated from sibling materials, not TDS-confirmed. Tier C — verify before high-heat use.
 - **eSUN** — 2 lines: ePA-CF and ePA12-CF, both Black, both specs estimated from sibling materials rather than individually confirmed. Tier C.
 

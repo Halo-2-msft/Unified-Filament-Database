@@ -386,6 +386,11 @@ def _build_catalog(wb: Workbook, cat_df: pd.DataFrame):
     if ADAP_COL:
         _cf_eq(ws, ADAP_COL, first_data, last_cf, "Yes", P["ams_warn"], P["ams_warn_fg"])
 
+    # AutoFilter over the header + actual populated data rows (not the
+    # padded conditional-formatting range, which runs 5 rows past the data)
+    last_cat_row = first_data + len(cat_df) - 1
+    ws.auto_filter.ref = f"A2:{get_column_letter(len(cols))}{last_cat_row}"
+
     # Column widths
     ws.column_dimensions["A"].width = 16  # Brand
     for i in range(2, len(cols) + 1):
@@ -430,7 +435,6 @@ def _build_inventory(wb: Workbook, inv_df: pd.DataFrame):
 
     _header_row(ws, 2, display_cols)
     ws.row_dimensions[2].height = 34
-    ws.auto_filter.ref = f"A2:{get_column_letter(len(display_cols))}{ws.max_row}"
     SWATCH_COL_IDX_INV = next((i+1 for i,c in enumerate(display_cols) if c == "Color Swatch"), None)
     HEX_COL_IDX_INV    = next((i+1 for i,c in enumerate(display_cols) if c == "Hex Code"), None)
     PRICE_COLS    = {i+1 for i,c in enumerate(display_cols) if c in ("List Price", "Price Paid")}
@@ -493,6 +497,11 @@ def _build_inventory(wb: Workbook, inv_df: pd.DataFrame):
             c = ws.cell(row=row, column=col_idx, value="")
             _sc(c, bg=P["manual"])
         ws.row_dimensions[row].height = 18
+
+    # AutoFilter — set only after every row (pulled + manual) exists, so the
+    # range actually spans the data instead of just the header row
+    last_inv_row = divider_row + 30
+    ws.auto_filter.ref = f"A2:{get_column_letter(len(display_cols))}{last_inv_row}"
 
     # Column widths
     ws.column_dimensions["A"].width = 16
