@@ -1,1 +1,57 @@
+name: Sync Inventory JSON
 
+# Fires whenever a Filament_Inventory_*.xlsx is pushed to main. Runs
+# sync_inventory_json.py and, if it produced a different real_inventory.json
+# than what's committed, pushes that update back automatically - closing the
+# loop so real_inventory.json can never silently drift from the xlsx that's
+# actually in the repo.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "Filament_Inventory_v*.xlsx"
+
+# The bot's own commit (tagged [skip-sync] below) also touches a file this
+# trigger watches - Filament_Inventory*.xlsx isn't touched by the bot, so
+# no path-based loop is possible. The message check is a second, redundant
+# guard in case the trigger paths are ever widened later.
+jobs:
+  sync:
+    if: "!contains(github.event.head_commit.message, '[skip-sync]')"
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install openpyxl
+
+      - name: Find the current inventory workbook
+        id: xlsx
+        run: |
+          latest=$(ls Filament_Inventory_v*.xlsx | sort -V | tail -n1)
+          echo "Found: $latest"
+          echo "path=$latest" >> "$GITHUB_OUTPUT"
+
+      - name: Run sync_inventory_json.py
+        run: python3 sync_inventory_json.py "${{ steps.xlsx.outputs.path }}" real_inventory.json
+
+      - name: Commit real_inventory.json if it changed
+        run: |
+          git config user.name "inventory-sync-bot"
+          git config user.email "actions@github.com"
+          git add real_inventory.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit - xlsx and JSON already agree."
+          else
+            git commit -m "chore: auto-sync real_inventory.json from ${{ steps.xlsx.outputs.path }} [skip-sync]"
+            git push
+          fi
