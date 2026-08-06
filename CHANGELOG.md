@@ -131,10 +131,43 @@ The 2026-08-02 fix had reassigned this row to the catalog's separate plain-`PLA+
 
 ---
 
+---
+
+## 2026-08-05 — Deployment verified, repo cleanup, first real weight measurements
+
+### Deployed and verified
+- `.github/workflows/sync-inventory.yml` is live and confirmed working end-to-end: pushing `Filament_Inventory_v4.xlsx` triggered the Action, which ran `sync_inventory_json.py` and auto-committed the result — visible in the repo as an `actions-user` commit (`chore: auto-sync real_inventory.json from Filament_Inventory_v4.xlsx`). **Pending Item #2 (two sources of truth) is now genuinely closed**, not just mitigated — first real-world proof it works, not just local test scenarios.
+- Debugged an initial "No event triggers defined in `on`" workflow failure — traced to the workflow file arriving in the repo empty (0 bytes), not a YAML syntax problem. Root cause: files delivered here don't overwrite on repeat download, so the local Downloads folder had been silently accumulating numbered duplicates (`CHANGELOG.md`, `CHANGELOG (1).md`, `CHANGELOG (2).md`, etc.) — likely the same mechanism that emptied the workflow file. Fixed by pasting the file content directly into GitHub's web editor.
+
+### Repo cleanup
+- Confirmed via direct GitHub file-listing screenshots (not assumption) that the repo now holds exactly one current version of every file:
+  - Deleted duplicates: `Filament_Inventory_v2.xlsx`, `Filament_Inventory_v3.xlsx`, `SUNLU_filaments_v3_10.xlsx`, `master_index_11_8.xlsx`, `master_index_11_9.xlsx`, three duplicate CHANGELOG files (`CHANGELOG_1.md`, `CHANGELOG_2026-07-30.md`, `CHANGELOG_3.md`), and a leftover `commit_message.txt`.
+  - **Version lineage confirmed continuous across sessions** — a `commit_message.txt` recovered from an earlier session (predating this changelog) showed that session had left every brand catalog at `_v3_9` and `master_index` at `_11_7`; this session picked up cleanly at `_v3_10`/`_11_8` with no gaps or overlaps.
+- **Pending Item #3 (deliverables in the project) is now verified, not assumed** — confirmed by actually inspecting the live repo file listing rather than trusting that an upload succeeded.
+
+### Fixed — real measured tare weights replace online estimates
+User weighed empty spools directly rather than relying on the internet-sourced estimates from 2026-08-04:
+
+| Brand | Online estimate | **Measured (authoritative)** | Difference |
+|---|---|---|---|
+| Bambu Lab | 256 g (third-party table) | **235 g** (spool + cardboard ring) | 21 g off |
+| SUNLU | 133 g (third-party table) / ~197 g (uncertain eBay listing) | **210 g** (spool + cardboard ring) | 77 g / 13 g off |
+
+Applied to the two currently-opened spools:
+- **Bambu Lab PLA Basic Light Gray**: raw scale 1189g − 235g tare = **954g remaining (95.4%)**. (This also corrects a near-miss: an earlier edit had set `Net Weight (g)` to `977` — a raw scale reading mistakenly entered into the nominal-fill-weight field instead of `Est. Remaining (g)`. Caught before it reached `real_inventory.json`; `Net Weight (g)` restored to the nominal `1000`.)
+- **SUNLU PETG White**: measured **20g remaining (2.0%)** — effectively empty, flagged in Notes as due for replacement.
+
+Both `Est. Remaining (g)` values now reflect real measurements with documented tare weights (reusable for future spools of the same brand, though re-weighing an actual empty spool once one runs out remains the most reliable source over time).
+
+### Impact on pending items
+- **Pending Item #5 is resolved for both currently-tracked "Opened" rows.** No `Opened` spools remain with a blank `Est. Remaining (g)`. This isn't a one-time fix, though — it's an ongoing task every time a new spool gets opened, now backed by known-good tare weights instead of guesswork.
+
+---
+
 ## Pending / Open Items
 
-1. ~~SKU discrepancy unresolved~~ — **RESOLVED 2026-08-04.** Physical spool/box photos confirmed `SL-PLAP2-02` / `PLA+ 2.0` (see above). No longer open.
-2. **Two sources of truth risk — now mitigated, not eliminated.** `sync_inventory_json.py` (added 2026-08-04) turns "hand-edit the xlsx, then manually re-derive the JSON" into one deterministic command with a diff printout. The risk that remains: someone can still forget to run it after an edit.
-3. **Deliverables not yet in the project** — `build_inventory.py`, `real_inventory.json`, `Filament_Inventory.xlsx`, and `master_index.xlsx` currently live only in this session's output folder. `/mnt/project/` is read-only from here, so these need to be manually placed into the actual project directory (replacing `master_index_11_8.xlsx`) to take effect for future script runs.
-4. **~70 more SUNLU `#999999` placeholder hex values remain unresolved** — 15 were fixed 2026-08-04 (see above); 6 have known conflicting/ambiguous source data (`SL-PETG-08` Orange, `SL-PETG-12` Roasted Chestnut, `SL-PETG-07` Clear(Transparent), `SL-PLA-27` Grass Green); ~65 more (niche lines: Marble, Galaxy, TPU Silk, Silk Multi-Color, Matte Dual-Color, Twinkling) haven't been checked at all.
-5. **`Est. Remaining (g)` / `Est. Remaining %` sparsely populated** — currently only set for the one partially-used spool (SUNLU PETG White, ~10.2% remaining). Other "Opened" rows (e.g. Bambu PLA Basic Light Gray) don't yet have a remaining-weight estimate, so those cells render blank until weighed.
+1. ~~SKU discrepancy unresolved~~ — **RESOLVED 2026-08-04.** Physical spool/box photos confirmed `SL-PLAP2-02` / `PLA+ 2.0`.
+2. ~~Two sources of truth risk~~ — **RESOLVED 2026-08-05.** `sync-inventory.yml` GitHub Action confirmed working in production, not just local tests — auto-commits `real_inventory.json` whenever the xlsx changes.
+3. ~~Deliverables not yet in the project~~ — **RESOLVED and VERIFIED 2026-08-05** via direct repo file-listing inspection, including cleanup of accumulated duplicates.
+4. **~70 SUNLU `#999999` placeholder hex values remain unresolved** — 15 were fixed 2026-08-04; 6 have known conflicting/ambiguous third-party source data; ~65 more (niche lines: Marble, Galaxy, TPU Silk, Silk Multi-Color, Matte Dual-Color, Twinkling) haven't been checked. Deprioritized — diminishing returns for the effort involved relative to the other items on this list.
+5. **Ongoing, not a one-time fix: weighing newly-opened spools.** The process is now established (measure raw weight → subtract brand tare → enter as `Est. Remaining (g)`) with real tare weights on file for Bambu Lab (235g) and SUNLU (210g). Every spool that gets opened going forward needs this same treatment — there will always be more of these as the collection gets used, this is routine maintenance rather than something to ever fully "close out."
