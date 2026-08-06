@@ -19,7 +19,7 @@
     "Last Dried Date": null,
     "Package Type": "Spool",
     "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 102,
+    "Est. Remaining (g)": 20,
     "Notes": "Weighed spool minus tare (empty-spool weight) to estimate remaining amount"
   },
   {
@@ -41,8 +41,8 @@
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
     "Package Type": "Spool",
-    "Net Weight (g)": 970,
-    "Est. Remaining (g)": null,
+    "Net Weight (g)": 1000,
+    "Est. Remaining (g)": 954,
     "Notes": null
   },
   {
