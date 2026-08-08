@@ -164,10 +164,45 @@ Both `Est. Remaining (g)` values now reflect real measurements with documented t
 
 ---
 
+---
+
+## 2026-08-08 — Inventory growth: 25 → 62 rows, two more SKU catches, conventions established
+
+### Growth
+Inventory expanded in two rounds as physical spools got added and weighed:
+- Round 1: 25 → 39 rows (7 Bambu Lab PLA Basic colors, 3 SUNLU colors added; several bulk-quantity rows split into individually-trackable single-quantity rows so each physical spool can be weighed separately)
+- Round 2: 39 → 62 rows (4 more opened spools, 6 sealed refills across 3 colors added)
+
+### Fixed — same pattern as Reflex Blue/PLA+2.0, caught before it became a problem
+Every batch of newly-added purchases has arrived with SKU (and once, Product Name) blank — expected, since the person's typing from the physical label, not looking up the catalog reference code. Caught and cross-referenced against the catalog both times:
+
+- **Round 1:** `Bambu Lab / Indigo Purple` — SKU and Product Name both blank despite `Est. Remaining (g): 940` already being filled in (had been weighed, just not identified). Resolved to `BL-PLAB-IP`, `#482960`, Product Name `PLA Basic`.
+- **Round 2:** 6 more colors, 10 rows total (3 of them duplicated across 2 refill bags each) — all resolved via **exact, unambiguous** catalog name matches (unlike the original "Blue" case, none of these had multiple candidates to choose between):
+
+| Color | Material | SKU | Hex |
+|---|---|---|---|
+| Jade White | Bambu PLA Basic | `BL-PLAB-WH` | `#FFFFFF` |
+| Yellow | Bambu PETG Basic | `BL-PETG-YL` | `#FCE300` |
+| Cyan | SUNLU PETG | `SL-PETG-15` | `#00A3E0` |
+| Red | Bambu PETG Basic | `BL-PETG-RD` | `#D6001C` |
+| Blue | Bambu PLA Basic | `BL-PLAB-BL` | `#0A2989` |
+| Gray | Bambu PLA Basic | `BL-PLAB-GY` | `#8E9089` |
+
+Zero blank-SKU rows confirmed in both rebuilt workbooks before shipping.
+
+### Conventions established (process decisions, not code changes)
+- **`Package Type` graduation:** a `Refill` is tracked as `Refill` until it's physically loaded onto a spool, at which point it becomes `Spool`. Not two different physical objects being tracked — one row's `Package Type` value changes over its lifecycle.
+- **Depleted spools: keep the row, zero it out, don't delete.** When a spool runs out with no refill on hand, set `Quantity in Stock` and `Est. Remaining (g)` to `0` and add a dated note (e.g. `"Depleted 2026-08-08, refill pending"`), rather than deleting the row. Preserves purchase history (Lot/Batch, Date Purchased, Price Paid) and avoids re-typing SKU/hex/Material Type from scratch later — the exact mistake that's been caught twice above. First applied to `Bambu Lab / Dark Gray`.
+
+### Verified
+- Second real-world proof of `sync-inventory.yml` working correctly: this time the person uploaded a manually-corrected `real_inventory.json` directly (rather than letting the bot generate it), and the workflow correctly recognized it already matched what the xlsx would produce — `"No changes to commit — xlsx and JSON already agree."` Confirms the diff logic itself is sound, not just that the bot can write files.
+
+---
+
 ## Pending / Open Items
 
 1. ~~SKU discrepancy unresolved~~ — **RESOLVED 2026-08-04.** Physical spool/box photos confirmed `SL-PLAP2-02` / `PLA+ 2.0`.
 2. ~~Two sources of truth risk~~ — **RESOLVED 2026-08-05.** `sync-inventory.yml` GitHub Action confirmed working in production, not just local tests — auto-commits `real_inventory.json` whenever the xlsx changes.
 3. ~~Deliverables not yet in the project~~ — **RESOLVED and VERIFIED 2026-08-05** via direct repo file-listing inspection, including cleanup of accumulated duplicates.
 4. **~70 SUNLU `#999999` placeholder hex values remain unresolved** — 15 were fixed 2026-08-04; 6 have known conflicting/ambiguous third-party source data; ~65 more (niche lines: Marble, Galaxy, TPU Silk, Silk Multi-Color, Matte Dual-Color, Twinkling) haven't been checked. Deprioritized — diminishing returns for the effort involved relative to the other items on this list.
-5. **Ongoing, not a one-time fix: weighing newly-opened spools.** The process is now established (measure raw weight → subtract brand tare → enter as `Est. Remaining (g)`) with real tare weights on file for Bambu Lab (235g) and SUNLU (210g). Every spool that gets opened going forward needs this same treatment — there will always be more of these as the collection gets used, this is routine maintenance rather than something to ever fully "close out."
+5. **Ongoing, not a one-time fix: weighing newly-opened spools.** Progress so far: 3 of 62 rows have a real measured `Est. Remaining (g)` (Bambu PLA Basic Light Gray: 954g/95.4%; Bambu PLA Basic Indigo Purple: 940g/94%; SUNLU PETG White: 20g/2%, flagged for replacement). Process is established — measure raw weight → subtract brand tare → enter as `Est. Remaining (g)` — with real tare weights on file for Bambu Lab (235g) and SUNLU (210g). Every spool opened going forward needs this same treatment; this is routine maintenance, not something to ever fully "close out."
