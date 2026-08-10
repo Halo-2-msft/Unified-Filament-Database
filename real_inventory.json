@@ -19,8 +19,8 @@
     "Last Dried Date": null,
     "Package Type": "Spool",
     "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 20,
-    "Notes": "Weighed spool minus tare (empty-spool weight) to estimate remaining amount"
+    "Est. Remaining (g)": 0,
+    "Notes": "Depleted 2026-08-08, refill pending"
   },
   {
     "Brand": "Bambu Lab",
@@ -1424,5 +1424,28 @@
     "Net Weight (g)": 1000,
     "Est. Remaining (g)": 1000,
     "Notes": null
+  },
+  {
+    "Brand": "PLA Basic",
+    "SKU / Product ID": "BL-PLAB-BK",
+    "Material Type": "PLA Basic",
+    "Product Name": "PLA Basic",
+    "Color Name": "Black",
+    "Hex Code": "#000000",
+    "Diameter": "1.75mm",
+    "Lot / Batch Code": null,
+    "Date Purchased": null,
+    "Where Purchased": "Bambu Lab",
+    "List Price": null,
+    "Price Paid": null,
+    "Quantity in Stock": 1,
+    "Opened / Sealed": "Opened",
+    "Condition": "Good",
+    "Moisture Rating": "Dry",
+    "Last Dried Date": null,
+    "Package Type": "Spool",
+    "Net Weight (g)": 1000,
+    "Est. Remaining (g)": 0,
+    "Notes": "Depleted 2026-08-10, refil pending"
   }
 ]
