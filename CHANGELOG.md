@@ -199,6 +199,34 @@ Zero blank-SKU rows confirmed in both rebuilt workbooks before shipping.
 
 ---
 
+## 2026-08-11 — Version-aware file discovery: master_index.py no longer reads stale/hardcoded filenames
+
+### Problem identified
+`master_index.py` looked up each brand's catalog workbook (and the inventory workbook) via a hardcoded filename list — e.g. `Bambu_Lab_filaments_v3.xlsx` — while every actual file in the repo carries a version suffix (`Bambu_Lab_filaments_v3_10.xlsx`). Likewise, `generate_all.py`, `generate_azurefilm.py`, `generate_voxelpla.py`, and `build_inventory.py` all wrote to unversioned output filenames, requiring a manual rename step after every run. Any drift between the hardcoded names and what's actually in the repo would cause `master_index.py` to silently skip a brand (`"⚠ Not found, skipping"`) or aggregate a stale/wrong version — a failure mode that wouldn't surface until someone checked the dashboard totals against expectations.
+
+### Added
+- **`find_latest_version(directory, pattern)`** and **`next_versioned_path(directory, pattern, template)`** in `template_v3.py` — shared helpers that scan a directory for filenames matching a regex (one capture group = version number) and return either the current highest version found, or the *next* version to write. Both are pattern-agnostic, so they work across this project's three different versioning schemes (`_v3_N` for brand catalogs, `_vN` for inventory, `_11_N` for the master index).
+
+### Changed
+- **`generate_all.py`, `generate_azurefilm.py`, `generate_voxelpla.py`, `build_inventory.py`** — each now calls `next_versioned_path()` to auto-discover the current highest version of its own output and write the next one, instead of overwriting a fixed unversioned filename. Each prints a reminder identifying which old version to delete from the repo after uploading (e.g. `⚠ Delete old version from the repo after uploading: AzureFilm_filaments_v3_6.xlsx`), automating the existing versioning-hygiene habit rather than relying on memory.
+- **`master_index.py`** — replaced the hardcoded `BRAND_FILES` list of exact filenames with `_latest_brand_file()` / `_latest_inventory_file()`, which look up the current highest-versioned file for each of the 11 brands and for the inventory workbook at read-time. The script's own output is now versioned too (`master_index_11_{N}.xlsx`), auto-incrementing from whatever's already in the output directory.
+- **`build_inventory.py`** — the Config sheet's `File Version` field was hardcoded `"v1"` (stale since the 2026-08-03 bump to `"v2"`, per that changelog entry). Now set dynamically from the actual version number computed by `next_versioned_path()`, so it can't drift again.
+- Fixed two leftover **"9 brand files"** references in `master_index.py`'s dashboard note and manual-rows divider — both now read the actual brand count (11) instead of a number left over from before the catalog grew.
+
+### Verified
+- Isolated unit tests on `find_latest_version` / `next_versioned_path`: empty directory (starts at version 1), one existing file (increments to 2), a gapped/out-of-order version present (e.g. only `_v3_10` exists — correctly jumps to `_v3_11`, not `_v3_2`), an unrelated brand name (returns none), and a nonexistent directory (returns none, doesn't crash).
+- Full end-to-end run of `master_index.py` against copies of the actual current repo files (`Bambu_Lab_filaments_v3_10.xlsx`, `Overture_filaments_v3_12.xlsx`, `AzureFilm_filaments_v3_6.xlsx`, `Filament_Inventory_v2.xlsx`, `master_index_11_8.xlsx`, and all other current versions) — correctly found the exact current version for every one of the 11 brands despite uneven version numbers across brands, aggregated all 1,172 catalog rows + 15 inventory rows, and wrote `master_index_11_9.xlsx`, correctly incrementing past the pre-existing `_8`.
+- Re-ran `generate_azurefilm.py` against a directory already containing `AzureFilm_filaments_v3_6.xlsx` — correctly wrote `AzureFilm_filaments_v3_7.xlsx` and flagged `_6` for deletion.
+- Diffed the repo's live copies of `generate_azurefilm.py` and `generate_voxelpla.py` against the versions delivered — byte-for-byte identical, confirming no unintended drift before upload.
+
+### Conventions established (process decision, not code)
+- **Claude will not run any generator script (`generate_all.py`, `generate_azurefilm.py`, `generate_voxelpla.py`, `build_inventory.py`, `master_index.py`) without first confirming it has the current versioned files available as project uploads.** Version-detection depends on seeing the real current files — running against an empty or assumed working directory would silently reset version numbers or aggregate against stale/missing data. If current files aren't available in-session, Claude asks the user to upload them before running anything.
+
+### Impact on pending items
+Closes a latent risk that wasn't previously logged as a pending item: `master_index.py`'s hardcoded `BRAND_FILES` list could have silently gone stale the next time any brand's version number changed without a matching code update. That class of bug is now structurally impossible — the script always reads whatever is actually the highest-versioned file on disk.
+
+---
+
 ## Pending / Open Items
 
 1. ~~SKU discrepancy unresolved~~ — **RESOLVED 2026-08-04.** Physical spool/box photos confirmed `SL-PLAP2-02` / `PLA+ 2.0`.
