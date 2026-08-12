@@ -8,9 +8,9 @@ Sources:
 Run: python generate_voxelpla.py
 """
 
-import os, sys
+import os, re, sys
 sys.path.insert(0, os.path.dirname(__file__))
-from template_v3 import build_workbook
+from template_v3 import build_workbook, next_versioned_path
 
 OUTPUT_DIR = os.path.join(os.path.dirname(__file__), "output")
 os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -205,9 +205,14 @@ VOXELPLA = {
 
 
 if __name__ == "__main__":
-    wb   = build_workbook(VOXELPLA)
-    path = os.path.join(OUTPUT_DIR, "VoxelPLA_filaments_v3.xlsx")
+    pattern  = r'^VoxelPLA_filaments_v3_(\d+)\.xlsx$'
+    template = 'VoxelPLA_filaments_v3_{n}.xlsx'
+    path, version, prev = next_versioned_path(OUTPUT_DIR, pattern, template)
+
+    wb = build_workbook(VOXELPLA)
     wb.save(path)
     n_cat = len(VOXELPLA["catalog"])
-    print(f"✓  VoxelPLA_filaments_v3.xlsx  ({n_cat} catalog entries)")
+    print(f"✓  {os.path.basename(path)}  ({n_cat} catalog entries)")
     print(f"   Written to: {path}")
+    if prev:
+        print(f"   ⚠  Delete old version from the repo after uploading: {prev}")

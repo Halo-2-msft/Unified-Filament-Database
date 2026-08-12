@@ -1,6 +1,8 @@
 """Filament Reference System — v3 Template Engine"""
 
 from __future__ import annotations
+import os
+import re
 from datetime import date
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
@@ -34,6 +36,51 @@ P = {
     "hex_bg":     "F2F2F2",   # light chip background for hex code cells
 }
 FONT_NAME = "Arial"
+
+
+# ── Version discovery ──────────────────────────────────────────────────────────
+# Every generated workbook in this project follows a "keep only the single
+# highest version" convention (Bambu_Lab_filaments_v3_10.xlsx,
+# Filament_Inventory_v2.xlsx, master_index_11_8.xlsx, etc). These two helpers
+# let every generator script discover the current highest version on disk and
+# write the *next* one, instead of hardcoding an unversioned filename that
+# drifts from what's actually in the repo.
+
+def find_latest_version(directory: str, pattern: str):
+    """Scan `directory` for filenames matching `pattern` (a regex with exactly
+    one capturing group for the integer version number) and return the
+    (version_number, filename) pair for the highest version found.
+
+    Returns (None, None) if the directory doesn't exist yet or no file
+    matches the pattern.
+    """
+    if not os.path.isdir(directory):
+        return None, None
+    rx = re.compile(pattern)
+    best = None
+    for fname in os.listdir(directory):
+        m = rx.match(fname)
+        if m:
+            n = int(m.group(1))
+            if best is None or n > best[0]:
+                best = (n, fname)
+    return best if best else (None, None)
+
+
+def next_versioned_path(directory: str, pattern: str, template: str):
+    """Given a regex `pattern` (one capture group = version number) and a
+    `template` string containing '{n}' where the version number goes,
+    return (full_path, version_number, previous_filename_or_None) for the
+    NEXT version to write.
+
+    Example:
+        pattern  = r'^Bambu_Lab_filaments_v3_(\\d+)\\.xlsx$'
+        template = 'Bambu_Lab_filaments_v3_{n}.xlsx'
+    """
+    latest_n, latest_fname = find_latest_version(directory, pattern)
+    next_n = 1 if latest_n is None else latest_n + 1
+    fname = template.format(n=next_n)
+    return os.path.join(directory, fname), next_n, latest_fname
 
 
 # ── Micro helpers ──────────────────────────────────────────────────────────────
@@ -235,6 +282,9 @@ def _build_catalog(wb: Workbook, brand_data: dict):
         base_bg = P["disc_bg"] if is_disc else (P["alt"] if alt else "FFFFFF")
         text_fg = P["disc_fg"] if is_disc else "000000"
         hex_val = entry.get("color_hex", "")
+        notes_val = entry.get("notes") or ""
+        if is_disc and "[DISCONTINUED]" not in notes_val:
+            notes_val = (f"[DISCONTINUED] {notes_val}").strip()
 
         vals = [
             entry.get("material_type", ""),           # A
@@ -256,7 +306,7 @@ def _build_catalog(wb: Workbook, brand_data: dict):
             entry.get("ams_ht",   "✓"),               # Q
             entry.get("tier", ""),                    # R
             entry.get("tier_rationale", ""),          # S
-            entry.get("notes", ""),                   # T
+            notes_val,                                # T
         ]
 
         for col_idx, val in enumerate(vals, 1):
@@ -477,7 +527,7 @@ def _build_dashboard(wb: Workbook, brand_data: dict):
     _section(ws, r, "  CATALOG SUMMARY", _DASH_W)
     r += 1; _kv(ws, r, "Total Catalog Entries (active)",
                 '=COUNTA(Catalog!C3:C1000)'
-                '-COUNTIF(Catalog!T3:T1000,"*end-of-life*")')
+                '-COUNTIF(Catalog!T3:T1000,"~[DISCONTINUED~]*")')
     r += 1; _kv(ws, r, "Tier S — Premium",
                 '=COUNTIF(Catalog!R3:R1000,"S")', val_bg=P["tier_s"])
     r += 1; _kv(ws, r, "Tier A — Excellent",

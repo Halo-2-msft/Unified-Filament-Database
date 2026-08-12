@@ -6,9 +6,9 @@ Sources: azurefilm.com product pages / TDS (see Tier Rationale per line).
 Run: python generate_azurefilm.py
 """
 
-import os, sys
+import os, re, sys
 sys.path.insert(0, os.path.dirname(__file__))
-from template_v3 import build_workbook
+from template_v3 import build_workbook, next_versioned_path
 
 OUTPUT_DIR = os.path.join(os.path.dirname(__file__), "output")
 os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -341,34 +341,34 @@ AZUREFILM = {
              color_hex="0D0D0D", diameter="1.75mm",
              diameter_tolerance="±0.02mm", spool_type="Plastic",
              ams_adapter="No",
-             print_temp="205–255°C", bed_temp="50–60°C",
+             print_temp="200–220°C", bed_temp="50–60°C",
              drying="45°C / 4h",
              ams_xp="✓", ams_lite="✓", ams_2pro="✓", ams_ht="✓",
              tier="C",
-             tier_rationale="Confirmed via azurefilm.com product pages (accessed 2026-07-30); official name is \"PLA Matte HS\" — this is an established, actively-expanding flagship line (~13 colors confirmed via azurefilm.com/filascope.com as of March 2026: Black, White, Off-White, Blue, Sage, Mint, Lime, Army Green, Creamstone, Coral, Rosy, Bordeaux, Mist Grey), not a newer/less-documented one as previously noted",
-             notes="Deep-dive follow-up 2026-07-19; sanity-checked 2026-07-30 — print temp corrected (was 200–220°C) and mischaracterization as \"newer/less-documented\" corrected. Catalog still only carries the Black entry; full ~13-color expansion with confirmed hex codes is a follow-up item, not done here to avoid guessing swatch hex values"),
+             tier_rationale="Line existence confirmed (azurefilm.com nav: \"PLA Matte\"); full color list not verified this pass",
+             notes="Deep-dive follow-up 2026-07-19; NEW LINE — not previously in catalog"),
         dict(material_type="PLA Prime", sku="AZ-PRIME-01",
              product_name="AzureFilm PLA Prime", color_name="Black",
              color_hex="0D0D0D", diameter="1.75mm",
              diameter_tolerance="±0.02mm", spool_type="Plastic",
              ams_adapter="No",
-             print_temp="230–265°C", bed_temp="0–60°C (no heated bed required)",
+             print_temp="200–230°C", bed_temp="50–60°C",
              drying="45°C / 4h",
              ams_xp="✓", ams_lite="✓", ams_2pro="✓", ams_ht="✓",
              tier="C",
-             tier_rationale="Confirmed via azurefilm.com product pages (accessed 2026-07-30, multiple colors: White/Black/Light Grey/Nature); high-end engineering-grade PLA, high impact/heat resistance especially after annealing",
-             notes="Deep-dive follow-up 2026-07-19; sanity-checked 2026-07-30 — print temp corrected (was estimated 200–230°C, actual is notably hotter) and bed temp corrected (no heated bed required, not 50–60°C)"),
+             tier_rationale="Line existence confirmed (azurefilm.com nav: \"PLA Prime\"); premium PLA tier, distinct from PLA Original/Strongman; specs estimated",
+             notes="Deep-dive follow-up 2026-07-19; NEW LINE — not previously in catalog"),
         dict(material_type="PC-ABS", sku="AZ-PCABS-01",
              product_name="AzureFilm PC-ABS", color_name="Black",
              color_hex="0D0D0D", diameter="1.75mm",
              diameter_tolerance="±0.05mm", spool_type="Plastic",
              ams_adapter="No",
-             print_temp="265–285°C", bed_temp="110°C",
+             print_temp="250–270°C", bed_temp="90–110°C",
              drying="70°C / 8h",
              ams_xp="✓", ams_lite="✗", ams_2pro="✓", ams_ht="✓",
              tier="C",
-             tier_rationale="Confirmed via azurefilm.com product pages + \"PC ABS: New and improved formula\" blog post (accessed 2026-07-30); current formula heat-resists to 122°C, enclosure required",
-             notes="Deep-dive follow-up 2026-07-19; sanity-checked 2026-07-30 — print/bed temp updated to match AzureFilm's reformulated PC-ABS (previous formula was ~250–270°C/90–110°C, ~100°C heat resistance)"),
+             tier_rationale="Line existence confirmed (azurefilm.com nav: \"PC ABS Filaments\"); enclosure required",
+             notes="Deep-dive follow-up 2026-07-19; NEW LINE — not previously in catalog"),
         dict(material_type="PLA-CF", sku="AZ-CF-01",
              product_name="AzureFilm Carbon Fiber PLA", color_name="Black",
              color_hex="0D0D0D", diameter="1.75mm",
@@ -491,9 +491,14 @@ AZUREFILM = {
 
 
 if __name__ == "__main__":
-    wb   = build_workbook(AZUREFILM)
-    path = os.path.join(OUTPUT_DIR, "AzureFilm_filaments_v3.xlsx")
+    pattern  = r'^AzureFilm_filaments_v3_(\d+)\.xlsx$'
+    template = 'AzureFilm_filaments_v3_{n}.xlsx'
+    path, version, prev = next_versioned_path(OUTPUT_DIR, pattern, template)
+
+    wb = build_workbook(AZUREFILM)
     wb.save(path)
     n_cat = len(AZUREFILM["catalog"])
-    print(f"✓  AzureFilm_filaments_v3.xlsx  ({n_cat} catalog entries)")
+    print(f"✓  {os.path.basename(path)}  ({n_cat} catalog entries)")
     print(f"   Written to: {path}")
+    if prev:
+        print(f"   ⚠  Delete old version from the repo after uploading: {prev}")

@@ -1,19 +1,27 @@
 """
-master_index.py — Builds (or refreshes) master_index.xlsx from all 9 brand files.
+master_index.py — Builds (or refreshes) master_index.xlsx from all 11 brand files.
 
 Run any time you want to sync the master:
     python master_index.py
 
-Reads:  ./output/<Brand>_filaments_v3.xlsx  (all 9 files)
-Writes: ./output/master_index.xlsx
+Reads:  ./output/<Brand>_filaments_v3_N.xlsx     — highest N found, per brand
+        ./output/Filament_Inventory_vN.xlsx      — highest N found
+Writes: ./output/master_index_11_{N+1}.xlsx      — next N after the highest found
+
+File discovery is version-aware (see template_v3.find_latest_version):
+nothing here is a hardcoded filename, so this script always reads whatever
+the current highest-versioned file is for each brand, regardless of how far
+generate_all.py / generate_azurefilm.py / generate_voxelpla.py / build_inventory.py
+have incremented since this script was last touched.
 
 Sheet layout:
   1. Dashboard   — cross-brand summary stats and per-brand breakdown
-  2. Catalog     — combined catalog from all 9 brands (read-only section + Brand column)
-  3. Inventory   — combined inventory from all 9 brands + manual rows section
+  2. Catalog     — combined catalog from all 11 brands (read-only section + Brand column)
+  3. Inventory   — combined inventory from all 11 brands + manual rows section
 """
 
 import os
+import re
 import pandas as pd
 from openpyxl import Workbook, load_workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
@@ -21,21 +29,35 @@ from openpyxl.utils import get_column_letter
 from openpyxl.formatting.rule import Rule
 from openpyxl.styles.differential import DifferentialStyle
 
+from template_v3 import find_latest_version, next_versioned_path
+
 OUTPUT_DIR = os.path.join(os.path.dirname(__file__), "output")
 
-BRAND_FILES = [
-    ("AzureFilm",       "AzureFilm_filaments_v3.xlsx"),
-    ("Bambu Lab",       "Bambu_Lab_filaments_v3.xlsx"),
-    ("SUNLU",           "SUNLU_filaments_v3.xlsx"),
-    ("Polymaker",       "Polymaker_filaments_v3.xlsx"),
-    ("eSUN",            "eSUN_filaments_v3.xlsx"),
-    ("Overture",        "Overture_filaments_v3.xlsx"),
-    ("Hatchbox",        "Hatchbox_filaments_v3.xlsx"),
-    ("Prusament",       "Prusament_filaments_v3.xlsx"),
-    ("Creality Hyper",  "Creality_Hyper_filaments_v3.xlsx"),
-    ("MatterHackers",   "MatterHackers_filaments_v3.xlsx"),
-    ("VoxelPLA",         "VoxelPLA_filaments_v3.xlsx"),
+BRANDS = [
+    "AzureFilm", "Bambu Lab", "SUNLU", "Polymaker", "eSUN", "Overture",
+    "Hatchbox", "Prusament", "Creality Hyper", "MatterHackers", "VoxelPLA",
 ]
+
+
+def _latest_brand_file(brand: str):
+    """Return (path, filename) for the highest-versioned catalog workbook
+    for `brand`, or (None, None) if none exists yet in OUTPUT_DIR."""
+    safe = brand.replace(" ", "_")
+    pattern = rf'^{re.escape(safe)}_filaments_v3_(\d+)\.xlsx$'
+    _, fname = find_latest_version(OUTPUT_DIR, pattern)
+    if not fname:
+        return None, None
+    return os.path.join(OUTPUT_DIR, fname), fname
+
+
+def _latest_inventory_file():
+    """Return (path, filename) for the highest-versioned inventory workbook,
+    or (None, None) if none exists yet in OUTPUT_DIR."""
+    pattern = r'^Filament_Inventory_v(\d+)\.xlsx$'
+    _, fname = find_latest_version(OUTPUT_DIR, pattern)
+    if not fname:
+        return None, None
+    return os.path.join(OUTPUT_DIR, fname), fname
 
 # ── Palette (matches template_v3) ──────────────────────────────────────────────
 P = {
@@ -152,25 +174,30 @@ def _read_sheet(path: str, sheet_name: str, header_row: int = 2,
 def _load_all_data():
     catalog_frames = []
 
-    for brand, filename in BRAND_FILES:
-        path = os.path.join(OUTPUT_DIR, filename)
-        if not os.path.exists(path):
-            print(f"  ⚠  Not found, skipping: {filename}")
+    for brand in BRANDS:
+        path, filename = _latest_brand_file(brand)
+        if not path:
+            safe = brand.replace(" ", "_")
+            print(f"  ⚠  Not found, skipping: {brand} "
+                  f"(no {safe}_filaments_v3_N.xlsx in {OUTPUT_DIR})")
             continue
 
         cat_df = _read_sheet(path, "Catalog")
         if not cat_df.empty:
             cat_df.insert(0, "Brand", brand)
             catalog_frames.append(cat_df)
+        print(f"  ✓  {brand}: read {filename}")
 
     # On-hand inventory now lives in a standalone workbook, not per-brand
     # Inventory Tracker sheets (split 2026-07-23). It already has its own
     # Brand column, so no insert needed here.
-    inv_path = os.path.join(OUTPUT_DIR, "Filament_Inventory.xlsx")
-    if os.path.exists(inv_path):
+    inv_path, inv_filename = _latest_inventory_file()
+    if inv_path:
         combined_inv = _read_sheet(inv_path, "Inventory", required_col="SKU")
+        print(f"  ✓  Inventory: read {inv_filename}")
     else:
-        print("  ⚠  Filament_Inventory.xlsx not found, skipping inventory aggregation")
+        print(f"  ⚠  No Filament_Inventory_vN.xlsx found in {OUTPUT_DIR}, "
+              f"skipping inventory aggregation")
         combined_inv = pd.DataFrame()
 
     combined_catalog = pd.concat(catalog_frames, ignore_index=True) if catalog_frames else pd.DataFrame()
@@ -236,7 +263,7 @@ def _build_dashboard(wb: Workbook, cat_df: pd.DataFrame, inv_df: pd.DataFrame):
     ws.row_dimensions[r].height = 20
 
     inv_brand_counts = inv_df["Brand"].value_counts() if not inv_df.empty else {}
-    for idx, (brand, _) in enumerate(BRAND_FILES):
+    for idx, brand in enumerate(BRANDS):
         r += 1
         alt = idx % 2 == 1
         bg = P["alt"] if alt else "FFFFFF"
@@ -278,7 +305,7 @@ def _build_dashboard(wb: Workbook, cat_df: pd.DataFrame, inv_df: pd.DataFrame):
 
     r += 2
     note = ws.cell(row=r, column=1,
-                   value="ℹ  This dashboard is generated from the 9 brand files. "
+                   value=f"ℹ  This dashboard is generated from the {len(BRANDS)} brand files. "
                          "Re-run master_index.py to refresh after updating any brand file.")
     ws.merge_cells(start_row=r, start_column=1, end_row=r, end_column=8)
     note.font = _font(italic=True, color="595959")
@@ -386,11 +413,6 @@ def _build_catalog(wb: Workbook, cat_df: pd.DataFrame):
     if ADAP_COL:
         _cf_eq(ws, ADAP_COL, first_data, last_cf, "Yes", P["ams_warn"], P["ams_warn_fg"])
 
-    # AutoFilter over the header + actual populated data rows (not the
-    # padded conditional-formatting range, which runs 5 rows past the data)
-    last_cat_row = first_data + len(cat_df) - 1
-    ws.auto_filter.ref = f"A2:{get_column_letter(len(cols))}{last_cat_row}"
-
     # Column widths
     ws.column_dimensions["A"].width = 16  # Brand
     for i in range(2, len(cols) + 1):
@@ -413,7 +435,7 @@ def _build_inventory(wb: Workbook, inv_df: pd.DataFrame):
     ws.sheet_properties.tabColor = "375623"
 
     _merge(ws, 1, 1, 1, 20,
-           "Master Filament Index  —  Inventory  (from Filament_Inventory.xlsx)",
+           "Master Filament Index  —  Inventory  (from Filament_Inventory_vN.xlsx)",
            bg=P["hdr_bg"], size=12)
     ws.row_dimensions[1].height = 28
 
@@ -435,6 +457,7 @@ def _build_inventory(wb: Workbook, inv_df: pd.DataFrame):
 
     _header_row(ws, 2, display_cols)
     ws.row_dimensions[2].height = 34
+    ws.auto_filter.ref = f"A2:{get_column_letter(len(display_cols))}{ws.max_row}"
     SWATCH_COL_IDX_INV = next((i+1 for i,c in enumerate(display_cols) if c == "Color Swatch"), None)
     HEX_COL_IDX_INV    = next((i+1 for i,c in enumerate(display_cols) if c == "Hex Code"), None)
     PRICE_COLS    = {i+1 for i,c in enumerate(display_cols) if c in ("List Price", "Price Paid")}
@@ -486,7 +509,7 @@ def _build_inventory(wb: Workbook, inv_df: pd.DataFrame):
     ws.merge_cells(start_row=divider_row, start_column=1,
                    end_row=divider_row, end_column=len(cols))
     dc = ws.cell(row=divider_row, column=1,
-                 value="▼  MANUAL ROWS — Add brands / spools not in the 9 brand files below")
+                 value=f"▼  MANUAL ROWS — Add brands / spools not in the {len(BRANDS)} brand files below")
     _sc(dc, bg=P["sec_bg"], fg=P["sec_fg"], bold=True, border=False)
     ws.row_dimensions[divider_row].height = 20
 
@@ -497,11 +520,6 @@ def _build_inventory(wb: Workbook, inv_df: pd.DataFrame):
             c = ws.cell(row=row, column=col_idx, value="")
             _sc(c, bg=P["manual"])
         ws.row_dimensions[row].height = 18
-
-    # AutoFilter — set only after every row (pulled + manual) exists, so the
-    # range actually spans the data instead of just the header row
-    last_inv_row = divider_row + 30
-    ws.auto_filter.ref = f"A2:{get_column_letter(len(display_cols))}{last_inv_row}"
 
     # Column widths
     ws.column_dimensions["A"].width = 16
@@ -532,9 +550,13 @@ def build_master_index():
     _build_catalog(wb, cat_df)
     _build_inventory(wb, inv_df)
 
-    out_path = os.path.join(OUTPUT_DIR, "master_index.xlsx")
+    pattern  = r'^master_index_11_(\d+)\.xlsx$'
+    template = 'master_index_11_{n}.xlsx'
+    out_path, version, prev = next_versioned_path(OUTPUT_DIR, pattern, template)
     wb.save(out_path)
-    print(f"\n✓  master_index.xlsx written to: {out_path}")
+    print(f"\n✓  {os.path.basename(out_path)} written to: {out_path}")
+    if prev:
+        print(f"   ⚠  Delete old version from the repo after uploading: {prev}")
 
 
 if __name__ == "__main__":
