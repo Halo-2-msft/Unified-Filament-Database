@@ -136,7 +136,12 @@ def _vx_galpla(color, hex_, sku_sfx):
         tier_rationale=_VX_GALPLA_R,
         notes=("Glitter/sparkle particle variant; same print settings as PLA+ HS; "
                "slightly abrasive — monitor nozzle wear at high volumes | "
-               "NEW LINE — added 2026-08-18, not in prior catalog pass"),
+               "Line confirmed real 2026-08-18 (own voxelpla.com product page, "
+               "own SKU, $24.99 — matches Galaxy PETG+ HS pricing tier); currently "
+               "shows Sold Out on voxelpla.com. Hex: unconfirmed — no colorimeter "
+               "measurement found for this PLA+ line specifically. Do NOT assume "
+               "identical to Galaxy PETG+ HS hex despite matching color name — "
+               "different material, not independently verified."),
     )
 
 
@@ -161,7 +166,11 @@ VOXELPLA = {
         _vx_pla("Brown",            "6B3A2A", "BR"),
         _vx_pla("Phantom Blue",     "2A5CAA", "PB"),
         _vx_pla("Silver",           "C0C0C0", "SV"),
-        _vx_pla("Army Green",       "4A5240", "AG"),
+        _vx_pla("Army Green",       "4A5240", "AG",
+                notes="FLAG 2026-08-18: 3dfilamentprofiles.com colorimeter "
+                      "measurement shows #667B65 for this exact product/color, "
+                      "differing from catalog's #4A5240 — not re-verified or "
+                      "corrected this pass, needs follow-up"),
         _vx_pla("Dark Purple",      "4B0082", "DPU"),
         _vx_pla("Pink",             "FF69B4", "PK"),
         _vx_pla("Wood",             "A0785A", "WD",
@@ -179,7 +188,11 @@ VOXELPLA = {
         _vx_pla("Eggshell White",   "F0EAD6", "ESW"),
         _vx_pla("Skin",             "FFCC99", "SK"),
         _vx_pla("Mint Green",       "999999", "MG",
-                notes="NEW — added 2026-08-18, hex not yet confirmed | Hex: approximate"),
+                notes="Confirmed real 2026-08-18 (own voxelpla.com product page, "
+                      "own SKU); currently shows Sold Out on voxelpla.com. Not "
+                      "found in 3dfilamentprofiles.com's High Speed listing (26 "
+                      "items) as of this pass — likely not yet indexed there. "
+                      "Hex: unconfirmed."),
 
         # ── VOXELPETG+ HS ─────────────────────────────────────────────────────
         # Confirmed from voxelpla.com PETG+ HS product pages:
