@@ -17,9 +17,9 @@
     "Condition": "Good",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Spool",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 0,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": "Depleted 2026-08-08, refill pending"
   },
   {
@@ -40,9 +40,9 @@
     "Condition": "Good",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Spool",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 954,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": null
   },
   {
@@ -63,9 +63,9 @@
     "Condition": "New",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Refill",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 1000,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": null
   },
   {
@@ -86,9 +86,9 @@
     "Condition": "New",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Refill",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 1000,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": null
   },
   {
@@ -109,9 +109,9 @@
     "Condition": "New",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Refill",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 1000,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": null
   },
   {
@@ -132,9 +132,9 @@
     "Condition": "New",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Refill",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 1000,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": null
   },
   {
@@ -155,9 +155,9 @@
     "Condition": "New",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Refill",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 1000,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": null
   },
   {
@@ -178,9 +178,9 @@
     "Condition": "Good",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Refill",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 939,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": null
   },
   {
@@ -201,10 +201,10 @@
     "Condition": "Good",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Refill",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 123,
-    "Notes": null
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
+    "Notes": "Depleted 2026-08-010, refill pending"
   },
   {
     "Brand": "Bambu Lab",
@@ -224,9 +224,9 @@
     "Condition": "New",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Refill",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 1000,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": null
   },
   {
@@ -247,9 +247,9 @@
     "Condition": "Good",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Refill",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 0,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": "Depleted 2026-08-08, refill pending"
   },
   {
@@ -270,9 +270,9 @@
     "Condition": "Good",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Refill",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 1000,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": null
   },
   {
@@ -293,9 +293,9 @@
     "Condition": "Good",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Refill",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 123,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": null
   },
   {
@@ -316,9 +316,9 @@
     "Condition": "New",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Spool",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 1000,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": null
   },
   {
@@ -339,9 +339,9 @@
     "Condition": "Good",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Refill",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 854,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": null
   },
   {
@@ -362,9 +362,9 @@
     "Condition": "New",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Spool",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 1000,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": null
   },
   {
@@ -382,21 +382,21 @@
     "Price Paid": null,
     "Quantity in Stock": 1,
     "Opened / Sealed": "Sealed",
-    "Condition": "New",
+    "Condition": "Good",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Spool",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 1000,
-    "Notes": null
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
+    "Notes": "Opened 2026-08-17"
   },
   {
     "Brand": "SUNLU",
     "SKU / Product ID": "SL-PETG-16",
     "Material Type": "PETG",
     "Product Name": "SUNLU PETG",
-    "Color Name": "Lavender Purple",
-    "Hex Code": "#999999",
+    "Color Name": "Lavender Purple(Purple)",
+    "Hex Code": "#685BC7",
     "Diameter": "1.75mm",
     "Lot / Batch Code": null,
     "Date Purchased": null,
@@ -408,9 +408,9 @@
     "Condition": "New",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Spool",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 1000,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": "Hex is catalog placeholder (#999999 = unconfirmed), not a real swatch color"
   },
   {
@@ -418,8 +418,8 @@
     "SKU / Product ID": "SL-PETG-16",
     "Material Type": "PETG",
     "Product Name": "SUNLU PETG",
-    "Color Name": "Lavender Purple",
-    "Hex Code": "#999999",
+    "Color Name": "Lavender Purple(Purple)",
+    "Hex Code": "#685BC7",
     "Diameter": "1.75mm",
     "Lot / Batch Code": null,
     "Date Purchased": null,
@@ -431,9 +431,9 @@
     "Condition": "New",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Spool",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 1000,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": "Hex is catalog placeholder (#999999 = unconfirmed), not a real swatch color"
   },
   {
@@ -441,8 +441,8 @@
     "SKU / Product ID": "SL-PETG-16",
     "Material Type": "PETG",
     "Product Name": "SUNLU PETG",
-    "Color Name": "Lavender Purple",
-    "Hex Code": "#999999",
+    "Color Name": "Lavender Purple(Purple)",
+    "Hex Code": "#685BC7",
     "Diameter": "1.75mm",
     "Lot / Batch Code": null,
     "Date Purchased": null,
@@ -454,9 +454,9 @@
     "Condition": "New",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Spool",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 1000,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": "Hex is catalog placeholder (#999999 = unconfirmed), not a real swatch color"
   },
   {
@@ -477,9 +477,9 @@
     "Condition": "New",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Spool",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 1000,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": null
   },
   {
@@ -500,9 +500,9 @@
     "Condition": "New",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Spool",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 1000,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": null
   },
   {
@@ -523,9 +523,9 @@
     "Condition": "Good",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Spool",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 318,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": null
   },
   {
@@ -546,9 +546,9 @@
     "Condition": "New",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Spool",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 1000,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": null
   },
   {
@@ -569,9 +569,9 @@
     "Condition": "Good",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Spool",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 233,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": null
   },
   {
@@ -592,9 +592,9 @@
     "Condition": "New",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Spool",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 1000,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": null
   },
   {
@@ -615,9 +615,9 @@
     "Condition": "New",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Spool",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 1000,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": null
   },
   {
@@ -638,9 +638,9 @@
     "Condition": "New",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Spool",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 1000,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": null
   },
   {
@@ -661,9 +661,9 @@
     "Condition": "New",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Spool",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 1000,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": null
   },
   {
@@ -684,9 +684,9 @@
     "Condition": "New",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Spool",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 1000,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": null
   },
   {
@@ -707,9 +707,9 @@
     "Condition": "New",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Spool",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 1000,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": null
   },
   {
@@ -730,9 +730,9 @@
     "Condition": "New",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Spool",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 1000,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": "Catalog lists this color as \"Oliver Green\" (SL-PLA-22) \u2014 likely a brand-catalog typo for Olive Green; matched on color/hex"
   },
   {
@@ -753,9 +753,9 @@
     "Condition": "New",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Spool",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 1000,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": "Physical spool + box label confirm \"PLA+2.0\" \u2014 corrects the prior 2026-08-02 fix, which had wrongly reassigned this to the plain \"PLA+\" line (SL-PLAP-02) based on the ambiguous user-entered SKU. Verified via IMG_0209.JPG / IMG_0210.JPG, 2026-08-04."
   },
   {
@@ -776,9 +776,9 @@
     "Condition": "New",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Spool",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 1000,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": "Physical spool + box label confirm \"PLA+2.0\" \u2014 corrects the prior 2026-08-02 fix, which had wrongly reassigned this to the plain \"PLA+\" line (SL-PLAP-02) based on the ambiguous user-entered SKU. Verified via IMG_0209.JPG / IMG_0210.JPG, 2026-08-04."
   },
   {
@@ -799,9 +799,55 @@
     "Condition": "Good",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Spool",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 387,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
+    "Notes": "Depleted 8/19/26 refill pending. Material Type corrected from \"PLA 2+\" \u2014 SL-PLAP2-01 belongs to the separate \"PLA+ 2.0\" line"
+  },
+  {
+    "Brand": "SUNLU",
+    "SKU / Product ID": "SL-PLAP2-01",
+    "Material Type": "PLA+ 2.0",
+    "Product Name": "SUNLU PLA+ 2.0",
+    "Color Name": "Black",
+    "Hex Code": "#000000",
+    "Diameter": "1.75mm",
+    "Lot / Batch Code": null,
+    "Date Purchased": null,
+    "Where Purchased": null,
+    "List Price": null,
+    "Price Paid": 10.83,
+    "Quantity in Stock": 1,
+    "Opened / Sealed": "Sealed",
+    "Condition": "New",
+    "Moisture Rating": "Dry",
+    "Last Dried Date": null,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
+    "Notes": "Mounted 8/19/26. Material Type corrected from \"PLA 2+\" \u2014 SL-PLAP2-01 belongs to the separate \"PLA+ 2.0\" line"
+  },
+  {
+    "Brand": "SUNLU",
+    "SKU / Product ID": "SL-PLAP2-01",
+    "Material Type": "PLA+ 2.0",
+    "Product Name": "SUNLU PLA+ 2.0",
+    "Color Name": "Black",
+    "Hex Code": "#000000",
+    "Diameter": "1.75mm",
+    "Lot / Batch Code": null,
+    "Date Purchased": null,
+    "Where Purchased": null,
+    "List Price": null,
+    "Price Paid": 10.83,
+    "Quantity in Stock": 1,
+    "Opened / Sealed": "Sealed",
+    "Condition": "New",
+    "Moisture Rating": "Dry",
+    "Last Dried Date": null,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": "Material Type corrected from \"PLA 2+\" \u2014 SL-PLAP2-01 belongs to the separate \"PLA+ 2.0\" line"
   },
   {
@@ -822,55 +868,9 @@
     "Condition": "New",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Spool",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 1000,
-    "Notes": "Material Type corrected from \"PLA 2+\" \u2014 SL-PLAP2-01 belongs to the separate \"PLA+ 2.0\" line"
-  },
-  {
-    "Brand": "SUNLU",
-    "SKU / Product ID": "SL-PLAP2-01",
-    "Material Type": "PLA+ 2.0",
-    "Product Name": "SUNLU PLA+ 2.0",
-    "Color Name": "Black",
-    "Hex Code": "#000000",
-    "Diameter": "1.75mm",
-    "Lot / Batch Code": null,
-    "Date Purchased": null,
-    "Where Purchased": null,
-    "List Price": null,
-    "Price Paid": 10.83,
-    "Quantity in Stock": 1,
-    "Opened / Sealed": "Sealed",
-    "Condition": "New",
-    "Moisture Rating": "Dry",
-    "Last Dried Date": null,
-    "Package Type": "Spool",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 1000,
-    "Notes": "Material Type corrected from \"PLA 2+\" \u2014 SL-PLAP2-01 belongs to the separate \"PLA+ 2.0\" line"
-  },
-  {
-    "Brand": "SUNLU",
-    "SKU / Product ID": "SL-PLAP2-01",
-    "Material Type": "PLA+ 2.0",
-    "Product Name": "SUNLU PLA+ 2.0",
-    "Color Name": "Black",
-    "Hex Code": "#000000",
-    "Diameter": "1.75mm",
-    "Lot / Batch Code": null,
-    "Date Purchased": null,
-    "Where Purchased": null,
-    "List Price": null,
-    "Price Paid": 10.83,
-    "Quantity in Stock": 1,
-    "Opened / Sealed": "Sealed",
-    "Condition": "New",
-    "Moisture Rating": "Dry",
-    "Last Dried Date": null,
-    "Package Type": "Spool",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 1000,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": "Material Type corrected from \"PLA 2+\" \u2014 SL-PLAP2-01 belongs to the separate \"PLA+ 2.0\" line"
   },
   {
@@ -891,9 +891,9 @@
     "Condition": "Good",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Spool",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 940,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": null
   },
   {
@@ -914,9 +914,9 @@
     "Condition": "Good",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Spool",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 304,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": null
   },
   {
@@ -937,9 +937,9 @@
     "Condition": "New",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Refill",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 1000,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": null
   },
   {
@@ -956,14 +956,14 @@
     "List Price": null,
     "Price Paid": null,
     "Quantity in Stock": 1,
-    "Opened / Sealed": "Sealed",
-    "Condition": "New",
+    "Opened / Sealed": "Opened",
+    "Condition": "Good",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Refill",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 1000,
-    "Notes": null
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
+    "Notes": "Mounted 2026-08-10"
   },
   {
     "Brand": "Bambu Lab",
@@ -983,9 +983,9 @@
     "Condition": "Good",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Spool",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 532,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": null
   },
   {
@@ -1006,9 +1006,9 @@
     "Condition": "Good",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Spool",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 583,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": null
   },
   {
@@ -1029,9 +1029,9 @@
     "Condition": "Good",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Spool",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 364,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": null
   },
   {
@@ -1052,9 +1052,9 @@
     "Condition": "New",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Refill",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 1000,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": null
   },
   {
@@ -1075,9 +1075,9 @@
     "Condition": "New",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Refill",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 1000,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": null
   },
   {
@@ -1098,9 +1098,9 @@
     "Condition": "New",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Refill",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 1000,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": null
   },
   {
@@ -1121,9 +1121,9 @@
     "Condition": "New",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Refill",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 1000,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": null
   },
   {
@@ -1144,9 +1144,9 @@
     "Condition": "New",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Refill",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 1000,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": null
   },
   {
@@ -1167,9 +1167,9 @@
     "Condition": "New",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Refill",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 1000,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": null
   },
   {
@@ -1190,9 +1190,9 @@
     "Condition": "New",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Refill",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 1000,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": null
   },
   {
@@ -1213,9 +1213,9 @@
     "Condition": "New",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Refill",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 1000,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": null
   },
   {
@@ -1236,9 +1236,9 @@
     "Condition": "New",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Refill",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 1000,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": null
   },
   {
@@ -1259,9 +1259,9 @@
     "Condition": "New",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Refill",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 1000,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": null
   },
   {
@@ -1282,9 +1282,9 @@
     "Condition": "New",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Refill",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 1000,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": null
   },
   {
@@ -1305,9 +1305,9 @@
     "Condition": "New",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Refill",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 1000,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": null
   },
   {
@@ -1328,9 +1328,9 @@
     "Condition": "New",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Refill",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 1000,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": null
   },
   {
@@ -1351,9 +1351,9 @@
     "Condition": "New",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Refill",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 1000,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": null
   },
   {
@@ -1374,9 +1374,9 @@
     "Condition": "New",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Refill",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 1000,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": null
   },
   {
@@ -1397,9 +1397,9 @@
     "Condition": "New",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Refill",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 1000,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": null
   },
   {
@@ -1420,13 +1420,13 @@
     "Condition": "New",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Refill",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 1000,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
     "Notes": null
   },
   {
-    "Brand": "PLA Basic",
+    "Brand": "Bambu Lab",
     "SKU / Product ID": "BL-PLAB-BK",
     "Material Type": "PLA Basic",
     "Product Name": "PLA Basic",
@@ -1443,9 +1443,32 @@
     "Condition": "Good",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
-    "Package Type": "Spool",
-    "Net Weight (g)": 1000,
-    "Est. Remaining (g)": 0,
-    "Notes": "Depleted 2026-08-10, refil pending"
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
+    "Notes": "Depleted 2026-08-010, refill pending"
+  },
+  {
+    "Brand": "Bambu Lab",
+    "SKU / Product ID": "BL-PLAB-BL",
+    "Material Type": "PLA Basic",
+    "Product Name": "PLA Basic",
+    "Color Name": "Blue",
+    "Hex Code": "#0A2989",
+    "Diameter": "1.75mm",
+    "Lot / Batch Code": null,
+    "Date Purchased": null,
+    "Where Purchased": "Bambu Lab",
+    "List Price": null,
+    "Price Paid": null,
+    "Quantity in Stock": 1,
+    "Opened / Sealed": "Opened",
+    "Condition": "Good",
+    "Moisture Rating": "Dry",
+    "Last Dried Date": null,
+    "Package Type": null,
+    "Net Weight (g)": null,
+    "Est. Remaining (g)": null,
+    "Notes": null
   }
 ]
