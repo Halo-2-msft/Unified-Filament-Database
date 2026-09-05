@@ -166,11 +166,15 @@ VOXELPLA = {
         _vx_pla("Brown",            "6B3A2A", "BR"),
         _vx_pla("Phantom Blue",     "2A5CAA", "PB"),
         _vx_pla("Silver",           "C0C0C0", "SV"),
-        _vx_pla("Army Green",       "4A5240", "AG",
-                notes="FLAG 2026-08-18: 3dfilamentprofiles.com colorimeter "
-                      "measurement shows #667B65 for this exact product/color, "
-                      "differing from catalog's #4A5240 — not re-verified or "
-                      "corrected this pass, needs follow-up"),
+        _vx_pla("Army Green",       "667B65", "AG",
+                notes="RESOLVED 2026-09-04 (was flagged discrepancy): #667B65 confirmed "
+                      "correct via TWO independent sources -- voxelpla.com's own product "
+                      "page (Army Green shows Hotend 200-220C, Bed 45-60C) and "
+                      "3dfilamentprofiles.com's colorimeter reading, which matches exactly. "
+                      "Prior #4A5240 was the incorrect value. Note: this product's own page "
+                      "shows print temp up to 220C, slightly above the 210C ceiling used "
+                      "site-wide for this line -- not changed here, flagging in case other "
+                      "colors need the same check."),
         _vx_pla("Dark Purple",      "4B0082", "DPU"),
         _vx_pla("Pink",             "FF69B4", "PK"),
         _vx_pla("Wood",             "A0785A", "WD",
