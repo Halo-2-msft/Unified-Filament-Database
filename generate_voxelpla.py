@@ -10,7 +10,7 @@ Run: python generate_voxelpla.py
 
 import os, sys
 sys.path.insert(0, os.path.dirname(__file__))
-from template_v3 import build_workbook
+from template_v3 import build_workbook, next_versioned_path
 
 OUTPUT_DIR = os.path.join(os.path.dirname(__file__), "output")
 os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -191,12 +191,13 @@ VOXELPLA = {
         _vx_pla("Dark Brown",       "3D1C02", "DBR"),
         _vx_pla("Eggshell White",   "F0EAD6", "ESW"),
         _vx_pla("Skin",             "FFCC99", "SK"),
-        _vx_pla("Mint Green",       "999999", "MG",
-                notes="Confirmed real 2026-08-18 (own voxelpla.com product page, "
-                      "own SKU); currently shows Sold Out on voxelpla.com. Not "
-                      "found in 3dfilamentprofiles.com's High Speed listing (26 "
-                      "items) as of this pass — likely not yet indexed there. "
-                      "Hex: unconfirmed."),
+        _vx_pla("Mint Green",       "7CF4DF", "MG",
+                notes="RESOLVED 2026-09-15: #7CF4DF found on 3dfilamentprofiles.com's "
+                      "VoxelPLA listing page (was not indexed there as of the 2026-08-18 "
+                      "pass — now is). Currently shows Sold Out on voxelpla.com. Same "
+                      "caveat as Army Green before its own resolution: this is a listed/"
+                      "nominal value, not confirmed colorimeter-measured (no 'Measured "
+                      "RGB' data on the detail page)."),
 
         # ── VOXELPETG+ HS ─────────────────────────────────────────────────────
         # Confirmed from voxelpla.com PETG+ HS product pages:
@@ -290,9 +291,14 @@ VOXELPLA = {
 
 
 if __name__ == "__main__":
-    wb   = build_workbook(VOXELPLA)
-    path = os.path.join(OUTPUT_DIR, "VoxelPLA_filaments_v3.xlsx")
+    pattern  = r'^VoxelPLA_filaments_v3_(\d+)\.xlsx$'
+    template = 'VoxelPLA_filaments_v3_{n}.xlsx'
+    path, version, prev = next_versioned_path(OUTPUT_DIR, pattern, template)
+
+    wb = build_workbook(VOXELPLA)
     wb.save(path)
     n_cat = len(VOXELPLA["catalog"])
-    print(f"✓  VoxelPLA_filaments_v3.xlsx  ({n_cat} catalog entries)")
+    print(f"✓  {os.path.basename(path)}  ({n_cat} catalog entries)")
     print(f"   Written to: {path}")
+    if prev:
+        print(f"   ⚠  Delete old version from the repo after uploading: {prev}")
