@@ -135,7 +135,7 @@
     "Package Type": null,
     "Net Weight (g)": null,
     "Est. Remaining (g)": null,
-    "Notes": null
+    "Notes": "Mounted 9/24/2026"
   },
   {
     "Brand": "Bambu Lab",
@@ -312,14 +312,14 @@
     "List Price": null,
     "Price Paid": null,
     "Quantity in Stock": 1,
-    "Opened / Sealed": "Sealed",
-    "Condition": "New",
+    "Opened / Sealed": "Opened",
+    "Condition": "Good",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
     "Package Type": null,
     "Net Weight (g)": null,
     "Est. Remaining (g)": null,
-    "Notes": null
+    "Notes": "Mounted 9/14/26"
   },
   {
     "Brand": "Bambu Lab",
@@ -726,14 +726,14 @@
     "List Price": null,
     "Price Paid": null,
     "Quantity in Stock": 1,
-    "Opened / Sealed": "Sealed",
-    "Condition": "New",
+    "Opened / Sealed": "Opened",
+    "Condition": "Good",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
     "Package Type": null,
     "Net Weight (g)": null,
     "Est. Remaining (g)": null,
-    "Notes": "Catalog lists this color as \"Oliver Green\" (SL-PLA-22) \u2014 likely a brand-catalog typo for Olive Green; matched on color/hex"
+    "Notes": "Mounted 9/24/2026 Catalog lists this color as \"Oliver Green\" (SL-PLA-22) \u2014 likely a brand-catalog typo for Olive Green; matched on color/hex"
   },
   {
     "Brand": "SUNLU",
@@ -756,7 +756,7 @@
     "Package Type": null,
     "Net Weight (g)": null,
     "Est. Remaining (g)": null,
-    "Notes": "Mounted 8/29/2026 Physical spool + box label confirm \"PLA+2.0\" \u2014 corrects the prior 2026-08-02 fix, which had wrongly reassigned this to the plain \"PLA+\" line (SL-PLAP-02) based on the ambiguous user-entered SKU. Verified via IMG_0209.JPG / IMG_0210.JPG, 2026-08-04."
+    "Notes": "Depleted 9/19/2026 Physical spool + box label confirm \"PLA+2.0\" \u2014 corrects the prior 2026-08-02 fix, which had wrongly reassigned this to the plain \"PLA+\" line (SL-PLAP-02) based on the ambiguous user-entered SKU. Verified via IMG_0209.JPG / IMG_0210.JPG, 2026-08-04."
   },
   {
     "Brand": "SUNLU",
@@ -772,14 +772,14 @@
     "List Price": null,
     "Price Paid": 16.98,
     "Quantity in Stock": 1,
-    "Opened / Sealed": "Sealed",
-    "Condition": "New",
+    "Opened / Sealed": "Opened",
+    "Condition": "Good",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
     "Package Type": null,
     "Net Weight (g)": null,
     "Est. Remaining (g)": null,
-    "Notes": "Physical spool + box label confirm \"PLA+2.0\" \u2014 corrects the prior 2026-08-02 fix, which had wrongly reassigned this to the plain \"PLA+\" line (SL-PLAP-02) based on the ambiguous user-entered SKU. Verified via IMG_0209.JPG / IMG_0210.JPG, 2026-08-04."
+    "Notes": "Mounted 9/19/26Physical spool + box label confirm \"PLA+2.0\" \u2014 corrects the prior 2026-08-02 fix, which had wrongly reassigned this to the plain \"PLA+\" line (SL-PLAP-02) based on the ambiguous user-entered SKU. Verified via IMG_0209.JPG / IMG_0210.JPG, 2026-08-04."
   },
   {
     "Brand": "SUNLU",
@@ -848,7 +848,7 @@
     "Package Type": null,
     "Net Weight (g)": null,
     "Est. Remaining (g)": null,
-    "Notes": "Mounted 8/23/2026. Material Type corrected from \"PLA 2+\" \u2014 SL-PLAP2-01 belongs to the separate \"PLA+ 2.0\" line"
+    "Notes": "Depleted 9/12/2026. Material Type corrected from \"PLA 2+\" \u2014 SL-PLAP2-01 belongs to the separate \"PLA+ 2.0\" line"
   },
   {
     "Brand": "SUNLU",
@@ -864,14 +864,14 @@
     "List Price": null,
     "Price Paid": 10.83,
     "Quantity in Stock": 1,
-    "Opened / Sealed": "Sealed",
-    "Condition": "New",
+    "Opened / Sealed": "Opened",
+    "Condition": "Good",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
     "Package Type": null,
     "Net Weight (g)": null,
     "Est. Remaining (g)": null,
-    "Notes": "Material Type corrected from \"PLA 2+\" \u2014 SL-PLAP2-01 belongs to the separate \"PLA+ 2.0\" line"
+    "Notes": "Mounted 9/12/2026. Material Type corrected from \"PLA 2+\" \u2014 SL-PLAP2-01 belongs to the separate \"PLA+ 2.0\" line"
   },
   {
     "Brand": "Bambu Lab",
@@ -894,7 +894,7 @@
     "Package Type": null,
     "Net Weight (g)": null,
     "Est. Remaining (g)": null,
-    "Notes": null
+    "Notes": "Mounted 9/20/26"
   },
   {
     "Brand": "Bambu Lab",
@@ -1071,8 +1071,8 @@
     "List Price": 19.99,
     "Price Paid": 12.99,
     "Quantity in Stock": 1,
-    "Opened / Sealed": "Opened",
-    "Condition": "Good",
+    "Opened / Sealed": "Sealed",
+    "Condition": "New",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
     "Package Type": null,
@@ -1370,14 +1370,14 @@
     "List Price": 19.99,
     "Price Paid": 12.99,
     "Quantity in Stock": 1,
-    "Opened / Sealed": "Sealed",
-    "Condition": "New",
+    "Opened / Sealed": "Opened",
+    "Condition": "Good",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
     "Package Type": null,
     "Net Weight (g)": null,
     "Est. Remaining (g)": null,
-    "Notes": null
+    "Notes": "Mounted 9/19/26"
   },
   {
     "Brand": "Bambu Lab",
@@ -1469,7 +1469,7 @@
     "Package Type": null,
     "Net Weight (g)": null,
     "Est. Remaining (g)": null,
-    "Notes": null
+    "Notes": "Depleted 9/19/26"
   },
   {
     "Brand": "SUNLU",
