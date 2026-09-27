@@ -255,6 +255,12 @@ ELEGOO = {
             "drying": "55°C / 6h",
             "notes": "Cardboard spool — AMS Adapter Ring required. 14-color line, only 1/14 hex confirmed this pass (Burgundy Red) — this line proved unusually hard to source per-color data for; worth a dedicated follow-up pass.",
         },
+        {
+            "material": "PLA (RFID) emoji Brand Edition", "print_temp": "190–220°C", "bed_temp": "45–60°C",
+            "enclosure": "No", "ams_compat": "⚠", "drying_required": "Recommended",
+            "drying": "45°C / 4h",
+            "notes": "Cardboard spool — AMS Adapter Ring required. Brand-new pre-order product as of 2026-09-27, RFID-tagged for ELEGOO CANVAS. Same 17 color names as PLA Plus. Zero hex confirmed — too new to be indexed by any third-party source checked; re-check once this line has fully shipped.",
+        },
     ],
 }
 
@@ -385,6 +391,61 @@ ELEGOO["catalog"].extend([
     _el_plapro("Neon Green",  "999999", "NGN"),
     _el_plapro("Beige",       "999999", "BEI"),
     _el_plapro("Hot Pink",    "999999", "HPK"),
+])
+
+
+def _el_rfid(color, sku_sfx, notes=""):
+    return dict(material_type="PLA (RFID) emoji Brand Edition", sku=f"EL-RFID-{sku_sfx}",
+                product_name="Elegoo PLA (RFID) emoji Brand Edition",
+                color_name=color, color_hex="999999", diameter="1.75mm",
+                diameter_tolerance="±0.03mm", spool_type="Cardboard", ams_adapter="Yes",
+                print_temp="190–220°C", bed_temp="45–60°C", drying="45°C / 4h",
+                ams_xp="⚠", ams_lite="⚠", ams_2pro="⚠", ams_ht="⚠",
+                tier="C",
+                tier_rationale=("PLACEHOLDER — color and official 17-color line count "
+                                 "confirmed (us.elegoo.com official product page) but this "
+                                 "is a very new PRE-ORDER product (as of this pass, only "
+                                 "Black/White/Red/Yellow show \"Ready to Ship\", the rest "
+                                 "\"By August 15\") — no hex found anywhere, genuinely too "
+                                 "new to be indexed by any third-party source checked, not a "
+                                 "research gap. The product's own official description calls "
+                                 "it \"an official ELEGOO x emoji brand edition of ELEGOO "
+                                 "PLA\" (not PLA Plus), which may mean identical pigments to "
+                                 "this catalog's plain PLA line, but that is not confirmed — "
+                                 "different SKU/product page/possibly different batch, not "
+                                 "assumed identical per no-cross-inference rule."),
+                notes=(notes + " | " if notes else "") +
+                      "Cardboard spool — AMS Adapter Ring required for all AMS variants; "
+                      "RFID-tagged for ELEGOO CANVAS filament recognition | "
+                      "Hex: unconfirmed placeholder, product too new to be indexed anywhere checked this pass")
+
+
+ELEGOO["catalog"].extend([
+    # ── PLA (RFID) emoji Brand Edition (17 colors — us.elegoo.com official) ──
+    # Brand-new PRE-ORDER product as of this pass (2026-09-27) — same 17 color
+    # names as PLA Plus, RFID-tagged for ELEGOO CANVAS, co-branded with emoji.
+    # No hex found anywhere for any color — genuinely too new to be indexed,
+    # not unresearched. Re-check in a future pass once this line has shipped
+    # and third-party sources (3dfilamentprofiles.com, filamentcolors.xyz)
+    # have had time to catch up, same pattern VoxelPLA's newest colors were in
+    # before they got indexed.
+    _el_rfid("Black",       "BK"),
+    _el_rfid("White",       "WH"),
+    _el_rfid("Grey",        "GY"),
+    _el_rfid("Red",         "RD"),
+    _el_rfid("Yellow",      "YL"),
+    _el_rfid("Orange",      "OR"),
+    _el_rfid("Dark Blue",   "DBL"),
+    _el_rfid("Neon Green",  "NGN"),
+    _el_rfid("Pink",        "PK"),
+    _el_rfid("Purple",      "PU"),
+    _el_rfid("Sky Blue",    "SKB"),
+    _el_rfid("Sea Green",   "SGN"),
+    _el_rfid("Space Grey",  "SPG"),
+    _el_rfid("Wood Color",  "WDC"),
+    _el_rfid("Brown",       "BR"),
+    _el_rfid("Beige",       "BEI"),
+    _el_rfid("Translucent", "TR"),
 ])
 
 
