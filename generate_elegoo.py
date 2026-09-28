@@ -261,6 +261,18 @@ ELEGOO = {
             "drying": "45°C / 4h",
             "notes": "Cardboard spool — AMS Adapter Ring required. Brand-new pre-order product as of 2026-09-27, RFID-tagged for ELEGOO CANVAS. Same 17 color names as PLA Plus. Zero hex confirmed — too new to be indexed by any third-party source checked; re-check once this line has fully shipped.",
         },
+        {
+            "material": "PLA Marble", "print_temp": "190–220°C", "bed_temp": "35–65°C",
+            "enclosure": "No", "ams_compat": "⚠", "drying_required": "Recommended",
+            "drying": "55°C / 8h",
+            "notes": "Cardboard spool — AMS Adapter Ring required. 3-color line, all 3 hex resolved, but two of the three (Marble, Marble Cement Grey) have conflicting values across sources within 3dfilamentprofiles.com itself — flagged per-entry, not reconciled. Stone-like surface texture over a solid pigment, not a multi-color blend.",
+        },
+        {
+            "material": "PLA Sparkle", "print_temp": "190–220°C", "bed_temp": "35–65°C",
+            "enclosure": "No", "ams_compat": "⚠", "drying_required": "Recommended",
+            "drying": "55°C / 6h",
+            "notes": "Cardboard spool — AMS Adapter Ring required. 7-color line, 6/7 hex resolved; Sparkle Green left unresolved due to conflicting source values (#004000 vs #38571A). Glitter-particle additive, slightly abrasive — monitor nozzle wear.",
+        },
     ],
 }
 
@@ -446,6 +458,69 @@ ELEGOO["catalog"].extend([
     _el_rfid("Brown",       "BR"),
     _el_rfid("Beige",       "BEI"),
     _el_rfid("Translucent", "TR"),
+])
+
+
+def _el_marble(color, hex_, sku_sfx, print_temp="190–220°C", notes=""):
+    return dict(material_type="PLA Marble", sku=f"EL-MRB-{sku_sfx}",
+                product_name="Elegoo PLA Marble",
+                color_name=color, color_hex=hex_, diameter="1.75mm",
+                diameter_tolerance="±0.03mm", spool_type="Cardboard", ams_adapter="Yes",
+                print_temp=print_temp, bed_temp="35–65°C", drying="55°C / 8h",
+                ams_xp="⚠", ams_lite="⚠", ams_2pro="⚠", ams_ht="⚠",
+                tier="A" if hex_ != "999999" else "C",
+                tier_rationale=("Color and official 3-color line count confirmed "
+                                 "(us.elegoo.com official product page); hex and temps via "
+                                 "3dfilamentprofiles.com's dedicated per-color detail page"
+                                 if hex_ != "999999" else
+                                 "PLACEHOLDER — color confirmed real but not resolved this pass"),
+                notes=(notes + " | " if notes else "") +
+                      "Cardboard spool — AMS Adapter Ring required for all AMS variants; "
+                      "\"Realistic stone-like texture\" per manufacturer — solid pigment with a marbled surface finish, not a multi-color blend | " +
+                      ("Hex: manufacturer-listed value (3dfilamentprofiles.com)"
+                       if hex_ != "999999" else "Hex: unconfirmed placeholder"))
+
+def _el_sparkle(color, hex_, sku_sfx, notes=""):
+    return dict(material_type="PLA Sparkle", sku=f"EL-SPK-{sku_sfx}",
+                product_name="Elegoo PLA Sparkle",
+                color_name=color, color_hex=hex_, diameter="1.75mm",
+                diameter_tolerance="±0.03mm", spool_type="Cardboard", ams_adapter="Yes",
+                print_temp="190–220°C", bed_temp="35–65°C", drying="55°C / 6h",
+                ams_xp="⚠", ams_lite="⚠", ams_2pro="⚠", ams_ht="⚠",
+                tier="A" if hex_ != "999999" else "C",
+                tier_rationale=("Color and official 7-color line count confirmed "
+                                 "(us.elegoo.com official product page); hex and temps via "
+                                 "3dfilamentprofiles.com's dedicated per-color detail page"
+                                 if hex_ != "999999" else
+                                 "PLACEHOLDER/AMBIGUOUS — color confirmed real but hex not "
+                                 "safely resolvable this pass, see notes"),
+                notes=(notes + " | " if notes else "") +
+                      "Cardboard spool — AMS Adapter Ring required for all AMS variants; "
+                      "glitter-particle additive, slightly abrasive — monitor nozzle wear | " +
+                      ("Hex: manufacturer-listed value (3dfilamentprofiles.com)"
+                       if hex_ != "999999" else "Hex: unconfirmed placeholder"))
+
+
+ELEGOO["catalog"].extend([
+    # ── PLA Marble (3 colors — us.elegoo.com official) ─────────────────────
+    _el_marble("Marble",            "D5DFE7", "MRB", print_temp="190–220°C",
+               notes="AMBIGUOUS SOURCE — this color's own dedicated 3dfilamentprofiles.com detail page (TD 5.4) gives #D5DFE7, used here; a separate generic listing-grid row for the same color name gives a conflicting #ADADAD — dedicated page preferred as the more authoritative source, but not independently reconciled"),
+    _el_marble("Marble Brick Red",  "6E1C20", "BRD", print_temp="190–230°C"),
+    _el_marble("Marble Cement Grey","696969", "CMG",
+               notes="AMBIGUOUS SOURCE — this value is from the correctly-categorized \"PLA Marble\" listing grid; a separate 3dfilamentprofiles.com entry lists a conflicting #505253 for \"Marble cement Grey\" but miscategorizes it under their \"PLA Basic\" material type — likely a site data-entry error on their end, not a second real product, but not independently confirmed which value is correct"),
+
+    # ── PLA Sparkle (7 colors — us.elegoo.com official) ────────────────────
+    _el_sparkle("Sparkle Black",        "010C13", "BK"),
+    _el_sparkle("Sparkle Gold",         "FDD528", "GD",
+                notes="Mapped from 3dfilamentprofiles.com's \"Gold Yellow\" — naming variance from Elegoo's own \"Sparkle Gold\", treated as the same color"),
+    _el_sparkle("Sparkle Green",        "999999", "GN",
+                notes="AMBIGUOUS — two different 3dfilamentprofiles.com entries give conflicting hex for this exact color (#004000 vs #38571A), one with notably different temps (single-point 230°C/65°C vs the line's usual 190-220°C/35-65°C range, suggesting it may be a data-entry outlier) — not resolved without a tiebreaker, left as placeholder rather than guessing"),
+    _el_sparkle("Sparkle Red",          "BF5043", "RD"),
+    _el_sparkle("Sparkle Dark Grey",    "878A8F", "DGY",
+                notes="Mapped from 3dfilamentprofiles.com's \"Dark Gray\" (US spelling) — same color as Elegoo's own \"Sparkle Dark Grey\""),
+    _el_sparkle("Sparkle Turquoise",    "36B7B2", "TQ"),
+    _el_sparkle("Sparkle Purplish Grey","413B53", "PGY",
+                notes="Mapped from 3dfilamentprofiles.com's \"Purplish Gray\" (US spelling) — same color as Elegoo's own \"Sparkle Purplish Grey\""),
 ])
 
 
