@@ -273,6 +273,18 @@ ELEGOO = {
             "drying": "55°C / 6h",
             "notes": "Cardboard spool — AMS Adapter Ring required. 7-color line, 6/7 hex resolved; Sparkle Green left unresolved due to conflicting source values (#004000 vs #38571A). Glitter-particle additive, slightly abrasive — monitor nozzle wear.",
         },
+        {
+            "material": "ASA-CF", "print_temp": "240–260°C", "bed_temp": "85–105°C",
+            "enclosure": "Yes", "ams_compat": "⚠", "drying_required": "Yes",
+            "drying": "85°C / 8h",
+            "notes": "Cardboard spool — AMS Adapter Ring required; AMS Lite incompatible; abrasive, hardened nozzle required. 6-color line, only 1/6 hex resolved (Green) — Black/Grey/Blue explicitly show no RGB data on their own source pages (genuine absence, not unresearched); Red/Sand never surfaced.",
+        },
+        {
+            "material": "PLA-CF", "print_temp": "210–240°C", "bed_temp": "45–55°C",
+            "enclosure": "No", "ams_compat": "⚠", "drying_required": "Recommended",
+            "drying": "55°C / 4h",
+            "notes": "Cardboard spool — AMS Adapter Ring required; abrasive, hardened nozzle required. 7-color line, 0/7 hex resolved — genuine dead end confirmed against 3dfilamentprofiles.com's dedicated PLA-CF section directly, not an unresearched gap. Print temps are real (manufacturer default-settings page).",
+        },
     ],
 }
 
@@ -521,6 +533,75 @@ ELEGOO["catalog"].extend([
     _el_sparkle("Sparkle Turquoise",    "36B7B2", "TQ"),
     _el_sparkle("Sparkle Purplish Grey","413B53", "PGY",
                 notes="Mapped from 3dfilamentprofiles.com's \"Purplish Gray\" (US spelling) — same color as Elegoo's own \"Sparkle Purplish Grey\""),
+])
+
+
+def _el_ascf(color, hex_, sku_sfx, notes=""):
+    return dict(material_type="ASA-CF", sku=f"EL-ASACF-{sku_sfx}",
+                product_name="Elegoo ASA-CF",
+                color_name=color, color_hex=hex_, diameter="1.75mm",
+                diameter_tolerance="±0.03mm", spool_type="Cardboard", ams_adapter="Yes",
+                print_temp="240–260°C", bed_temp="85–105°C", drying="85°C / 8h",
+                ams_xp="⚠", ams_lite="✗", ams_2pro="⚠", ams_ht="⚠",
+                tier="A" if hex_ != "999999" else "C",
+                tier_rationale=("Color and official 6-color line count confirmed "
+                                 "(us.elegoo.com official product page); hex via "
+                                 "3dfilamentprofiles.com"
+                                 if hex_ != "999999" else
+                                 "PLACEHOLDER — color confirmed real (us.elegoo.com, "
+                                 "6-color line: Carbon Fiber Black/Grey/Red/Blue/Green/Sand) "
+                                 "but hex not found this pass"),
+                notes=(notes + " | " if notes else "") +
+                      "Cardboard spool — AMS Adapter Ring required for all AMS variants; "
+                      "enclosure recommended (ASA); AMS Lite ✗; abrasive — hardened nozzle required; heat resistance to 108°C per manufacturer | " +
+                      ("Hex: manufacturer-listed value (3dfilamentprofiles.com)"
+                       if hex_ != "999999" else "Hex: unconfirmed placeholder"))
+
+def _el_placf(color, hex_, sku_sfx, notes=""):
+    return dict(material_type="PLA-CF", sku=f"EL-PLACF-{sku_sfx}",
+                product_name="Elegoo PLA-CF",
+                color_name=color, color_hex=hex_, diameter="1.75mm",
+                diameter_tolerance="±0.03mm", spool_type="Cardboard", ams_adapter="Yes",
+                print_temp="210–240°C", bed_temp="45–55°C", drying="55°C / 4h",
+                ams_xp="⚠", ams_lite="⚠", ams_2pro="⚠", ams_ht="⚠",
+                tier="C",
+                tier_rationale=("PLACEHOLDER — color confirmed real (us.elegoo.com, "
+                                 "7-color line: Carbon Fiber Black/Grey/Red/Blue/Green/"
+                                 "Purple/Brown, consistent across US/EU/AU storefronts); "
+                                 "print temps confirmed via 3dfilamentprofiles.com's default-"
+                                 "settings page for this material (210-240°C / 55°C bed / "
+                                 "55°C-4h dry), but no per-color hex data exists on that site "
+                                 "for any color in this line — checked directly, genuine "
+                                 "absence not an unresearched gap"),
+                notes=(notes + " | " if notes else "") +
+                      "Cardboard spool — AMS Adapter Ring required for all AMS variants; "
+                      "abrasive — hardened nozzle required | Hex: unconfirmed placeholder")
+
+
+ELEGOO["catalog"].extend([
+    # ── ASA-CF (6 colors — us.elegoo.com official) ──────────────────────────
+    _el_ascf("Carbon Fiber Black", "999999", "BK",
+             notes="This color's own 3dfilamentprofiles.com page explicitly says \"No RGB Provided\" — a genuine absence, not unresearched"),
+    _el_ascf("Carbon Fiber Grey",  "999999", "GY",
+             notes="This color's own 3dfilamentprofiles.com page explicitly says \"No data\" — a genuine absence, not unresearched"),
+    _el_ascf("Carbon Fiber Red",   "999999", "RD"),
+    _el_ascf("Carbon Fiber Blue",  "999999", "BL",
+             notes="This color's own 3dfilamentprofiles.com page explicitly says \"— No data\" — a genuine absence, not unresearched"),
+    _el_ascf("Carbon Fiber Green", "007700", "GN"),
+    _el_ascf("Carbon Fiber Sand",  "999999", "SND"),
+
+    # ── PLA-CF (7 colors — us.elegoo.com official) ──────────────────────────
+    # Genuine dead end for hex on this entire line, checked directly against
+    # 3dfilamentprofiles.com's dedicated PLA-CF section — no per-color RGB
+    # data exists there for any of the 7 colors. Real official default print
+    # temps applied instead of guessing.
+    _el_placf("Carbon Fiber Black",  "999999", "BK"),
+    _el_placf("Carbon Fiber Grey",   "999999", "GY"),
+    _el_placf("Carbon Fiber Red",    "999999", "RD"),
+    _el_placf("Carbon Fiber Blue",   "999999", "BL"),
+    _el_placf("Carbon Fiber Green",  "999999", "GN"),
+    _el_placf("Carbon Fiber Purple", "999999", "PU"),
+    _el_placf("Carbon Fiber Brown",  "999999", "BR"),
 ])
 
 
