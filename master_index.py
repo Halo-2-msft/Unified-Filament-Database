@@ -1,5 +1,5 @@
 """
-master_index.py — Builds (or refreshes) master_index.xlsx from all 11 brand files.
+master_index.py — Builds (or refreshes) master_index.xlsx from all 12 brand files.
 
 Run any time you want to sync the master:
     python master_index.py
@@ -7,17 +7,22 @@ Run any time you want to sync the master:
 Reads:  ./output/<Brand>_filaments_v3_N.xlsx     — highest N found, per brand
         ./output/Filament_Inventory_vN.xlsx      — highest N found
 Writes: ./output/master_index_11_{N+1}.xlsx      — next N after the highest found
+        (NOTE: the "11" in the output filename is a fixed historical label,
+        not a live brand count — it was set when the catalog had 11 brands
+        and is kept as-is by design so existing file references/links don't
+        break. Do not rename it as brands are added or removed; BRANDS below
+        is the actual source of truth for brand count.)
 
 File discovery is version-aware (see template_v3.find_latest_version):
 nothing here is a hardcoded filename, so this script always reads whatever
 the current highest-versioned file is for each brand, regardless of how far
-generate_all.py / generate_azurefilm.py / generate_voxelpla.py / build_inventory.py
-have incremented since this script was last touched.
+generate_all.py / generate_azurefilm.py / generate_voxelpla.py / generate_elegoo.py /
+build_inventory.py have incremented since this script was last touched.
 
 Sheet layout:
   1. Dashboard   — cross-brand summary stats and per-brand breakdown
-  2. Catalog     — combined catalog from all 11 brands (read-only section + Brand column)
-  3. Inventory   — combined inventory from all 11 brands + manual rows section
+  2. Catalog     — combined catalog from all 12 brands (read-only section + Brand column)
+  3. Inventory   — combined inventory from all 12 brands + manual rows section
 """
 
 import os
@@ -36,6 +41,7 @@ OUTPUT_DIR = os.path.join(os.path.dirname(__file__), "output")
 BRANDS = [
     "AzureFilm", "Bambu Lab", "SUNLU", "Polymaker", "eSUN", "Overture",
     "Hatchbox", "Prusament", "Creality Hyper", "MatterHackers", "VoxelPLA",
+    "Elegoo",
 ]
 
 
@@ -550,6 +556,10 @@ def build_master_index():
     _build_catalog(wb, cat_df)
     _build_inventory(wb, inv_df)
 
+    # NOTE: the "master_index_11_" filename prefix is a fixed historical
+    # label (set when the catalog had 11 brands), not a live brand-count
+    # tracker. Kept as-is by explicit decision even now that BRANDS has 12
+    # entries — do not rename this to "master_index_12_".
     pattern  = r'^master_index_11_(\d+)\.xlsx$'
     template = 'master_index_11_{n}.xlsx'
     out_path, version, prev = next_versioned_path(OUTPUT_DIR, pattern, template)
