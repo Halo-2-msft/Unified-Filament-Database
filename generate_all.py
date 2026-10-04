@@ -32,6 +32,21 @@ def _pla(color, hex_, sku, product="PLA Basic", mat="PLA Basic",
 _BL_PLA_BASIC_RATIONALE = "First-party PLA Basic; RFID profile; up to 258mm/s; all AMS variants"
 _BL_PLA_MATTE_RATIONALE = "First-party PLA Matte; matte finish; RFID profile; all AMS variants"
 _BL_PETG_RATIONALE      = "First-party PETG Basic (reformulated 2026); improved strength vs HF"
+_BL_PETG_MATTE_RATIONALE = ("First-party PETG Matte, launched 2026-09-30 (store.bambulab.com, "
+                             "forum.bambulab.com announcement) — \"prints like PLA, lasts like "
+                             "PETG\"; RFID-tagged, matte finish, no support interface needed. "
+                             "All 8 official color names and Bambu color codes confirmed "
+                             "2026-10-04 directly by Wayne (who ordered a physical spool of "
+                             "each): Black 35101, White 35100, Gray 35102, Lime 35500, Avocado "
+                             "Green 35501, Baby Blue 35600, Pink 35700, Violet 35702 — these "
+                             "codes follow the same numbering convention as this catalog's "
+                             "existing Bambu color-code SKUs (e.g. PETG Basic's 30600-series). "
+                             "Web sources at the time this line was added (all3dp.com, Bambu's "
+                             "forum announcement) had only named 4 of the 8 (Baby Blue, Avocado "
+                             "Green, Pink, Violet) and no hex codes anywhere, including Bambu's "
+                             "own hex-code PDF — still true as of this update. Hex remains an "
+                             "honest placeholder for all 8 pending either the PDF being updated "
+                             "or Wayne measuring the ordered physical spools.")
 _BL_ABS_RATIONALE       = "First-party ABS; RFID profile; enclosure required; AMS Lite ✗"
 _BL_ASA_RATIONALE       = "First-party ASA; UV-resistant; enclosure required; AMS Lite ✗"
 
@@ -49,6 +64,24 @@ def _bl_petg(color, hex_, sku_code):
     return _pla(color, hex_, f"BL-PETG-{sku_code}", "PETG Basic", "PETG Basic",
                 "220–260°C", "70–85°C", "65°C / 8h",
                 rationale=_BL_PETG_RATIONALE)
+
+def _bl_petg_matte(color, hex_, sku_code, bambu_code, measured_hex="PENDING",
+                    measured_date="PENDING", measured_by="PENDING",
+                    readings_averaged="PENDING", notes=""):
+    return _pla(color, hex_, f"BL-PETGM-{sku_code}", "PETG Matte", "PETG Matte",
+                "230–260°C", "65–75°C", "65°C / 8h",
+                tier="C",
+                rationale=_BL_PETG_MATTE_RATIONALE,
+                notes=notes or (f"NEW LINE, added 2026-10-03, launched 2026-09-30 | Official "
+                                 f"Bambu color code {bambu_code}, confirmed by Wayne 2026-10-04 "
+                                 f"(ordered a physical spool) | Hex: unconfirmed placeholder — "
+                                 f"pending Bambu's hex PDF update or Wayne measuring the ordered spool "
+                                 f"| Measurement tracking — measured_hex: {measured_hex}, "
+                                 f"measured_date: {measured_date}, measured_by: {measured_by}, "
+                                 f"readings_averaged: {readings_averaged} (fill in once the physical "
+                                 f"spool is measured, then move the hex up into the Hex Code column "
+                                 f"and bump Tier to S/A per the colorimeter-measured-outranks-nominal "
+                                 f"convention)"))
 
 def _bl_abs(color, hex_, sku_code):
     return _pla(color, hex_, f"BL-ABS-{sku_code}", "ABS", "ABS",
@@ -526,6 +559,24 @@ BAMBU = {
              tier="C",
              tier_rationale="Metallic-effect PLA; specs estimated from PLA Basic, not individually TDS-confirmed",
              notes="Deep-dive follow-up 2026-07-19; NEW LINE — confirmed via bambulab.com/en-us/filament/pla-list | FIXED 2026-08-25: was incorrectly marked discontinued=True despite being documented as a currently-existing new line"),
+
+        # ── PETG Matte (8 colors — launched 2026-09-30, NEW LINE 2026-10-03) ──
+        # All 8 official color names + Bambu color codes confirmed 2026-10-04
+        # by Wayne directly (ordered a physical spool of each). Web sources
+        # (forum.bambulab.com, all3dp.com) had only named 4 of the 8 when this
+        # line was first added; Wayne's order confirms the other 4 (Black,
+        # White, Gray, Lime). Hex still unconfirmed for all 8 — no third-party
+        # source has it and Bambu's own hex PDF isn't updated for this line
+        # yet; will be resolvable once Wayne's ordered spools arrive and can
+        # be measured, or the PDF updates. Tier C throughout until then.
+        _bl_petg_matte("Black",         "999999", "BK",  "35101"),
+        _bl_petg_matte("White",         "999999", "WH",  "35100"),
+        _bl_petg_matte("Gray",          "999999", "GY",  "35102"),
+        _bl_petg_matte("Lime",          "999999", "LM",  "35500"),
+        _bl_petg_matte("Avocado Green", "999999", "AVG", "35501"),
+        _bl_petg_matte("Baby Blue",     "999999", "BBL", "35600"),
+        _bl_petg_matte("Pink",          "999999", "PK",  "35700"),
+        _bl_petg_matte("Violet",        "999999", "VI",  "35702"),
     ],
     "inventory": [],
     "material_guide": [
@@ -533,6 +584,7 @@ BAMBU = {
         {"material": "PLA Matte",      "print_temp": "190–220°C", "bed_temp": "35–45°C",  "enclosure": "No",  "ams_compat": "Yes", "drying_required": "Recommended", "drying": "55°C / 8h", "notes": "Matte finish; hides layer lines; slightly higher viscosity than PLA Basic"},
         {"material": "PLA Translucent","print_temp": "190–220°C", "bed_temp": "35–45°C",  "enclosure": "No",  "ams_compat": "Yes", "drying_required": "Recommended", "drying": "55°C / 8h", "notes": "Semi-translucent; great for light diffusion prints"},
         {"material": "PETG Basic",     "print_temp": "220–260°C", "bed_temp": "70–85°C",  "enclosure": "No",  "ams_compat": "Yes", "drying_required": "Yes",         "drying": "65°C / 8h", "notes": "Reformulated 2026; better strength than PETG HF; 13 colors; must dry before use"},
+        {"material": "PETG Matte",     "print_temp": "230–260°C", "bed_temp": "65–75°C",  "enclosure": "No",  "ams_compat": "Yes", "drying_required": "Yes",         "drying": "65°C / 8h", "notes": "NEW LINE, launched 2026-09-30; \"prints like PLA, lasts like PETG\"; matte finish, no support interface needed; max speed <250mm/s; all 8 colors + Bambu color codes confirmed 2026-10-04 by Wayne's own order, zero hex confirmed yet"},
         {"material": "PETG HF",        "print_temp": "220–260°C", "bed_temp": "70–85°C",  "enclosure": "No",  "ams_compat": "Yes", "drying_required": "Yes",         "drying": "65°C / 8h", "notes": "⚠ DISCONTINUED 2026 — no restock; switch to PETG Basic"},
         {"material": "ABS",            "print_temp": "240–270°C", "bed_temp": "90–100°C", "enclosure": "Yes", "ams_compat": "Yes", "drying_required": "Yes",         "drying": "65°C / 8h", "notes": "Requires P1S/X1C/H2D; AMS Lite ✗; fumes — ventilate"},
         {"material": "ASA",            "print_temp": "240–270°C", "bed_temp": "90–100°C", "enclosure": "Yes", "ams_compat": "Yes", "drying_required": "Yes",         "drying": "80°C / 8h", "notes": "UV-stable outdoor use; requires enclosure; AMS Lite ✗"},
