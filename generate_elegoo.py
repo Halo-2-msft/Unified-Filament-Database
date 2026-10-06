@@ -1,14 +1,27 @@
 """
 generate_elegoo.py — Elegoo filament workbook
 
-Full build as of this sync (2026-10-05): 158 catalog entries across 14 product
+Full build as of this sync (2026-10-06): 165 catalog entries across 16 product
 lines — PLA, PLA Basic, PLA Plus, TPU 95A, ASA, Rapid PETG, PLA Pro,
 PLA (RFID) emoji Brand Edition, PLA Marble, PLA Sparkle, ASA-CF, PLA-CF,
-PLA Matte, PLA Silk. 83 confirmed hex / 75 honest #999999 placeholders
-(per-entry tier_rationale and notes document why each placeholder is
-unresolved — genuine absence, too-new-to-be-indexed, ambiguous/conflicting
-source data, or (PLA Silk only) an inherently multi-color gradient product
-with no single representative hex — never guessed).
+PLA Matte, PLA Silk, PLA Galaxy, PLA Metallic. 86 confirmed hex / 79 honest
+#999999 placeholders (per-entry tier_rationale and notes document why each
+placeholder is unresolved — genuine absence, too-new-to-be-indexed,
+ambiguous/conflicting source data, or (PLA Silk only) an inherently
+multi-color gradient product with no single representative hex — never
+guessed).
+
+PLA Galaxy added 2026-10-06: 3 colors (Black, Purple, Peacock Blue) — a
+speckled night-sky finish over a solid base color, not a gradient. All 3 hex
+resolved via 3dfilamentprofiles.com (Tier A); Peacock Blue had two candidate
+source entries with different hex ("Galaxy Peacock Blue" #0E3D6C vs plain
+"Peacock Blue" #1D4965) — used the line-specific-named one, flagged as an
+unreconciled ambiguity rather than a clean resolution.
+
+PLA Metallic added 2026-10-06: 4 colors (Metallic Gold, Bronze, Blue, Green)
+confirmed via elegoo.com (all listed sold out at time of check). All 4 hex
+left as placeholders — genuine dead end, 3dfilamentprofiles.com has zero
+Elegoo PLA Metallic entries.
 
 PLA Matte added 2026-10-05: 9 colors, all 9 hex resolved via
 3dfilamentprofiles.com's dedicated per-color pages (Tier A). Elegoo's own
@@ -34,9 +47,9 @@ gradient variants carry a #999999 placeholder by design, same convention as
 every other brand's rainbow/gradient products in this catalog (e.g. Overture's
 "Rainbow A1") — a multi-color-per-spool product has no single hex to report.
 
-Still not built: PLA Galaxy, PLA Metallic, PLA Wood, PLA Glow, PLA CMYK,
-Rapid PLA Plus, PETG Pro, PETG Translucent, PETG-CF, PETG-GF — real Elegoo
-lines not yet added to this catalog at all.
+Still not built: PLA Wood, PLA Glow, PLA CMYK, Rapid PLA Plus, PETG Pro,
+PETG Translucent, PETG-CF, PETG-GF — real Elegoo lines not yet added to this
+catalog at all.
 
 Sources:
   - us.elegoo.com product pages (confirmed color names + official color counts)
@@ -3074,6 +3087,143 @@ ELEGOO = {
              tier='C',
              tier_rationale='Multi-color gradient/dual-tone product — no single representative hex published (3dfilamentprofiles.com: #2842AA / #AB2D55). Note: identical component hex pair to this same line\'s separate "Blue Magenta" entry on 3dfilamentprofiles.com — likely the same physical product listed twice under two names on that source, not independently verified',
              notes='Cardboard spool — AMS Adapter Ring required for all AMS variants | Confirmed to exist in official catalog'),
+
+        # ── PLA Galaxy (3 colors — official elegoo.com/3djake.ch product listings; hex via 3dfilamentprofiles.com) ──
+        dict(material_type='PLA Galaxy',
+             sku='EL-GLX-BK',
+             product_name='Elegoo PLA Galaxy',
+             color_name='Black',
+             color_hex='000026',
+             diameter='1.75mm',
+             diameter_tolerance='±0.03mm',
+             spool_type='Cardboard',
+             ams_adapter='Yes',
+             print_temp='190–220°C',
+             bed_temp='35–65°C',
+             drying='55°C / 8h',
+             ams_xp='⚠',
+             ams_lite='⚠',
+             ams_2pro='⚠',
+             ams_ht='⚠',
+             tier='A',
+             tier_rationale='Color and 3-color line confirmed via official elegoo.com/3djake.ch product listings (2026-10-06) — a speckled night-sky finish over a solid base color, not a multi-color gradient; hex via 3dfilamentprofiles.com dedicated per-color page, unambiguous single match',
+             notes='Cardboard spool — AMS Adapter Ring required for all AMS variants | Hex: 3dfilamentprofiles.com per-color page'),
+        dict(material_type='PLA Galaxy',
+             sku='EL-GLX-PU',
+             product_name='Elegoo PLA Galaxy',
+             color_name='Purple',
+             color_hex='1A0A53',
+             diameter='1.75mm',
+             diameter_tolerance='±0.03mm',
+             spool_type='Cardboard',
+             ams_adapter='Yes',
+             print_temp='190–220°C',
+             bed_temp='35–65°C',
+             drying='55°C / 8h',
+             ams_xp='⚠',
+             ams_lite='⚠',
+             ams_2pro='⚠',
+             ams_ht='⚠',
+             tier='A',
+             tier_rationale='Color and 3-color line confirmed via official elegoo.com/3djake.ch product listings (2026-10-06); hex via 3dfilamentprofiles.com dedicated per-color page, unambiguous single match',
+             notes='Cardboard spool — AMS Adapter Ring required for all AMS variants | Hex: 3dfilamentprofiles.com per-color page'),
+        dict(material_type='PLA Galaxy',
+             sku='EL-GLX-PKB',
+             product_name='Elegoo PLA Galaxy',
+             color_name='Peacock Blue',
+             color_hex='0E3D6C',
+             diameter='1.75mm',
+             diameter_tolerance='±0.03mm',
+             spool_type='Cardboard',
+             ams_adapter='Yes',
+             print_temp='190–220°C',
+             bed_temp='35–65°C',
+             drying='55°C / 8h',
+             ams_xp='⚠',
+             ams_lite='⚠',
+             ams_2pro='⚠',
+             ams_ht='⚠',
+             tier='A',
+             tier_rationale='Color and 3-color line confirmed via official elegoo.com/3djake.ch product listings (2026-10-06); 3dfilamentprofiles.com lists two candidate entries for this color — "Galaxy Peacock Blue" (#0E3D6C, used here, exact line-name match) and a separate plain "Peacock Blue" (#1D4965) — not reconciled further, used the line-specific name as the better match',
+             notes='Cardboard spool — AMS Adapter Ring required for all AMS variants | Hex: 3dfilamentprofiles.com per-color page (one of two ambiguous candidates — see tier_rationale)'),
+
+        # ── PLA Metallic (4 colors — official elegoo.com product page; hex genuinely unresolved, dead end confirmed) ──
+        dict(material_type='PLA Metallic',
+             sku='EL-MET-GLD',
+             product_name='Elegoo PLA Metallic',
+             color_name='Metallic Gold',
+             color_hex='999999',
+             diameter='1.75mm',
+             diameter_tolerance='±0.03mm',
+             spool_type='Cardboard',
+             ams_adapter='Yes',
+             print_temp='190–220°C',
+             bed_temp='35–65°C',
+             drying='55°C / 8h',
+             ams_xp='⚠',
+             ams_lite='⚠',
+             ams_2pro='⚠',
+             ams_ht='⚠',
+             tier='C',
+             tier_rationale='PLACEHOLDER — color and official 4-color line confirmed (elegoo.com product page, 2026-10-06: Metallic Gold/Bronze/Blue/Green, all listed sold out at time of check) but hex is a genuine dead end — 3dfilamentprofiles.com has no Elegoo PLA Metallic entries at all (confirmed against its dedicated line page directly, not an unresearched gap)',
+             notes='Cardboard spool — AMS Adapter Ring required for all AMS variants | Hex: unconfirmed placeholder'),
+        dict(material_type='PLA Metallic',
+             sku='EL-MET-BRZ',
+             product_name='Elegoo PLA Metallic',
+             color_name='Metallic Bronze',
+             color_hex='999999',
+             diameter='1.75mm',
+             diameter_tolerance='±0.03mm',
+             spool_type='Cardboard',
+             ams_adapter='Yes',
+             print_temp='190–220°C',
+             bed_temp='35–65°C',
+             drying='55°C / 8h',
+             ams_xp='⚠',
+             ams_lite='⚠',
+             ams_2pro='⚠',
+             ams_ht='⚠',
+             tier='C',
+             tier_rationale='PLACEHOLDER — color and official 4-color line confirmed (elegoo.com product page, 2026-10-06) but hex is a genuine dead end — 3dfilamentprofiles.com has no Elegoo PLA Metallic entries at all (confirmed against its dedicated line page directly, not an unresearched gap)',
+             notes='Cardboard spool — AMS Adapter Ring required for all AMS variants | Hex: unconfirmed placeholder'),
+        dict(material_type='PLA Metallic',
+             sku='EL-MET-BL',
+             product_name='Elegoo PLA Metallic',
+             color_name='Metallic Blue',
+             color_hex='999999',
+             diameter='1.75mm',
+             diameter_tolerance='±0.03mm',
+             spool_type='Cardboard',
+             ams_adapter='Yes',
+             print_temp='190–220°C',
+             bed_temp='35–65°C',
+             drying='55°C / 8h',
+             ams_xp='⚠',
+             ams_lite='⚠',
+             ams_2pro='⚠',
+             ams_ht='⚠',
+             tier='C',
+             tier_rationale='PLACEHOLDER — color and official 4-color line confirmed (elegoo.com product page, 2026-10-06) but hex is a genuine dead end — 3dfilamentprofiles.com has no Elegoo PLA Metallic entries at all (confirmed against its dedicated line page directly, not an unresearched gap)',
+             notes='Cardboard spool — AMS Adapter Ring required for all AMS variants | Hex: unconfirmed placeholder'),
+        dict(material_type='PLA Metallic',
+             sku='EL-MET-GN',
+             product_name='Elegoo PLA Metallic',
+             color_name='Metallic Green',
+             color_hex='999999',
+             diameter='1.75mm',
+             diameter_tolerance='±0.03mm',
+             spool_type='Cardboard',
+             ams_adapter='Yes',
+             print_temp='190–220°C',
+             bed_temp='35–65°C',
+             drying='55°C / 8h',
+             ams_xp='⚠',
+             ams_lite='⚠',
+             ams_2pro='⚠',
+             ams_ht='⚠',
+             tier='C',
+             tier_rationale='PLACEHOLDER — color and official 4-color line confirmed (elegoo.com product page, 2026-10-06) but hex is a genuine dead end — 3dfilamentprofiles.com has no Elegoo PLA Metallic entries at all (confirmed against its dedicated line page directly, not an unresearched gap)',
+             notes='Cardboard spool — AMS Adapter Ring required for all AMS variants | Hex: unconfirmed placeholder'),
     ],
 
     "inventory": [],
@@ -3093,6 +3243,8 @@ ELEGOO = {
         {"material": 'PLA-CF', "print_temp": '210–240°C', "bed_temp": '45–55°C', "enclosure": 'No', "ams_compat": '⚠', "drying_required": 'Recommended', "drying": '55°C / 4h', "notes": "Cardboard spool — AMS Adapter Ring required; abrasive, hardened nozzle required. 7-color line, 0/7 hex resolved — genuine dead end confirmed against 3dfilamentprofiles.com's dedicated PLA-CF section directly, not an unresearched gap. Print temps are real (manufacturer default-settings page)."},
         {"material": 'PLA Matte', "print_temp": '190–230°C', "bed_temp": '35–65°C', "enclosure": 'No', "ams_compat": '⚠', "drying_required": 'Recommended', "drying": '55°C / 6h', "notes": "Cardboard spool — AMS Adapter Ring required. Added 2026-10-05. 9-color line per official elegoo.com (Black, Slate Grey, Beige, Ice Blue, Lavender Purple, Mint Green, Navy Blue, Pink, Sunshine Yellow); 9/9 hex resolved via 3dfilamentprofiles.com's dedicated per-color pages, which carry several additional color names (Army Green, Chocolate, Ruby Red, Sky Blue, Teal Green, Yellow, etc.) not seen on elegoo.com's own storefront — not added here, flagged as the same regional/retailer naming variance already documented for PLA Basic."},
         {"material": 'PLA Silk', "print_temp": '190–220°C', "bed_temp": '45–60°C', "enclosure": 'No', "ams_compat": '⚠', "drying_required": 'Recommended', "drying": '45°C / 4h', "notes": "Cardboard spool — AMS Adapter Ring required. Added 2026-10-05. 16-variant line per official elegoo.com storefront: 8 single-tone colors (Silver, White, Bronze, Holly Green, Mint Green, Red, Gold, Hot Pink) + 8 multi-tone/gradient variants (tri-color silk announced in Elegoo's own 2026 blog post) — Green Red, Black Purple, Black Red, Blue Magenta, Blue Green, Blue Green Orange, Blue Purple Black, Blue Purple. 6/8 single-tone hex resolved (Tier A, unambiguous 3dfilamentprofiles.com matches); Gold and Hot Pink left as placeholders due to multiple conflicting/unconfirmed source candidates, not guessed. All 8 gradient variants left as placeholders by design — a multi-color-per-spool product has no single representative hex, consistent with how this catalog treats every other brand's gradient/rainbow products."},
+        {"material": 'PLA Galaxy', "print_temp": '190–220°C', "bed_temp": '35–65°C', "enclosure": 'No', "ams_compat": '⚠', "drying_required": 'Recommended', "drying": '55°C / 8h', "notes": "Cardboard spool — AMS Adapter Ring required. Added 2026-10-06. 3-color line (Black, Purple, Peacock Blue) — speckled night-sky finish over a solid base, not a gradient. 3/3 hex resolved via 3dfilamentprofiles.com; Peacock Blue had two candidate source entries with different hex, used the line-specific-named one."},
+        {"material": 'PLA Metallic', "print_temp": '190–220°C', "bed_temp": '35–65°C', "enclosure": 'No', "ams_compat": '⚠', "drying_required": 'Recommended', "drying": '55°C / 8h', "notes": "Cardboard spool — AMS Adapter Ring required. Added 2026-10-06. 4-color line (Metallic Gold, Bronze, Blue, Green) confirmed via elegoo.com (all listed sold out at time of check). 0/4 hex resolved — genuine dead end confirmed against 3dfilamentprofiles.com's dedicated PLA Metallic section directly (zero entries), not an unresearched gap."},
     ],
 }
 
