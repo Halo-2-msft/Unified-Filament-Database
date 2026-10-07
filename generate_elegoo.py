@@ -1,15 +1,24 @@
 """
 generate_elegoo.py — Elegoo filament workbook
 
-Full build as of this sync (2026-10-06): 174 catalog entries across 18 product
+Full build as of this sync (2026-10-07): 178 catalog entries across 19 product
 lines — PLA, PLA Basic, PLA Plus, TPU 95A, ASA, Rapid PETG, PLA Pro,
 PLA (RFID) emoji Brand Edition, PLA Marble, PLA Sparkle, ASA-CF, PLA-CF,
-PLA Matte, PLA Silk, PLA Galaxy, PLA Metallic, PLA Wood, PLA Glow. 92
-confirmed hex / 82 honest #999999 placeholders (per-entry tier_rationale and
-notes document why each placeholder is unresolved — genuine absence,
+PLA Matte, PLA Silk, PLA Galaxy, PLA Metallic, PLA Wood, PLA Glow, PLA CMYK.
+92 confirmed hex / 86 honest #999999 placeholders (per-entry tier_rationale
+and notes document why each placeholder is unresolved — genuine absence,
 too-new-to-be-indexed, ambiguous/conflicting source data, or (PLA Silk only)
 an inherently multi-color gradient product with no single representative hex
 — never guessed).
+
+PLA CMYK added 2026-10-07: 4 colors (Rilievo Cyan, Magenta, Yellow, White) —
+a translucent CMY+White lithophane/relief-print set, confirmed via
+elegoo.com. All 4 hex left as placeholders — genuine dead end,
+3dfilamentprofiles.com has zero Elegoo PLA CMYK entries. Deliberately not
+borrowed from another brand's own published CMYK hex values for a similar
+bundle concept (e.g. Bambu Lab's PLA CMYK lithophane set uses Cyan #0086D6,
+Magenta #EC008C, Yellow #F4EE2A, White #FFFFFF) — different manufacturer,
+not assumed identical, per the no-cross-inference rule.
 
 PLA Glow added 2026-10-06: 5 colors (Blue, Green, Yellow, Orange, Pink) per
 official elegoo.com product page. Only 2/5 hex resolved (Blue — colorimeter-
@@ -3416,6 +3425,84 @@ ELEGOO = {
              tier='C',
              tier_rationale='PLACEHOLDER — color and 5-color line confirmed (elegoo.com product page, 2026-10-06); 3dfilamentprofiles.com\'s per-color page lists two conflicting RGB values under the same "RGB:" label (#FA9D96 and #F3CA81, neither marked as measured/tested) with no way to pick between them — left unresolved rather than guessing',
              notes='Cardboard spool — AMS Adapter Ring required for all AMS variants | Hex: unconfirmed placeholder — two ambiguous source candidates, see tier_rationale'),
+
+        # ── PLA CMYK (4 colors — official elegoo.com product page; hex genuinely unresolved, dead end confirmed) ──
+        dict(material_type='PLA CMYK',
+             sku='EL-CMYK-CY',
+             product_name='Elegoo PLA CMYK',
+             color_name='Rilievo Cyan',
+             color_hex='999999',
+             diameter='1.75mm',
+             diameter_tolerance='±0.03mm',
+             spool_type='Cardboard',
+             ams_adapter='Yes',
+             print_temp='190–220°C',
+             bed_temp='35–65°C',
+             drying='55°C / 8h',
+             ams_xp='⚠',
+             ams_lite='⚠',
+             ams_2pro='⚠',
+             ams_ht='⚠',
+             tier='C',
+             tier_rationale='PLACEHOLDER — color and official 4-color line confirmed (elegoo.com product page, 2026-10-07: Rilievo Cyan/Magenta/Yellow/White, a translucent CMY+White lithophane set, same format as similar bundles from other brands) but hex is a genuine dead end — 3dfilamentprofiles.com has no Elegoo PLA CMYK entries at all (confirmed against its dedicated line page directly, not an unresearched gap). Deliberately not borrowing another brand\'s published CMYK hex values for this line — no-cross-inference rule',
+             notes='Cardboard spool — AMS Adapter Ring required for all AMS variants | Lithophane/relief-print filament, translucent by design | Hex: unconfirmed placeholder'),
+        dict(material_type='PLA CMYK',
+             sku='EL-CMYK-MG',
+             product_name='Elegoo PLA CMYK',
+             color_name='Rilievo Magenta',
+             color_hex='999999',
+             diameter='1.75mm',
+             diameter_tolerance='±0.03mm',
+             spool_type='Cardboard',
+             ams_adapter='Yes',
+             print_temp='190–220°C',
+             bed_temp='35–65°C',
+             drying='55°C / 8h',
+             ams_xp='⚠',
+             ams_lite='⚠',
+             ams_2pro='⚠',
+             ams_ht='⚠',
+             tier='C',
+             tier_rationale='PLACEHOLDER — color and official 4-color line confirmed (elegoo.com product page, 2026-10-07) but hex is a genuine dead end — 3dfilamentprofiles.com has no Elegoo PLA CMYK entries at all (confirmed against its dedicated line page directly, not an unresearched gap)',
+             notes='Cardboard spool — AMS Adapter Ring required for all AMS variants | Lithophane/relief-print filament, translucent by design | Hex: unconfirmed placeholder'),
+        dict(material_type='PLA CMYK',
+             sku='EL-CMYK-YL',
+             product_name='Elegoo PLA CMYK',
+             color_name='Rilievo Yellow',
+             color_hex='999999',
+             diameter='1.75mm',
+             diameter_tolerance='±0.03mm',
+             spool_type='Cardboard',
+             ams_adapter='Yes',
+             print_temp='190–220°C',
+             bed_temp='35–65°C',
+             drying='55°C / 8h',
+             ams_xp='⚠',
+             ams_lite='⚠',
+             ams_2pro='⚠',
+             ams_ht='⚠',
+             tier='C',
+             tier_rationale='PLACEHOLDER — color and official 4-color line confirmed (elegoo.com product page, 2026-10-07) but hex is a genuine dead end — 3dfilamentprofiles.com has no Elegoo PLA CMYK entries at all (confirmed against its dedicated line page directly, not an unresearched gap)',
+             notes='Cardboard spool — AMS Adapter Ring required for all AMS variants | Lithophane/relief-print filament, translucent by design | Hex: unconfirmed placeholder'),
+        dict(material_type='PLA CMYK',
+             sku='EL-CMYK-WH',
+             product_name='Elegoo PLA CMYK',
+             color_name='Rilievo White',
+             color_hex='999999',
+             diameter='1.75mm',
+             diameter_tolerance='±0.03mm',
+             spool_type='Cardboard',
+             ams_adapter='Yes',
+             print_temp='190–220°C',
+             bed_temp='35–65°C',
+             drying='55°C / 8h',
+             ams_xp='⚠',
+             ams_lite='⚠',
+             ams_2pro='⚠',
+             ams_ht='⚠',
+             tier='C',
+             tier_rationale='PLACEHOLDER — color and official 4-color line confirmed (elegoo.com product page, 2026-10-07) but hex is a genuine dead end — 3dfilamentprofiles.com has no Elegoo PLA CMYK entries at all (confirmed against its dedicated line page directly, not an unresearched gap)',
+             notes='Cardboard spool — AMS Adapter Ring required for all AMS variants | Lithophane/relief-print filament, translucent by design | Hex: unconfirmed placeholder'),
     ],
 
     "inventory": [],
@@ -3439,6 +3526,7 @@ ELEGOO = {
         {"material": 'PLA Metallic', "print_temp": '190–220°C', "bed_temp": '35–65°C', "enclosure": 'No', "ams_compat": '⚠', "drying_required": 'Recommended', "drying": '55°C / 8h', "notes": "Cardboard spool — AMS Adapter Ring required. Added 2026-10-06. 4-color line (Metallic Gold, Bronze, Blue, Green) confirmed via elegoo.com (all listed sold out at time of check). 0/4 hex resolved — genuine dead end confirmed against 3dfilamentprofiles.com's dedicated PLA Metallic section directly (zero entries), not an unresearched gap."},
         {"material": 'PLA Wood', "print_temp": '190–220°C', "bed_temp": '35–65°C', "enclosure": 'No', "ams_compat": '⚠', "drying_required": 'Recommended', "drying": '55°C / 8h', "notes": "Cardboard spool — AMS Adapter Ring required. Added 2026-10-06. 4-color line (Oak Wood, Teak Wood, Tan Birch, Rosewood) — a wood-toned PLA (not wood-filled). 4/4 hex resolved via 3dfilamentprofiles.com. Note: Elegoo also sells a separate 'PLA Walnut Wood' product that is a genuinely wood-particle-filled filament, a different material entirely from this color-only line — not added here, flagged for a possible future separate line."},
         {"material": 'PLA Glow', "print_temp": '190–220°C', "bed_temp": '35–65°C', "enclosure": 'No', "ams_compat": '⚠', "drying_required": 'Recommended', "drying": '55°C / 8h', "notes": "Cardboard spool — AMS Adapter Ring required. Added 2026-10-06. 5-color line (Blue, Green, Yellow, Orange, Pink) confirmed via elegoo.com. 2/5 hex resolved (Blue, Green) — Yellow and Orange have dedicated 3dfilamentprofiles.com pages with blank RGB fields (genuine gap, not unresearched); Pink's source page lists two conflicting RGB values with no way to pick between them. All hex are the daylight/charged color — this catalog does not track a separate dark-glow color."},
+        {"material": 'PLA CMYK', "print_temp": '190–220°C', "bed_temp": '35–65°C', "enclosure": 'No', "ams_compat": '⚠', "drying_required": 'Recommended', "drying": '55°C / 8h', "notes": "Cardboard spool — AMS Adapter Ring required. Added 2026-10-07. 4-color translucent lithophane/relief-print set (Rilievo Cyan, Magenta, Yellow, White) confirmed via elegoo.com. 0/4 hex resolved — genuine dead end, 3dfilamentprofiles.com has zero Elegoo PLA CMYK entries. Deliberately not borrowed from another brand's published CMYK hex values for a similar bundle (e.g. Bambu Lab's own PLA CMYK set) — no-cross-inference rule."},
     ],
 }
 
