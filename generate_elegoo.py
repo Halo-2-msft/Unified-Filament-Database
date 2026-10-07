@@ -1,15 +1,24 @@
 """
 generate_elegoo.py — Elegoo filament workbook
 
-Full build as of this sync (2026-10-06): 169 catalog entries across 17 product
+Full build as of this sync (2026-10-06): 174 catalog entries across 18 product
 lines — PLA, PLA Basic, PLA Plus, TPU 95A, ASA, Rapid PETG, PLA Pro,
 PLA (RFID) emoji Brand Edition, PLA Marble, PLA Sparkle, ASA-CF, PLA-CF,
-PLA Matte, PLA Silk, PLA Galaxy, PLA Metallic, PLA Wood. 90 confirmed hex / 79
-honest #999999 placeholders (per-entry tier_rationale and notes document why
-each placeholder is unresolved — genuine absence, too-new-to-be-indexed,
-ambiguous/conflicting source data, or (PLA Silk only) an inherently
-multi-color gradient product with no single representative hex — never
-guessed).
+PLA Matte, PLA Silk, PLA Galaxy, PLA Metallic, PLA Wood, PLA Glow. 92
+confirmed hex / 82 honest #999999 placeholders (per-entry tier_rationale and
+notes document why each placeholder is unresolved — genuine absence,
+too-new-to-be-indexed, ambiguous/conflicting source data, or (PLA Silk only)
+an inherently multi-color gradient product with no single representative hex
+— never guessed).
+
+PLA Glow added 2026-10-06: 5 colors (Blue, Green, Yellow, Orange, Pink) per
+official elegoo.com product page. Only 2/5 hex resolved (Blue — colorimeter-
+measured on 3dfilamentprofiles.com; Green — listed value). Yellow and Orange
+each have a dedicated 3dfilamentprofiles.com page but both RGB fields are
+blank — genuine gap, not unresearched. Pink's page lists two conflicting RGB
+values with neither marked as measured/preferred — left as placeholder
+rather than guessing. All resolved hex are the daylight/charged color; this
+catalog does not track glow-in-the-dark color separately.
 
 PLA Wood added 2026-10-06: 4 colors (Oak Wood, Teak Wood, Tan Birch,
 Rosewood), a wood-toned (not wood-filled) PLA. All 4 hex resolved via
@@ -3310,6 +3319,103 @@ ELEGOO = {
              tier='A',
              tier_rationale='Color and line confirmed via official elegoo.com/3djake product listings (2026-10-06); hex via 3dfilamentprofiles.com dedicated per-color page, unambiguous single match',
              notes='Cardboard spool — AMS Adapter Ring required for all AMS variants | Hex: 3dfilamentprofiles.com per-color page'),
+
+        # ── PLA Glow (5 colors — official elegoo.com product page; hex via 3dfilamentprofiles.com, mixed results) ──
+        dict(material_type='PLA Glow',
+             sku='EL-GLW-BL',
+             product_name='Elegoo PLA Glow',
+             color_name='Blue',
+             color_hex='64B0FF',
+             diameter='1.75mm',
+             diameter_tolerance='±0.03mm',
+             spool_type='Cardboard',
+             ams_adapter='Yes',
+             print_temp='190–220°C',
+             bed_temp='35–65°C',
+             drying='55°C / 8h',
+             ams_xp='⚠',
+             ams_lite='⚠',
+             ams_2pro='⚠',
+             ams_ht='⚠',
+             tier='A',
+             tier_rationale='Color and 5-color line confirmed via official elegoo.com product page (2026-10-06: Blue, Green, Yellow, Orange, Pink); hex is a colorimeter-measured value from 3dfilamentprofiles.com — this is the daylight/charged color, not the dark-glow color, which this catalog does not track',
+             notes='Cardboard spool — AMS Adapter Ring required for all AMS variants | Hex: colorimeter-measured value (3dfilamentprofiles.com), no separate nominal/listed value shown on source page'),
+        dict(material_type='PLA Glow',
+             sku='EL-GLW-GN',
+             product_name='Elegoo PLA Glow',
+             color_name='Green',
+             color_hex='96D35F',
+             diameter='1.75mm',
+             diameter_tolerance='±0.03mm',
+             spool_type='Cardboard',
+             ams_adapter='Yes',
+             print_temp='190–220°C',
+             bed_temp='35–65°C',
+             drying='55°C / 8h',
+             ams_xp='⚠',
+             ams_lite='⚠',
+             ams_2pro='⚠',
+             ams_ht='⚠',
+             tier='A',
+             tier_rationale='Color and 5-color line confirmed via official elegoo.com product page (2026-10-06); hex via 3dfilamentprofiles.com dedicated per-color page, unambiguous single match (listed value, not separately colorimeter-measured on that page)',
+             notes='Cardboard spool — AMS Adapter Ring required for all AMS variants | Hex: 3dfilamentprofiles.com per-color page (daylight/charged color, not the dark-glow color)'),
+        dict(material_type='PLA Glow',
+             sku='EL-GLW-YL',
+             product_name='Elegoo PLA Glow',
+             color_name='Yellow',
+             color_hex='999999',
+             diameter='1.75mm',
+             diameter_tolerance='±0.03mm',
+             spool_type='Cardboard',
+             ams_adapter='Yes',
+             print_temp='190–220°C',
+             bed_temp='35–65°C',
+             drying='55°C / 8h',
+             ams_xp='⚠',
+             ams_lite='⚠',
+             ams_2pro='⚠',
+             ams_ht='⚠',
+             tier='C',
+             tier_rationale='PLACEHOLDER — color and 5-color line confirmed (elegoo.com product page, 2026-10-06) but hex is a genuine dead end — 3dfilamentprofiles.com has a dedicated per-color page for this exact color but both its listed RGB and measured RGB fields are blank/unrecorded',
+             notes='Cardboard spool — AMS Adapter Ring required for all AMS variants | Hex: unconfirmed placeholder'),
+        dict(material_type='PLA Glow',
+             sku='EL-GLW-OR',
+             product_name='Elegoo PLA Glow',
+             color_name='Orange',
+             color_hex='999999',
+             diameter='1.75mm',
+             diameter_tolerance='±0.03mm',
+             spool_type='Cardboard',
+             ams_adapter='Yes',
+             print_temp='190–220°C',
+             bed_temp='35–65°C',
+             drying='55°C / 8h',
+             ams_xp='⚠',
+             ams_lite='⚠',
+             ams_2pro='⚠',
+             ams_ht='⚠',
+             tier='C',
+             tier_rationale='PLACEHOLDER — color and 5-color line confirmed (elegoo.com product page, 2026-10-06) but hex is a genuine dead end — 3dfilamentprofiles.com has a dedicated per-color page for this exact color but both its listed RGB and measured RGB fields are blank/unrecorded',
+             notes='Cardboard spool — AMS Adapter Ring required for all AMS variants | Hex: unconfirmed placeholder'),
+        dict(material_type='PLA Glow',
+             sku='EL-GLW-PK',
+             product_name='Elegoo PLA Glow',
+             color_name='Pink',
+             color_hex='999999',
+             diameter='1.75mm',
+             diameter_tolerance='±0.03mm',
+             spool_type='Cardboard',
+             ams_adapter='Yes',
+             print_temp='190–220°C',
+             bed_temp='35–65°C',
+             drying='55°C / 8h',
+             ams_xp='⚠',
+             ams_lite='⚠',
+             ams_2pro='⚠',
+             ams_ht='⚠',
+             tier='C',
+             tier_rationale='PLACEHOLDER — color and 5-color line confirmed (elegoo.com product page, 2026-10-06); 3dfilamentprofiles.com\'s per-color page lists two conflicting RGB values under the same "RGB:" label (#FA9D96 and #F3CA81, neither marked as measured/tested) with no way to pick between them — left unresolved rather than guessing',
+             notes='Cardboard spool — AMS Adapter Ring required for all AMS variants | Hex: unconfirmed placeholder — two ambiguous source candidates, see tier_rationale'),
     ],
 
     "inventory": [],
@@ -3332,6 +3438,7 @@ ELEGOO = {
         {"material": 'PLA Galaxy', "print_temp": '190–220°C', "bed_temp": '35–65°C', "enclosure": 'No', "ams_compat": '⚠', "drying_required": 'Recommended', "drying": '55°C / 8h', "notes": "Cardboard spool — AMS Adapter Ring required. Added 2026-10-06. 3-color line (Black, Purple, Peacock Blue) — speckled night-sky finish over a solid base, not a gradient. 3/3 hex resolved via 3dfilamentprofiles.com; Peacock Blue had two candidate source entries with different hex, used the line-specific-named one."},
         {"material": 'PLA Metallic', "print_temp": '190–220°C', "bed_temp": '35–65°C', "enclosure": 'No', "ams_compat": '⚠', "drying_required": 'Recommended', "drying": '55°C / 8h', "notes": "Cardboard spool — AMS Adapter Ring required. Added 2026-10-06. 4-color line (Metallic Gold, Bronze, Blue, Green) confirmed via elegoo.com (all listed sold out at time of check). 0/4 hex resolved — genuine dead end confirmed against 3dfilamentprofiles.com's dedicated PLA Metallic section directly (zero entries), not an unresearched gap."},
         {"material": 'PLA Wood', "print_temp": '190–220°C', "bed_temp": '35–65°C', "enclosure": 'No', "ams_compat": '⚠', "drying_required": 'Recommended', "drying": '55°C / 8h', "notes": "Cardboard spool — AMS Adapter Ring required. Added 2026-10-06. 4-color line (Oak Wood, Teak Wood, Tan Birch, Rosewood) — a wood-toned PLA (not wood-filled). 4/4 hex resolved via 3dfilamentprofiles.com. Note: Elegoo also sells a separate 'PLA Walnut Wood' product that is a genuinely wood-particle-filled filament, a different material entirely from this color-only line — not added here, flagged for a possible future separate line."},
+        {"material": 'PLA Glow', "print_temp": '190–220°C', "bed_temp": '35–65°C', "enclosure": 'No', "ams_compat": '⚠', "drying_required": 'Recommended', "drying": '55°C / 8h', "notes": "Cardboard spool — AMS Adapter Ring required. Added 2026-10-06. 5-color line (Blue, Green, Yellow, Orange, Pink) confirmed via elegoo.com. 2/5 hex resolved (Blue, Green) — Yellow and Orange have dedicated 3dfilamentprofiles.com pages with blank RGB fields (genuine gap, not unresearched); Pink's source page lists two conflicting RGB values with no way to pick between them. All hex are the daylight/charged color — this catalog does not track a separate dark-glow color."},
     ],
 }
 
