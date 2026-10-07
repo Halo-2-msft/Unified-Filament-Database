@@ -1,15 +1,23 @@
 """
 generate_elegoo.py — Elegoo filament workbook
 
-Full build as of this sync (2026-10-06): 165 catalog entries across 16 product
+Full build as of this sync (2026-10-06): 169 catalog entries across 17 product
 lines — PLA, PLA Basic, PLA Plus, TPU 95A, ASA, Rapid PETG, PLA Pro,
 PLA (RFID) emoji Brand Edition, PLA Marble, PLA Sparkle, ASA-CF, PLA-CF,
-PLA Matte, PLA Silk, PLA Galaxy, PLA Metallic. 86 confirmed hex / 79 honest
-#999999 placeholders (per-entry tier_rationale and notes document why each
-placeholder is unresolved — genuine absence, too-new-to-be-indexed,
+PLA Matte, PLA Silk, PLA Galaxy, PLA Metallic, PLA Wood. 90 confirmed hex / 79
+honest #999999 placeholders (per-entry tier_rationale and notes document why
+each placeholder is unresolved — genuine absence, too-new-to-be-indexed,
 ambiguous/conflicting source data, or (PLA Silk only) an inherently
 multi-color gradient product with no single representative hex — never
 guessed).
+
+PLA Wood added 2026-10-06: 4 colors (Oak Wood, Teak Wood, Tan Birch,
+Rosewood), a wood-toned (not wood-filled) PLA. All 4 hex resolved via
+3dfilamentprofiles.com dedicated per-color pages (Tier A), though Tan Birch's
+color/line match relies on its position in the source site's ID sequence
+alongside the other 3 colors rather than a separate elegoo.com confirmation.
+Note: Elegoo also sells "PLA Walnut Wood", a genuinely wood-particle-filled
+filament — a different product from this color-only line, not added here.
 
 PLA Galaxy added 2026-10-06: 3 colors (Black, Purple, Peacock Blue) — a
 speckled night-sky finish over a solid base color, not a gradient. All 3 hex
@@ -3224,6 +3232,84 @@ ELEGOO = {
              tier='C',
              tier_rationale='PLACEHOLDER — color and official 4-color line confirmed (elegoo.com product page, 2026-10-06) but hex is a genuine dead end — 3dfilamentprofiles.com has no Elegoo PLA Metallic entries at all (confirmed against its dedicated line page directly, not an unresearched gap)',
              notes='Cardboard spool — AMS Adapter Ring required for all AMS variants | Hex: unconfirmed placeholder'),
+
+        # ── PLA Wood (4 colors — official elegoo.com product page; hex via 3dfilamentprofiles.com) ──
+        dict(material_type='PLA Wood',
+             sku='EL-WD-OAK',
+             product_name='Elegoo PLA Wood',
+             color_name='Oak Wood',
+             color_hex='C4AC99',
+             diameter='1.75mm',
+             diameter_tolerance='±0.03mm',
+             spool_type='Cardboard',
+             ams_adapter='Yes',
+             print_temp='190–220°C',
+             bed_temp='35–65°C',
+             drying='55°C / 8h',
+             ams_xp='⚠',
+             ams_lite='⚠',
+             ams_2pro='⚠',
+             ams_ht='⚠',
+             tier='A',
+             tier_rationale='Color and line confirmed via official elegoo.com product page (2026-10-06); hex via 3dfilamentprofiles.com dedicated per-color page, unambiguous single match',
+             notes='Cardboard spool — AMS Adapter Ring required for all AMS variants | Hex: 3dfilamentprofiles.com per-color page (measured RGB on the same page: #D4B792, listed hex used per standing convention)'),
+        dict(material_type='PLA Wood',
+             sku='EL-WD-TEAK',
+             product_name='Elegoo PLA Wood',
+             color_name='Teak Wood',
+             color_hex='B6825D',
+             diameter='1.75mm',
+             diameter_tolerance='±0.03mm',
+             spool_type='Cardboard',
+             ams_adapter='Yes',
+             print_temp='190–220°C',
+             bed_temp='35–65°C',
+             drying='55°C / 8h',
+             ams_xp='⚠',
+             ams_lite='⚠',
+             ams_2pro='⚠',
+             ams_ht='⚠',
+             tier='A',
+             tier_rationale='Color and line confirmed via official elegoo.com product page (2026-10-06); hex via 3dfilamentprofiles.com dedicated per-color page, unambiguous single match',
+             notes='Cardboard spool — AMS Adapter Ring required for all AMS variants | Hex: 3dfilamentprofiles.com per-color page (measured RGB on the same page: #A46B4C, listed hex used per standing convention)'),
+        dict(material_type='PLA Wood',
+             sku='EL-WD-BIRCH',
+             product_name='Elegoo PLA Wood',
+             color_name='Tan Birch',
+             color_hex='DFD1C4',
+             diameter='1.75mm',
+             diameter_tolerance='±0.03mm',
+             spool_type='Cardboard',
+             ams_adapter='Yes',
+             print_temp='190–220°C',
+             bed_temp='35–65°C',
+             drying='55°C / 8h',
+             ams_xp='⚠',
+             ams_lite='⚠',
+             ams_2pro='⚠',
+             ams_ht='⚠',
+             tier='A',
+             tier_rationale='Color confirmed via 3dfilamentprofiles.com dedicated per-color page (2026-10-06); not separately verified against elegoo.com storefront listing text, but appears alongside the other 3 colors on the same manufacturer-sourced listing sequence',
+             notes='Cardboard spool — AMS Adapter Ring required for all AMS variants | Hex: 3dfilamentprofiles.com per-color page (measured RGB on the same page: #E1C59E, listed hex used per standing convention)'),
+        dict(material_type='PLA Wood',
+             sku='EL-WD-ROSE',
+             product_name='Elegoo PLA Wood',
+             color_name='Rosewood',
+             color_hex='60433F',
+             diameter='1.75mm',
+             diameter_tolerance='±0.03mm',
+             spool_type='Cardboard',
+             ams_adapter='Yes',
+             print_temp='190–220°C',
+             bed_temp='35–65°C',
+             drying='55°C / 8h',
+             ams_xp='⚠',
+             ams_lite='⚠',
+             ams_2pro='⚠',
+             ams_ht='⚠',
+             tier='A',
+             tier_rationale='Color and line confirmed via official elegoo.com/3djake product listings (2026-10-06); hex via 3dfilamentprofiles.com dedicated per-color page, unambiguous single match',
+             notes='Cardboard spool — AMS Adapter Ring required for all AMS variants | Hex: 3dfilamentprofiles.com per-color page'),
     ],
 
     "inventory": [],
@@ -3245,6 +3331,7 @@ ELEGOO = {
         {"material": 'PLA Silk', "print_temp": '190–220°C', "bed_temp": '45–60°C', "enclosure": 'No', "ams_compat": '⚠', "drying_required": 'Recommended', "drying": '45°C / 4h', "notes": "Cardboard spool — AMS Adapter Ring required. Added 2026-10-05. 16-variant line per official elegoo.com storefront: 8 single-tone colors (Silver, White, Bronze, Holly Green, Mint Green, Red, Gold, Hot Pink) + 8 multi-tone/gradient variants (tri-color silk announced in Elegoo's own 2026 blog post) — Green Red, Black Purple, Black Red, Blue Magenta, Blue Green, Blue Green Orange, Blue Purple Black, Blue Purple. 6/8 single-tone hex resolved (Tier A, unambiguous 3dfilamentprofiles.com matches); Gold and Hot Pink left as placeholders due to multiple conflicting/unconfirmed source candidates, not guessed. All 8 gradient variants left as placeholders by design — a multi-color-per-spool product has no single representative hex, consistent with how this catalog treats every other brand's gradient/rainbow products."},
         {"material": 'PLA Galaxy', "print_temp": '190–220°C', "bed_temp": '35–65°C', "enclosure": 'No', "ams_compat": '⚠', "drying_required": 'Recommended', "drying": '55°C / 8h', "notes": "Cardboard spool — AMS Adapter Ring required. Added 2026-10-06. 3-color line (Black, Purple, Peacock Blue) — speckled night-sky finish over a solid base, not a gradient. 3/3 hex resolved via 3dfilamentprofiles.com; Peacock Blue had two candidate source entries with different hex, used the line-specific-named one."},
         {"material": 'PLA Metallic', "print_temp": '190–220°C', "bed_temp": '35–65°C', "enclosure": 'No', "ams_compat": '⚠', "drying_required": 'Recommended', "drying": '55°C / 8h', "notes": "Cardboard spool — AMS Adapter Ring required. Added 2026-10-06. 4-color line (Metallic Gold, Bronze, Blue, Green) confirmed via elegoo.com (all listed sold out at time of check). 0/4 hex resolved — genuine dead end confirmed against 3dfilamentprofiles.com's dedicated PLA Metallic section directly (zero entries), not an unresearched gap."},
+        {"material": 'PLA Wood', "print_temp": '190–220°C', "bed_temp": '35–65°C', "enclosure": 'No', "ams_compat": '⚠', "drying_required": 'Recommended', "drying": '55°C / 8h', "notes": "Cardboard spool — AMS Adapter Ring required. Added 2026-10-06. 4-color line (Oak Wood, Teak Wood, Tan Birch, Rosewood) — a wood-toned PLA (not wood-filled). 4/4 hex resolved via 3dfilamentprofiles.com. Note: Elegoo also sells a separate 'PLA Walnut Wood' product that is a genuinely wood-particle-filled filament, a different material entirely from this color-only line — not added here, flagged for a possible future separate line."},
     ],
 }
 
