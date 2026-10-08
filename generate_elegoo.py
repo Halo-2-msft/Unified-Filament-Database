@@ -1,16 +1,24 @@
 """
 generate_elegoo.py — Elegoo filament workbook
 
-Full build as of this sync (2026-10-07): 222 catalog entries across 22 product
+Full build as of this sync (2026-10-08): 227 catalog entries across 23 product
 lines — PLA, PLA Basic, PLA Plus, TPU 95A, ASA, Rapid PETG, PLA Pro,
 PLA (RFID) emoji Brand Edition, PLA Marble, PLA Sparkle, ASA-CF, PLA-CF,
 PLA Matte, PLA Silk, PLA Galaxy, PLA Metallic, PLA Wood, PLA Glow, PLA CMYK,
-Rapid PLA Plus, PETG Pro, PETG Translucent. 108 confirmed hex / 114 honest
-#999999 placeholders (per-entry tier_rationale and notes document why each
-placeholder is unresolved — genuine absence, too-new-to-be-indexed,
+Rapid PLA Plus, PETG Pro, PETG Translucent, PETG-CF. 113 confirmed hex / 114
+honest #999999 placeholders (per-entry tier_rationale and notes document why
+each placeholder is unresolved — genuine absence, too-new-to-be-indexed,
 ambiguous/conflicting source data, too-large-a-line-for-this-pass (Rapid PLA
 Plus), or (PLA Silk only) an inherently multi-color gradient product with no
 single representative hex — never guessed).
+
+PETG-CF added 2026-10-08: 5 colors (Carbon Fiber Blue, Green, Grey, Purple,
+Red) confirmed via retailer product listings (3djake.ch) since elegoo.com's
+own product page returned a fetch error this pass. All 5 hex resolved via
+3dfilamentprofiles.com (Tier A). That same source separately carries
+Black/Carbon Fiber Black entries not matched to any current retailer listing
+for this specific line — not added as a 6th color, flagged rather than
+guessed.
 
 PETG Translucent added 2026-10-07: 11 colors (Blue, Burgundy Red, Olive
 Green, Pink, Purple, Translucent Amber, Translucent Blue, Translucent Green,
@@ -4379,6 +4387,103 @@ ELEGOO = {
              tier_rationale='Color and 11-color line confirmed via 3dfilamentprofiles.com\'s dedicated "Translucent" material-type page for Elegoo PETG (2026-10-07) — elegoo.com\'s own storefront pages did not surface a static color list during this pass (likely a JS-rendered selector), so the line count relies on this source rather than a direct elegoo.com confirmation, same as noted for this line\'s overall sourcing; hex via the per-color page, unambiguous single match',
              notes='Cardboard spool — AMS Adapter Ring required for all AMS variants | Translucent/semi-transparent by design | Hex: 3dfilamentprofiles.com per-color page'),
 
+        # ── PETG-CF (5 colors — retailer listings + 3dfilamentprofiles.com dedicated line page ──
+        dict(material_type='PETG-CF',
+             sku='EL-PETGCF-BL',
+             product_name='Elegoo PETG-CF',
+             color_name='Carbon Fiber Blue',
+             color_hex='1F5A94',
+             diameter='1.75mm',
+             diameter_tolerance='±0.02mm',
+             spool_type='Cardboard',
+             ams_adapter='Yes',
+             print_temp='240–270°C',
+             bed_temp='65–75°C',
+             drying='65°C / 8h',
+             ams_xp='⚠',
+             ams_lite='✗',
+             ams_2pro='⚠',
+             ams_ht='⚠',
+             tier='A',
+             tier_rationale='Color and 5-color line confirmed via retailer product listings (3djake.ch, 2026-10-08: Carbon Fiber Blue/Green/Grey/Purple/Red — elegoo.com\'s own product page could not be fetched this pass) hex via 3dfilamentprofiles.com dedicated per-color page, unambiguous single match. Note: that same source also separately lists "Black"/"Carbon Fiber Black" entries not matched to a current retailer listing for this line — not added here as a 6th color, flagged rather than guessed',
+             notes='Cardboard spool — AMS Adapter Ring required for all AMS variants; AMS Lite ✗; abrasive — hardened nozzle (≥0.4mm) required | Hex: 3dfilamentprofiles.com per-color page'),
+        dict(material_type='PETG-CF',
+             sku='EL-PETGCF-GN',
+             product_name='Elegoo PETG-CF',
+             color_name='Carbon Fiber Green',
+             color_hex='00AA84',
+             diameter='1.75mm',
+             diameter_tolerance='±0.02mm',
+             spool_type='Cardboard',
+             ams_adapter='Yes',
+             print_temp='240–270°C',
+             bed_temp='65–75°C',
+             drying='65°C / 8h',
+             ams_xp='⚠',
+             ams_lite='✗',
+             ams_2pro='⚠',
+             ams_ht='⚠',
+             tier='A',
+             tier_rationale='Color and 5-color line confirmed via retailer product listings (3djake.ch, 2026-10-08: Carbon Fiber Blue/Green/Grey/Purple/Red — elegoo.com\'s own product page could not be fetched this pass) hex via 3dfilamentprofiles.com dedicated per-color page, unambiguous single match. Note: that same source also separately lists "Black"/"Carbon Fiber Black" entries not matched to a current retailer listing for this line — not added here as a 6th color, flagged rather than guessed',
+             notes='Cardboard spool — AMS Adapter Ring required for all AMS variants; AMS Lite ✗; abrasive — hardened nozzle (≥0.4mm) required | Hex: 3dfilamentprofiles.com per-color page'),
+        dict(material_type='PETG-CF',
+             sku='EL-PETGCF-GY',
+             product_name='Elegoo PETG-CF',
+             color_name='Carbon Fiber Grey',
+             color_hex='324B4F',
+             diameter='1.75mm',
+             diameter_tolerance='±0.02mm',
+             spool_type='Cardboard',
+             ams_adapter='Yes',
+             print_temp='240–270°C',
+             bed_temp='65–75°C',
+             drying='65°C / 8h',
+             ams_xp='⚠',
+             ams_lite='✗',
+             ams_2pro='⚠',
+             ams_ht='⚠',
+             tier='A',
+             tier_rationale='Color and 5-color line confirmed via retailer product listings (3djake.ch, 2026-10-08: Carbon Fiber Blue/Green/Grey/Purple/Red — elegoo.com\'s own product page could not be fetched this pass) hex via 3dfilamentprofiles.com dedicated per-color page, unambiguous single match. Note: that same source also separately lists "Black"/"Carbon Fiber Black" entries not matched to a current retailer listing for this line — not added here as a 6th color, flagged rather than guessed',
+             notes='Cardboard spool — AMS Adapter Ring required for all AMS variants; AMS Lite ✗; abrasive — hardened nozzle (≥0.4mm) required | Hex: 3dfilamentprofiles.com per-color page'),
+        dict(material_type='PETG-CF',
+             sku='EL-PETGCF-PU',
+             product_name='Elegoo PETG-CF',
+             color_name='Carbon Fiber Purple',
+             color_hex='560896',
+             diameter='1.75mm',
+             diameter_tolerance='±0.02mm',
+             spool_type='Cardboard',
+             ams_adapter='Yes',
+             print_temp='240–270°C',
+             bed_temp='65–75°C',
+             drying='65°C / 8h',
+             ams_xp='⚠',
+             ams_lite='✗',
+             ams_2pro='⚠',
+             ams_ht='⚠',
+             tier='A',
+             tier_rationale='Color and 5-color line confirmed via retailer product listings (3djake.ch, 2026-10-08: Carbon Fiber Blue/Green/Grey/Purple/Red — elegoo.com\'s own product page could not be fetched this pass) hex via 3dfilamentprofiles.com dedicated per-color page, unambiguous single match. Note: that same source also separately lists "Black"/"Carbon Fiber Black" entries not matched to a current retailer listing for this line — not added here as a 6th color, flagged rather than guessed',
+             notes='Cardboard spool — AMS Adapter Ring required for all AMS variants; AMS Lite ✗; abrasive — hardened nozzle (≥0.4mm) required | Hex: 3dfilamentprofiles.com per-color page'),
+        dict(material_type='PETG-CF',
+             sku='EL-PETGCF-RD',
+             product_name='Elegoo PETG-CF',
+             color_name='Carbon Fiber Red',
+             color_hex='930101',
+             diameter='1.75mm',
+             diameter_tolerance='±0.02mm',
+             spool_type='Cardboard',
+             ams_adapter='Yes',
+             print_temp='240–270°C',
+             bed_temp='65–75°C',
+             drying='65°C / 8h',
+             ams_xp='⚠',
+             ams_lite='✗',
+             ams_2pro='⚠',
+             ams_ht='⚠',
+             tier='A',
+             tier_rationale='Color and 5-color line confirmed via retailer product listings (3djake.ch, 2026-10-08: Carbon Fiber Blue/Green/Grey/Purple/Red — elegoo.com\'s own product page could not be fetched this pass) hex via 3dfilamentprofiles.com dedicated per-color page, unambiguous single match. Note: that same source also separately lists "Black"/"Carbon Fiber Black" entries not matched to a current retailer listing for this line — not added here as a 6th color, flagged rather than guessed',
+             notes='Cardboard spool — AMS Adapter Ring required for all AMS variants; AMS Lite ✗; abrasive — hardened nozzle (≥0.4mm) required | Hex: 3dfilamentprofiles.com per-color page'),
+
     ],
 
     "inventory": [],
@@ -4406,6 +4511,7 @@ ELEGOO = {
         {"material": 'Rapid PLA Plus', "print_temp": '190–230°C', "bed_temp": '35–65°C', "enclosure": 'No', "ams_compat": '⚠', "drying_required": 'Recommended', "drying": '55°C / 6h', "notes": "Cardboard spool — AMS Adapter Ring required. Added 2026-10-07. 26-color line confirmed via elegoo.com's UK storefront (supports 30-600mm/s print speed per manufacturer). Only 1/26 hex resolved (Orange) via 3dfilamentprofiles.com's single 'Rapid'-tagged entry — the other 25 colors were not individually source-matched this pass to avoid a cross-line guess (e.g. borrowing same-named PLA Basic hex values); worth a dedicated follow-up pass. Print/bed temps not manufacturer-stated on the product page — modeled on this catalog's standard Elegoo PLA profile."},
         {"material": 'PETG Pro', "print_temp": '240–270°C', "bed_temp": '65–75°C', "enclosure": 'No', "ams_compat": '⚠', "drying_required": 'Yes', "drying": '65°C / 8h', "notes": "Cardboard spool — AMS Adapter Ring required. Added 2026-10-07. 7-color line (Grey, White, Black, Silver, Blue, Pink, Red) confirmed via elegoo.com. 7/7 hex resolved via 3dfilamentprofiles.com, which also lists 7 more color names (Burgundy Red, Green, Light Blue, Olive Green, Orange, Purple, Yellow) not on elegoo.com's own storefront — same regional/retailer naming variance already documented for PLA Basic/PLA Matte, not added here."},
         {"material": 'PETG Translucent', "print_temp": '240–270°C', "bed_temp": '65–75°C', "enclosure": 'No', "ams_compat": '⚠', "drying_required": 'Yes', "drying": '65°C / 8h', "notes": "Cardboard spool — AMS Adapter Ring required. Added 2026-10-07. 11-color line per 3dfilamentprofiles.com's dedicated Translucent material-type page for Elegoo PETG — elegoo.com's own storefront pages didn't surface a static color list this pass (likely JS-rendered). 8/11 hex resolved; Olive Green, Translucent Blue, and Translucent Green each have a dedicated per-color page with a blank RGB field — genuine gap, not unresearched."},
+        {"material": 'PETG-CF', "print_temp": '240–270°C', "bed_temp": '65–75°C', "enclosure": 'No', "ams_compat": '⚠', "drying_required": 'Yes', "drying": '65°C / 8h', "notes": "Cardboard spool — AMS Adapter Ring required; AMS Lite incompatible; abrasive, hardened nozzle required. Added 2026-10-08. 5-color line (Carbon Fiber Blue/Green/Grey/Purple/Red) confirmed via retailer listings (elegoo.com's own product page couldn't be fetched this pass). 5/5 hex resolved via 3dfilamentprofiles.com, which also separately lists Black/Carbon Fiber Black entries not matched to a current retailer listing for this line — not added as a 6th color."},
     ],
 }
 
