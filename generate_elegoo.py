@@ -1,16 +1,26 @@
 """
 generate_elegoo.py — Elegoo filament workbook
 
-Full build as of this sync (2026-10-08): 227 catalog entries across 23 product
+Full build as of this sync (2026-10-08): 230 catalog entries across 24 product
 lines — PLA, PLA Basic, PLA Plus, TPU 95A, ASA, Rapid PETG, PLA Pro,
 PLA (RFID) emoji Brand Edition, PLA Marble, PLA Sparkle, ASA-CF, PLA-CF,
 PLA Matte, PLA Silk, PLA Galaxy, PLA Metallic, PLA Wood, PLA Glow, PLA CMYK,
-Rapid PLA Plus, PETG Pro, PETG Translucent, PETG-CF. 113 confirmed hex / 114
-honest #999999 placeholders (per-entry tier_rationale and notes document why
-each placeholder is unresolved — genuine absence, too-new-to-be-indexed,
-ambiguous/conflicting source data, too-large-a-line-for-this-pass (Rapid PLA
-Plus), or (PLA Silk only) an inherently multi-color gradient product with no
-single representative hex — never guessed).
+Rapid PLA Plus, PETG Pro, PETG Translucent, PETG-CF, PETG-GF. 116 confirmed
+hex / 114 honest #999999 placeholders (per-entry tier_rationale and notes
+document why each placeholder is unresolved — genuine absence,
+too-new-to-be-indexed, ambiguous/conflicting source data,
+too-large-a-line-for-this-pass (Rapid PLA Plus), or (PLA Silk only) an
+inherently multi-color gradient product with no single representative hex —
+never guessed).
+
+This is the full Elegoo catalog backlog as originally scoped — every known
+Elegoo product line is now represented, confirmed hex where source data
+allows and honest placeholders everywhere it doesn't.
+
+PETG-GF added 2026-10-08: 3 colors (Glass Fiber Black, Grey, White),
+confirmed via official elegoo.com product page. All 3 hex resolved via
+3dfilamentprofiles.com — a clean match, no naming variance or ambiguity,
+unlike most of this session's other additions.
 
 PETG-CF added 2026-10-08: 5 colors (Carbon Fiber Blue, Green, Grey, Purple,
 Red) confirmed via retailer product listings (3djake.ch) since elegoo.com's
@@ -4484,6 +4494,64 @@ ELEGOO = {
              tier_rationale='Color and 5-color line confirmed via retailer product listings (3djake.ch, 2026-10-08: Carbon Fiber Blue/Green/Grey/Purple/Red — elegoo.com\'s own product page could not be fetched this pass) hex via 3dfilamentprofiles.com dedicated per-color page, unambiguous single match. Note: that same source also separately lists "Black"/"Carbon Fiber Black" entries not matched to a current retailer listing for this line — not added here as a 6th color, flagged rather than guessed',
              notes='Cardboard spool — AMS Adapter Ring required for all AMS variants; AMS Lite ✗; abrasive — hardened nozzle (≥0.4mm) required | Hex: 3dfilamentprofiles.com per-color page'),
 
+        # ── PETG-GF (3 colors — official elegoo.com product page; hex via 3dfilamentprofiles.com, clean match ──
+        dict(material_type='PETG-GF',
+             sku='EL-PETGGF-BK',
+             product_name='Elegoo PETG-GF',
+             color_name='Glass Fiber Black',
+             color_hex='000000',
+             diameter='1.75mm',
+             diameter_tolerance='±0.02mm',
+             spool_type='Cardboard',
+             ams_adapter='Yes',
+             print_temp='240–270°C',
+             bed_temp='65–75°C',
+             drying='65°C / 8h',
+             ams_xp='⚠',
+             ams_lite='✗',
+             ams_2pro='⚠',
+             ams_ht='⚠',
+             tier='A',
+             tier_rationale='Color and 3-color line confirmed via official elegoo.com product page (2026-10-08: Glass Fiber Black/Grey/White); hex via 3dfilamentprofiles.com dedicated per-color page, unambiguous single match — clean 3-for-3 resolution, no naming variance or ambiguity found',
+             notes='Cardboard spool — AMS Adapter Ring required for all AMS variants; AMS Lite ✗; abrasive — hardened nozzle (≥0.4mm) required | Hex: 3dfilamentprofiles.com per-color page'),
+        dict(material_type='PETG-GF',
+             sku='EL-PETGGF-GY',
+             product_name='Elegoo PETG-GF',
+             color_name='Glass Fiber Grey',
+             color_hex='929399',
+             diameter='1.75mm',
+             diameter_tolerance='±0.02mm',
+             spool_type='Cardboard',
+             ams_adapter='Yes',
+             print_temp='240–270°C',
+             bed_temp='65–75°C',
+             drying='65°C / 8h',
+             ams_xp='⚠',
+             ams_lite='✗',
+             ams_2pro='⚠',
+             ams_ht='⚠',
+             tier='A',
+             tier_rationale='Color and 3-color line confirmed via official elegoo.com product page (2026-10-08: Glass Fiber Black/Grey/White); hex via 3dfilamentprofiles.com dedicated per-color page, unambiguous single match — clean 3-for-3 resolution, no naming variance or ambiguity found',
+             notes='Cardboard spool — AMS Adapter Ring required for all AMS variants; AMS Lite ✗; abrasive — hardened nozzle (≥0.4mm) required | Hex: 3dfilamentprofiles.com per-color page'),
+        dict(material_type='PETG-GF',
+             sku='EL-PETGGF-WH',
+             product_name='Elegoo PETG-GF',
+             color_name='Glass Fiber White',
+             color_hex='FFFFFF',
+             diameter='1.75mm',
+             diameter_tolerance='±0.02mm',
+             spool_type='Cardboard',
+             ams_adapter='Yes',
+             print_temp='240–270°C',
+             bed_temp='65–75°C',
+             drying='65°C / 8h',
+             ams_xp='⚠',
+             ams_lite='✗',
+             ams_2pro='⚠',
+             ams_ht='⚠',
+             tier='A',
+             tier_rationale='Color and 3-color line confirmed via official elegoo.com product page (2026-10-08: Glass Fiber Black/Grey/White); hex via 3dfilamentprofiles.com dedicated per-color page, unambiguous single match — clean 3-for-3 resolution, no naming variance or ambiguity found',
+             notes='Cardboard spool — AMS Adapter Ring required for all AMS variants; AMS Lite ✗; abrasive — hardened nozzle (≥0.4mm) required | Hex: 3dfilamentprofiles.com per-color page'),
     ],
 
     "inventory": [],
@@ -4512,6 +4580,7 @@ ELEGOO = {
         {"material": 'PETG Pro', "print_temp": '240–270°C', "bed_temp": '65–75°C', "enclosure": 'No', "ams_compat": '⚠', "drying_required": 'Yes', "drying": '65°C / 8h', "notes": "Cardboard spool — AMS Adapter Ring required. Added 2026-10-07. 7-color line (Grey, White, Black, Silver, Blue, Pink, Red) confirmed via elegoo.com. 7/7 hex resolved via 3dfilamentprofiles.com, which also lists 7 more color names (Burgundy Red, Green, Light Blue, Olive Green, Orange, Purple, Yellow) not on elegoo.com's own storefront — same regional/retailer naming variance already documented for PLA Basic/PLA Matte, not added here."},
         {"material": 'PETG Translucent', "print_temp": '240–270°C', "bed_temp": '65–75°C', "enclosure": 'No', "ams_compat": '⚠', "drying_required": 'Yes', "drying": '65°C / 8h', "notes": "Cardboard spool — AMS Adapter Ring required. Added 2026-10-07. 11-color line per 3dfilamentprofiles.com's dedicated Translucent material-type page for Elegoo PETG — elegoo.com's own storefront pages didn't surface a static color list this pass (likely JS-rendered). 8/11 hex resolved; Olive Green, Translucent Blue, and Translucent Green each have a dedicated per-color page with a blank RGB field — genuine gap, not unresearched."},
         {"material": 'PETG-CF', "print_temp": '240–270°C', "bed_temp": '65–75°C', "enclosure": 'No', "ams_compat": '⚠', "drying_required": 'Yes', "drying": '65°C / 8h', "notes": "Cardboard spool — AMS Adapter Ring required; AMS Lite incompatible; abrasive, hardened nozzle required. Added 2026-10-08. 5-color line (Carbon Fiber Blue/Green/Grey/Purple/Red) confirmed via retailer listings (elegoo.com's own product page couldn't be fetched this pass). 5/5 hex resolved via 3dfilamentprofiles.com, which also separately lists Black/Carbon Fiber Black entries not matched to a current retailer listing for this line — not added as a 6th color."},
+        {"material": 'PETG-GF', "print_temp": '240–270°C', "bed_temp": '65–75°C', "enclosure": 'No', "ams_compat": '⚠', "drying_required": 'Yes', "drying": '65°C / 8h', "notes": "Cardboard spool — AMS Adapter Ring required; AMS Lite incompatible; abrasive, hardened nozzle required. Added 2026-10-08. 3-color line (Glass Fiber Black/Grey/White) confirmed via official elegoo.com product page. 3/3 hex resolved via 3dfilamentprofiles.com — a clean match, no naming variance or ambiguity. Final line in the Elegoo catalog backlog."},
     ],
 }
 
