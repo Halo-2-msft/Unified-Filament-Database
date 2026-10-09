@@ -128,8 +128,8 @@
     "List Price": null,
     "Price Paid": null,
     "Quantity in Stock": 1,
-    "Opened / Sealed": "Sealed",
-    "Condition": "New",
+    "Opened / Sealed": "Opened",
+    "Condition": "Good",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
     "Package Type": null,
@@ -1646,14 +1646,14 @@
     "List Price": 23.99,
     "Price Paid": 23.99,
     "Quantity in Stock": 1,
-    "Opened / Sealed": "Sealed",
-    "Condition": "New",
+    "Opened / Sealed": "Opened",
+    "Condition": "Good",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
     "Package Type": null,
     "Net Weight (g)": null,
     "Est. Remaining (g)": null,
-    "Notes": null
+    "Notes": "Mounted 10/8/2026"
   },
   {
     "Brand": "Bambu Lab",
