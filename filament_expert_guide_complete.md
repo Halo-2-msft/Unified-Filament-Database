@@ -1,5 +1,5 @@
 # Expert Filament Guide for Bambu Lab Printers
-### Covering 12 Brands · 27 Material Types · AMS Compatibility · Cross-Brand Comparisons
+### Covering 12 Brands · 30 Material Types · AMS Compatibility · Cross-Brand Comparisons
 
 ---
 
@@ -93,6 +93,10 @@ One of the most widely used budget PLAs. Long track record, broad color selectio
 - Tier: B — excellent value but adapter ring friction adds risk
 - Weakness: cardboard spool, no optimized Bambu profile
 
+**Hatchbox — newer PLA lines (PLA MAX, PLA PRO+, Matte)**
+Hatchbox's current catalog (94 entries) is broader than the standard PLA above. **PLA MAX** is a USA-made NatureWorks Ingeo line with 23 colors; **PLA PRO+** is a newer line with 6 colors; the Matte line adds a few colors (Lemon Yellow, plus Gray, Olive Green and Brown via retailers), though 9 older Matte colors no longer appear on hatchbox3d.com and are flagged unverified. **None of these colors has a published hex**, so every one is a placeholder swatch (Tier C). The relationship between the older "Performance PLA" entry and PLA PRO+ is not confirmed. Spool type for the new lines has not been verified on physical spools; the brand-wide rule is cardboard.
+- Tier: C for the newer lines (colors confirmed, hex and specs not)
+
 **Overture PLA**
 Reliable budget option. 43 colors across several sub-lines (standard, Rock, Easy, Air), plastic spool, no adapter issues. Prints cleanly on standard PLA profiles. Slightly less consistency batch-to-batch than Polymaker but cheaper. The widest color selection of any budget PLA in this catalog.
 - Tolerance: ±0.03mm
@@ -131,7 +135,7 @@ These PLA+ variants add toughening agents to the base PLA formula — typically 
 - Tier: A
 
 **Elegoo — PLA / PLA Basic / PLA Plus**
-Three parallel standard-PLA lines rather than one. Plain PLA (18 colors) leans on the community-sourced MakerWorld swatch set rather than manufacturer hex, Tier B. PLA Basic (19 colors) is the weakest-confirmed of the three — only 6 of 19 colors have resolved hex, the rest sit at Tier C pending further sourcing. PLA Plus (17 colors) shares the same community swatch set as plain PLA and is fully hex-resolved, Tier B. Elegoo also sells PLA Pro (14 colors, only 1 of 14 with confirmed hex — most colors remain unconfirmed pending further sourcing) and a brand-new RFID-tagged "Brand Edition" PLA for ELEGOO CANVAS (17 colors, zero hex confirmed yet — too new to be indexed by third-party color sources as of this pass). Rapid PLA Plus, a high-speed-rated line, is Elegoo's largest PLA catalog entry at 26 colors, but only 1 of 26 has confirmed hex — most colors remain unconfirmed pending further sourcing. Every Elegoo PLA spool in this catalog is cardboard, same adapter-ring caveat as Hatchbox.
+Three parallel standard-PLA lines rather than one. Plain PLA (18 colors) leans on the community-sourced MakerWorld swatch set rather than manufacturer hex, Tier B. PLA Basic (19 colors) is the weakest-confirmed of the three — only 6 of 19 colors have resolved hex, the rest sit at Tier C pending further sourcing. PLA Plus (17 colors) shares the same community swatch set as plain PLA and is fully hex-resolved, Tier B. Elegoo also sells PLA Pro (14 colors, only 1 of 14 with confirmed hex — most colors remain unconfirmed pending further sourcing) and a brand-new RFID-tagged "Brand Edition" PLA for ELEGOO CANVAS (17 colors, zero hex confirmed yet — too new to be indexed by third-party color sources as of this pass). Rapid PLA Plus, a high-speed-rated line, is Elegoo's largest PLA catalog entry at 26 colors, but only 2 of 26 have resolved hex (Orange, plus Grey at a colorimeter-measured #838889 — a measured value, not manufacturer-published) — most colors remain unconfirmed pending further sourcing. Every Elegoo PLA spool in this catalog is cardboard, same adapter-ring caveat as Hatchbox.
 - Tolerance: ±0.03mm
 - AMS: ⚠ all variants — cardboard spool requires Adapter Ring 📦
 - Tier: B (PLA, PLA Plus) / C (PLA Basic, PLA Pro, Brand Edition, Rapid PLA Plus — majority of colors unconfirmed in each)
@@ -303,9 +307,24 @@ Phosphorescent (glow-in-the-dark) filament. Charge under UV or daylight. The hex
 4 colors (Metallic Gold, Bronze, Blue, Green), confirmed to exist via elegoo.com (all listed sold out at time of check). None of the 4 have confirmed hex — a genuine dead end against available sources, not an unresearched gap. Cardboard spool, Adapter Ring required.
 - Tier: C — line confirmed but hex entirely unresolved
 
-#### PLA Wood (color-toned, Elegoo-exclusive in this catalog)
+#### PLA Wood (color-toned: Bambu Lab and Elegoo)
 4 colors (Oak Wood, Teak Wood, Tan Birch, Rosewood) — a wood-toned PLA, not wood-particle-filled (Elegoo's genuinely wood-filled product, "PLA Walnut Wood," is a different product not currently in this catalog; see Part 7.1 for the catalog's true wood-fill lines). All 4 hex resolved. Cardboard spool, Adapter Ring required.
 - Tier: A
+
+**Bambu Lab PLA Wood** (added 2026-10-14): 6 colors (Black Walnut, Rosewood, Clay Brown, Classic Birch, White Oak, Ochre Yellow) with hex published on Bambu's own store page, so all 6 are Tier A. Prints at 190–240°C with a 35–45°C bed (glue stick on PEI); dry at 55°C for 8h. Diameter tolerance is assumed at ±0.03mm, since the page does not state it.
+- Tier: A (Bambu) / A (Elegoo)
+
+#### PLA Metal (Bambu Lab)
+Metallic-effect PLA using Bambu's numeric color codes. Two colors are confirmed in this catalog: Gold and Cobalt Blue Metallic (code 13600, Basic Reusable Spool, 1.75mm ±0.03mm). Hex is not published for Cobalt Blue, and temperatures are estimated from PLA Basic. Other metal colors were seen in the sweep but never confirmed on a fetched page, so they are not listed.
+- Tier: C — line confirmed, specs and hex not
+
+#### PLA-Coffee (eSUN)
+A coffee-grounds composite PLA. 12 colors per an All3DP review, including three coffee shades (Light Coffee, Coffee, Dark Coffee); only those three are in the catalog. Prints at 210–230°C, bed 55–65°C, max 250mm/s. Listed sold out on eSUN's shop at the last check; no hex published.
+- Tier: C
+
+#### PLA PolySonic (Polymaker)
+A high-speed PLA family claiming speeds above 300mm/s, 210–230°C nozzle, 25–60°C bed. Three colors confirmed via 3DJake (White, Grey, Red); Polymaker's launch reportedly had five, and a "PolySonic PLA Pro" variant exists but has not been researched. No hex published.
+- Tier: C
 
 #### PLA CMYK (Elegoo-exclusive in this catalog)
 4 colors (Rilievo Cyan, Magenta, Yellow, White) — a translucent lithophane/relief-print set, confirmed to exist via elegoo.com. None of the 4 have confirmed hex — a genuine dead end, not borrowed from any other brand's published CMYK values for a similar bundle concept. Cardboard spool, Adapter Ring required.
@@ -420,6 +439,10 @@ The most demanding PETG in this catalog — runs significantly hotter than typic
 
 ---
 
+**AzureFilm — PCTG** (new 2026-10-14)
+PCTG is a PETG-family copolyester with better impact strength and clarity. AzureFilm lists 4 colors (Grey, Transparent, White, Black), each as a standard spool or a cheaper spool-less "Refill," so 8 catalog entries. Temperatures are not stated by the retailer (240–260°C nozzle, 70–85°C bed are estimates); no hex published. Black was unavailable at the last check.
+- Tier: C
+
 #### Cross-Brand PETG Comparison
 
 | Brand | Product | Colors | Temp | AMS | Spool | Tier | Notes |
@@ -479,8 +502,14 @@ Launched 2026-09-30 as a genuinely new Bambu first-party line — not a rebrand 
 | Brand | Colors | Spool | AMS | Price | Tier |
 |---|---|---|---|---|---|
 | Bambu Lab | 8 | Plastic | ✓ all | ~$20 (est.) | C — hex unconfirmed |
+| SUNLU High Speed Matte | 13 | Not stated | ✓ (assumed) | n/a | C — 12 of 13 hex unpublished |
+| Prusament PETG Matte | 2 | NFC spool | ✓ (per retailer) | ~CHF 32 | C — hex unpublished |
 
-Only one brand currently carries PETG Matte in this catalog. No cross-brand comparison is possible yet — revisit once other brands release competing matte-PETG lines.
+**SUNLU — High Speed Matte PETG:** 13 colors per sunlu.com (Green, White, Grey, Black, Red, Yellow, Sunny Orange, Olive Green, Sky Blue, Coral Pink, Klein Blue, Lavender Purple, Mocha Mousse). Official 240–260°C nozzle, 70–80°C bed, ±0.02mm. The page's speed claims conflict (headline 600mm/s vs spec table ≤400mm/s), so treat both with suspicion. Only Black has a hex.
+
+**Prusament — PETG Matte:** a new sub-line announced with Prusa's refill-spool system. Matte Black and Noctua Brown are listed by 3DJake at 250–260°C nozzle and 80–90°C bed; no hex published, and Prusa has said more colors are coming.
+
+Three brands now carry a matte PETG, but hex is unconfirmed everywhere, so no color-accuracy comparison is possible yet.
 
 ---
 
@@ -654,6 +683,10 @@ Outdoor signage, garden hardware, RC car bodies for outdoor use, automotive exte
 - AMS: ⚠ X/P, 2 Pro, HT / ✗ Lite — cardboard spool requires Adapter Ring 📦
 - Tier: A (5 confirmed colors) / C (Grey — unconfirmed)
 
+**MatterHackers — PRO Series ASA** (new 2026-10-14)
+7 colors (Black, Gray, Natural, Crimson Red, Jet Gray, White, Yellow), 1kg, 1.75mm or 2.85mm, around $52 — noticeably pricier than most ASA here. Marketing says UV-stable and weather-resistant but gives no print temperatures or hex; 240–260°C / 90–110°C are estimates. Enclosure required.
+- Tier: C
+
 #### Cross-Brand ASA Comparison
 
 | Brand | Colors | Temp | AMS Lite | Tier | Notes |
@@ -666,6 +699,7 @@ Outdoor signage, garden hardware, RC car bodies for outdoor use, automotive exte
 | SUNLU | 8 | 240–260°C | ✗ | B | Budget |
 | Creality Hyper | 2 | 240–270°C | ✗ | B | Budget |
 | AzureFilm | 2 | 240–260°C | ✗ | B | Budget, not Bambu-verified |
+| MatterHackers PRO | 7 | 240–260°C (est.) | ✗ | C | Hex and temps unpublished, ~$52 |
 
 ### 4.1 ASA-CF
 Carbon fiber reinforced ASA. Combines ASA's UV/weather resistance with CF's stiffness increase. Hardened nozzle required.
@@ -736,6 +770,10 @@ Overture has expanded to 37 colors across standard and high-speed TPU formulatio
 
 ---
 
+**AzureFilm — TPU Flexible 95A** (new 2026-10-14)
+A separate grade from the 85A line above: 4 colors (Black, Blue, White, Red) on 3DJake, 1kg, no printing parameters listed and no hex. External spool only. Red was unavailable at the last check.
+- Tier: C
+
 #### Cross-Brand TPU Comparison
 
 | Brand | Colors | AMS Compatible | Speed | Tier | Notes |
@@ -747,6 +785,7 @@ Overture has expanded to 37 colors across standard and high-speed TPU formulatio
 | eSUN eTPU-95A | 12 | ✗ ext. spool | Slow | B | Reliable, consistent |
 | Creality Hyper TPU | 2 | ✗ ext. spool | Slow | B | Budget |
 | AzureFilm Flexible 85A | 2 | ✗ ext. spool | Slow | B | Budget, not Bambu-verified |
+| AzureFilm Flexible 95A | 4 | ✗ ext. spool | Slow | C | Hex and temps unpublished |
 | Elegoo TPU 95A | 7 | ✗ ext. spool | Slow | B/C | 4/7 hex confirmed, cardboard 📦 |
 
 ---
@@ -788,6 +827,14 @@ Nylon (polyamide) is one of the toughest FDM materials available — excellent i
 **AzureFilm — Nylon**
 1 color (Natural). Line existence confirmed via azurefilm.com; full spec not yet manufacturer-verified. Very moisture-sensitive like all PA — dry immediately before printing. External spool preferred.
 - Tier: C — line confirmed but specs not fully verified
+
+**MatterHackers — PRO Series Nylon** (8 colors)
+Black, White, Gray, Blue, Green, Orange, Red, Yellow, on 0.75kg spools at about $62. No temperatures or hex published; 250–270°C nozzle is an estimate. Only Black had a nominal hex; the other 7 are placeholders.
+- Tier: C
+
+**Bambu Lab — PA6-GF** (new 2026-10-14)
+A standalone glass-fiber-filled nylon 6 line (not a rename of an existing PA), 8 colors (White, Yellow, Lime, Blue, Orange, Brown, Gray, Black), all with hex published on Bambu's store. 260–290°C nozzle, 80–100°C bed with glue; dry 80°C for 8–12h and never above 100°C. Glass fiber is abrasive, so use a hardened nozzle (my assumption, not stated on the page). AMS compatibility flags were copied from PA-CF and are unverified.
+- Tier: A (hex and temps published by Bambu)
 
 ### 6.2 PA-CF
 
@@ -948,7 +995,7 @@ Across all material types, here is how each brand ranks holistically for Bambu p
 **Creality Hyper** — Niche advantage at very high print speeds. Good range of materials. No exotic issues. Budget tier for most use cases.
 
 ### Tier B (use with caution)
-**Hatchbox** — Proven quality but **every spool is cardboard** — the AMS Adapter Ring is mandatory for all materials. The adapter adds setup friction and low-level feed risk on long multi-color prints. Fine for single-color external spool use. For AMS printing, the cardboard spool is a meaningful operational disadvantage.
+**Hatchbox** — Proven quality but **every spool is cardboard** — the AMS Adapter Ring is mandatory for all materials. The adapter adds setup friction and low-level feed risk on long multi-color prints. Fine for single-color external spool use. For AMS printing, the cardboard spool is a meaningful operational disadvantage. The catalog has grown to 94 entries (PLA MAX, PLA PRO+, more Matte and TPU colors), but nearly all of the new entries are unconfirmed-hex placeholders.
 
 **MatterHackers Build Series** — Looser tolerances than PRO Series, fewer colors, lower price. Choose only when price is the sole constraint.
 
