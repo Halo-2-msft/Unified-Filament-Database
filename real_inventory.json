@@ -204,7 +204,7 @@
     "Package Type": null,
     "Net Weight (g)": null,
     "Est. Remaining (g)": null,
-    "Notes": "Depleted 2026-08-010, refill pending"
+    "Notes": "Depleted 8/10/2026, refill pending"
   },
   {
     "Brand": "Bambu Lab",
@@ -963,7 +963,7 @@
     "Package Type": null,
     "Net Weight (g)": null,
     "Est. Remaining (g)": null,
-    "Notes": "Mounted 2026-08-10"
+    "Notes": "Mounted  8/10/2026"
   },
   {
     "Brand": "Bambu Lab",
@@ -1255,14 +1255,14 @@
     "List Price": 19.99,
     "Price Paid": 12.99,
     "Quantity in Stock": 1,
-    "Opened / Sealed": "Sealed",
-    "Condition": "New",
+    "Opened / Sealed": "Opened",
+    "Condition": "Good",
     "Moisture Rating": "Dry",
     "Last Dried Date": null,
     "Package Type": null,
     "Net Weight (g)": null,
     "Est. Remaining (g)": null,
-    "Notes": null
+    "Notes": "Mounted 10/19/2026"
   },
   {
     "Brand": "Bambu Lab",
@@ -1818,10 +1818,10 @@
   },
   {
     "Brand": "Bambu Lab",
-    "SKU / Product ID": "BL-PETGM-GY",
+    "SKU / Product ID": "BL-PETG-GY",
     "Material Type": "PETG Matte",
     "Product Name": "PETG Matte",
-    "Color Name": "Grey",
+    "Color Name": "Black",
     "Hex Code": "#999999",
     "Diameter": "1.75mm",
     "Lot / Batch Code": null,
@@ -2006,29 +2006,6 @@
     "Material Type": "PETG Matte",
     "Product Name": "PETG Matte",
     "Color Name": "White",
-    "Hex Code": "#999999",
-    "Diameter": "1.75mm",
-    "Lot / Batch Code": null,
-    "Date Purchased": "2026-10-07T00:00:00",
-    "Where Purchased": "Bambu Lab",
-    "List Price": 23.79,
-    "Price Paid": 10.19,
-    "Quantity in Stock": 1,
-    "Opened / Sealed": "Sealed",
-    "Condition": "New",
-    "Moisture Rating": "Dry",
-    "Last Dried Date": null,
-    "Package Type": null,
-    "Net Weight (g)": null,
-    "Est. Remaining (g)": null,
-    "Notes": "Purchased 10/3/2026"
-  },
-  {
-    "Brand": "Bambu Lab",
-    "SKU / Product ID": "BL-PETGM-GY",
-    "Material Type": "PETG Matte",
-    "Product Name": "PETG Matte",
-    "Color Name": "Grey",
     "Hex Code": "#999999",
     "Diameter": "1.75mm",
     "Lot / Batch Code": null,
