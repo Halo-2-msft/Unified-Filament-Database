@@ -142,8 +142,8 @@ def _build_inventory(wb: Workbook, entries: list):
     # Data validations
     for col_name, formula in [
         ("Brand", '"' + ",".join(BRANDS) + '"'),
-        ("Opened / Sealed", '"Opened,Sealed"'),
-        ("Condition", '"New,Good,Fair,Poor"'),
+        ("Opened / Sealed", '"Opened,Sealed,Empty"'),
+        ("Condition", '"New,Good,Fair,Poor,Depleted"'),
         ("Moisture Rating", '"Dry,OK,Damp,Wet"'),
         ("Diameter", '"1.75mm,2.85mm"'),
     ]:
