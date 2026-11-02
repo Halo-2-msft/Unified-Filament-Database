@@ -1,5 +1,15 @@
 # Changelog — Filament Reference System
 
+## 2026-11-02 — Source-address convention + guide citations
+
+### Added
+- **Source-address convention**: new or changed catalog entries end `notes` with `| Source: <exact URL> (consulted YYYY-MM-DD)`. Documented in `README.md`.
+- **`check_sources.py`**: lists entries dated on or after a cutoff (default 2026-11-02) that lack a Source URL. Reminder only.
+- **Guide Part 25 — Sources and Credits**: 24 numbered sources with superscript citations throughout `filament_expert_guide_complete.md`; PDF regenerated.
+
+### Changed
+- Guide Part 20.1 rebuilt from real catalog hex counts; new section 9.1 on newer Bambu printers; PLA Pure added (not yet in catalog — awaiting published colors/hex/temps).
+
 ## 2026-08-02 — Inventory schema extension + Reflex Blue resolution
 
 ### Added
