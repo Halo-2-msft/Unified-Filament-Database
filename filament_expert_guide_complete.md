@@ -20,6 +20,7 @@ This guide is structured in three layers:
 - 🔧 = requires hardware change (nozzle, etc.)
 - 💧 = moisture-sensitive — dry before use
 - 📦 = cardboard spool — AMS Adapter Ring required
+- <sup>[[n]]</sup> = a citation. The number points to the matching entry in **Part 25 — Sources and Credits**, which gives the name, web address and what was taken from each source. General material properties (how PLA, PETG and similar behave) are standard industry knowledge and are not individually cited; brand-specific facts, color lists, hex values, prices and printer details are.
 
 ---
 
@@ -94,7 +95,7 @@ One of the most widely used budget PLAs. Long track record, broad color selectio
 - Weakness: cardboard spool, no optimized Bambu profile
 
 **Hatchbox — newer PLA lines (PLA MAX, PLA PRO+, Matte)**
-Hatchbox's current catalog (94 entries) is broader than the standard PLA above. **PLA MAX** is a USA-made NatureWorks Ingeo line with 23 colors; **PLA PRO+** is a newer line with 6 colors; the Matte line adds a few colors (Lemon Yellow, plus Gray, Olive Green and Brown via retailers), though 9 older Matte colors no longer appear on hatchbox3d.com and are flagged unverified. **None of these colors has a published hex**, so every one is a placeholder swatch (Tier C). The relationship between the older "Performance PLA" entry and PLA PRO+ is not confirmed. Spool type for the new lines has not been verified on physical spools; the brand-wide rule is cardboard.
+Hatchbox's current catalog (94 entries) is broader than the standard PLA above. **PLA MAX** is a USA-made NatureWorks Ingeo line with 23 colors; **PLA PRO+** is a newer line with 6 colors; the Matte line adds a few colors (Lemon Yellow, plus Gray, Olive Green and Brown via retailers), though 9 older Matte colors no longer appear on hatchbox3d.com<sup>[[17]](#src-17)</sup> and are flagged unverified. **None of these colors has a published hex**, so every one is a placeholder swatch (Tier C). The relationship between the older "Performance PLA" entry and PLA PRO+ is not confirmed. Spool type for the new lines has not been verified on physical spools; the brand-wide rule is cardboard.
 - Tier: C for the newer lines (colors confirmed, hex and specs not)
 
 **Overture PLA**
@@ -135,7 +136,7 @@ These PLA+ variants add toughening agents to the base PLA formula — typically 
 - Tier: A
 
 **Elegoo — PLA / PLA Basic / PLA Plus**
-Three parallel standard-PLA lines rather than one. Plain PLA (18 colors) leans on the community-sourced MakerWorld swatch set rather than manufacturer hex, Tier B. PLA Basic (19 colors) is the weakest-confirmed of the three — only 6 of 19 colors have resolved hex, the rest sit at Tier C pending further sourcing. PLA Plus (17 colors) shares the same community swatch set as plain PLA and is fully hex-resolved, Tier B. Elegoo also sells PLA Pro (14 colors, only 1 of 14 with confirmed hex — most colors remain unconfirmed pending further sourcing) and a brand-new RFID-tagged "Brand Edition" PLA for ELEGOO CANVAS (17 colors, zero hex confirmed yet — too new to be indexed by third-party color sources as of this pass). Rapid PLA Plus, a high-speed-rated line, is Elegoo's largest PLA catalog entry at 26 colors, but only 2 of 26 have resolved hex (Orange, plus Grey at a colorimeter-measured #838889 — a measured value, not manufacturer-published) — most colors remain unconfirmed pending further sourcing. Every Elegoo PLA spool in this catalog is cardboard, same adapter-ring caveat as Hatchbox.
+Three parallel standard-PLA lines rather than one. Plain PLA (18 colors) leans on the community-sourced MakerWorld<sup>[[10]](#src-10)</sup> swatch set rather than manufacturer hex, Tier B. PLA Basic (19 colors) is the weakest-confirmed of the three — only 6 of 19 colors have resolved hex, the rest sit at Tier C pending further sourcing. PLA Plus (17 colors) shares the same community swatch set as plain PLA and is fully hex-resolved, Tier B. Elegoo also sells PLA Pro (14 colors, only 1 of 14 with confirmed hex — most colors remain unconfirmed pending further sourcing) and a brand-new RFID-tagged "Brand Edition" PLA for ELEGOO CANVAS (17 colors, zero hex confirmed yet — too new to be indexed by third-party color sources as of this pass). Rapid PLA Plus, a high-speed-rated line, is Elegoo's largest PLA catalog entry at 26 colors, but only 2 of 26 have resolved hex (Orange, plus Grey at a colorimeter-measured #838889 — a measured value, not manufacturer-published)<sup>[[11]](#src-11)</sup> — most colors remain unconfirmed pending further sourcing. Every Elegoo PLA spool in this catalog is cardboard, same adapter-ring caveat as Hatchbox.
 - Tolerance: ±0.03mm
 - AMS: ⚠ all variants — cardboard spool requires Adapter Ring 📦
 - Tier: B (PLA, PLA Plus) / C (PLA Basic, PLA Pro, Brand Edition, Rapid PLA Plus — majority of colors unconfirmed in each)
@@ -208,11 +209,11 @@ Rebranded in 2025. 27 colors with a strong earthy/muted palette, spanning number
 - Tier: B
 
 **AzureFilm — PLA Matte**
-1 color (Black). Line existence confirmed via azurefilm.com navigation, but the full color list has not been verified — this is one of AzureFilm's newer, less-documented lines. Treat as unconfirmed until checked against the actual spool.
+1 color (Black). Line existence confirmed via azurefilm.com<sup>[[18]](#src-18)</sup> navigation, but the full color list has not been verified — this is one of AzureFilm's newer, less-documented lines. Treat as unconfirmed until checked against the actual spool.
 - Tier: C — line confirmed but not fully verified
 
 **Elegoo — PLA Matte**
-9 colors (Black, Slate Grey, Beige, Ice Blue, Lavender Purple, Mint Green, Navy Blue, Pink, Sunshine Yellow), confirmed via elegoo.com's official storefront. All 9 hex resolved via per-color manufacturer-adjacent sourcing — the strongest-confirmed Elegoo line in this entire catalog. Cardboard spool, same Adapter Ring requirement as every other Elegoo product.
+9 colors (Black, Slate Grey, Beige, Ice Blue, Lavender Purple, Mint Green, Navy Blue, Pink, Sunshine Yellow), confirmed via elegoo.com<sup>[[12]](#src-12)</sup>'s official storefront. All 9 hex resolved via per-color manufacturer-adjacent sourcing — the strongest-confirmed Elegoo line in this entire catalog. Cardboard spool, same Adapter Ring requirement as every other Elegoo product.
 - Tolerance: ±0.03mm
 - AMS: ⚠ all variants — cardboard spool requires Adapter Ring 📦
 - Tier: A — fully hex-confirmed, best-documented Elegoo line
@@ -265,7 +266,7 @@ Rebranded in 2025. 27 colors with a strong earthy/muted palette, spanning number
 - Tier: B
 
 **Polymaker — Panchroma Silk**
-2 colors (Gold, Copper). Official hex confirmed via shop.polymaker.com. Reliable quality consistent with Polymaker's other lines.
+2 colors (Gold, Copper). Official hex confirmed via shop.polymaker.com<sup>[[14]](#src-14)</sup>. Reliable quality consistent with Polymaker's other lines.
 - Tier: A
 
 **AzureFilm — Silk PLA**
@@ -299,35 +300,40 @@ Metallic glitter-particle fill in gold, silver, red. Abrasive at high volumes bu
 Phosphorescent (glow-in-the-dark) filament. Charge under UV or daylight. The hex codes in the catalog represent daylight color, not glow color. Most glow filaments emit green-yellow regardless of daylight color. Bambu Lab offers 2 colors; SUNLU offers 4 PLA Glow colors plus 2 PETG Glow colors — SUNLU is currently the wider glow-filament selection in this catalog. Elegoo also offers a 5-color PLA Glow line (Blue, Green, Yellow, Orange, Pink), but only 2 of 5 have confirmed hex — most colors remain unconfirmed pending further sourcing (Yellow and Orange have dedicated source pages with blank data; Pink has two conflicting candidate values).
 - Tier: S (Bambu) / B (SUNLU) / C (Elegoo — majority of colors unconfirmed)
 
+#### PLA Pure (Bambu Lab, new in 2026)
+A PLA formulation Bambu markets as family-friendly and low-emission. Per Tom's Hardware (June 18, 2026) it comes in five colors — three soft pastels plus black and white — at $24.99 per spool or $21.99 per 1kg refill. It carries UL 2904 Greenguard certification (particulate and VOC emissions, tested on A1 and A2L printers without an enclosure or filtration) and EN 71-3 toy-safety certification (heavy-metal migration). Bambu lists polylactic acid, acrylic copolymer, pigments, ethylene bis-stearamide and talc, and says the talc is asbestos-free.<sup>[[4]](#src-4)</sup> Bambu says PLA should not be used for liquids or above 60°C, and the article notes layer lines can trap germs, so "food safe" here describes the material, not a guarantee about a printed part.<sup>[[4]](#src-4)</sup>
+- Not yet in the catalog: the source gave no color names, hex, print temperatures or AMS/RFID details, so no entries were created rather than guessing.
+- Tier: not yet rated
+
 #### PLA Galaxy (Elegoo-exclusive in this catalog)
 3 colors (Black, Purple, Peacock Blue) — a speckled night-sky finish over a solid base color, not a gradient. All 3 hex resolved, though Peacock Blue had two differently-valued candidate sources and the line-specific-named one was used. Cardboard spool, Adapter Ring required. No other brand in this catalog carries a direct equivalent.
 - Tier: A
 
 #### PLA Metallic (Elegoo-exclusive in this catalog)
-4 colors (Metallic Gold, Bronze, Blue, Green), confirmed to exist via elegoo.com (all listed sold out at time of check). None of the 4 have confirmed hex — a genuine dead end against available sources, not an unresearched gap. Cardboard spool, Adapter Ring required.
+4 colors (Metallic Gold, Bronze, Blue, Green), confirmed to exist via elegoo.com<sup>[[12]](#src-12)</sup> (all listed sold out at time of check). None of the 4 have confirmed hex — a genuine dead end against available sources, not an unresearched gap. Cardboard spool, Adapter Ring required.
 - Tier: C — line confirmed but hex entirely unresolved
 
 #### PLA Wood (color-toned: Bambu Lab and Elegoo)
 4 colors (Oak Wood, Teak Wood, Tan Birch, Rosewood) — a wood-toned PLA, not wood-particle-filled (Elegoo's genuinely wood-filled product, "PLA Walnut Wood," is a different product not currently in this catalog; see Part 7.1 for the catalog's true wood-fill lines). All 4 hex resolved. Cardboard spool, Adapter Ring required.
 - Tier: A
 
-**Bambu Lab PLA Wood** (added 2026-10-14): 6 colors (Black Walnut, Rosewood, Clay Brown, Classic Birch, White Oak, Ochre Yellow) with hex published on Bambu's own store page, so all 6 are Tier A. Prints at 190–240°C with a 35–45°C bed (glue stick on PEI); dry at 55°C for 8h. Diameter tolerance is assumed at ±0.03mm, since the page does not state it.
+**Bambu Lab PLA Wood** (added 2026-10-14): 6 colors (Black Walnut, Rosewood, Clay Brown, Classic Birch, White Oak, Ochre Yellow) with hex published on Bambu's own store page, so all 6 are Tier A. Prints at 190–240°C with a 35–45°C bed (glue stick on PEI); dry at 55°C for 8h. Diameter tolerance is assumed at ±0.03mm, since the page does not state it.<sup>[[1]](#src-1)</sup>
 - Tier: A (Bambu) / A (Elegoo)
 
 #### PLA Metal (Bambu Lab)
-Metallic-effect PLA using Bambu's numeric color codes. Two colors are confirmed in this catalog: Gold and Cobalt Blue Metallic (code 13600, Basic Reusable Spool, 1.75mm ±0.03mm). Hex is not published for Cobalt Blue, and temperatures are estimated from PLA Basic. Other metal colors were seen in the sweep but never confirmed on a fetched page, so they are not listed.
+Metallic-effect PLA using Bambu's numeric color codes. Two colors are confirmed in this catalog: Gold and Cobalt Blue Metallic (code 13600, Basic Reusable Spool, 1.75mm ±0.03mm). Hex is not published for Cobalt Blue, and temperatures are estimated from PLA Basic. Other metal colors were seen in the sweep but never confirmed on a fetched page, so they are not listed.<sup>[[1]](#src-1)</sup>
 - Tier: C — line confirmed, specs and hex not
 
 #### PLA-Coffee (eSUN)
-A coffee-grounds composite PLA. 12 colors per an All3DP review, including three coffee shades (Light Coffee, Coffee, Dark Coffee); only those three are in the catalog. Prints at 210–230°C, bed 55–65°C, max 250mm/s. Listed sold out on eSUN's shop at the last check; no hex published.
+A coffee-grounds composite PLA. 12 colors per an All3DP<sup>[[24]](#src-24)</sup> review, including three coffee shades (Light Coffee, Coffee, Dark Coffee); only those three are in the catalog. Prints at 210–230°C, bed 55–65°C, max 250mm/s. Listed sold out on eSUN's shop at the last check; no hex published.<sup>[[15]](#src-15)</sup>
 - Tier: C
 
 #### PLA PolySonic (Polymaker)
-A high-speed PLA family claiming speeds above 300mm/s, 210–230°C nozzle, 25–60°C bed. Three colors confirmed via 3DJake (White, Grey, Red); Polymaker's launch reportedly had five, and a "PolySonic PLA Pro" variant exists but has not been researched. No hex published.
+A high-speed PLA family claiming speeds above 300mm/s, 210–230°C nozzle, 25–60°C bed. Three colors confirmed via 3DJake<sup>[[23]](#src-23)</sup> (White, Grey, Red); Polymaker's launch reportedly had five, and a "PolySonic PLA Pro" variant exists but has not been researched. No hex published.<sup>[[14]](#src-14)</sup>
 - Tier: C
 
 #### PLA CMYK (Elegoo-exclusive in this catalog)
-4 colors (Rilievo Cyan, Magenta, Yellow, White) — a translucent lithophane/relief-print set, confirmed to exist via elegoo.com. None of the 4 have confirmed hex — a genuine dead end, not borrowed from any other brand's published CMYK values for a similar bundle concept. Cardboard spool, Adapter Ring required.
+4 colors (Rilievo Cyan, Magenta, Yellow, White) — a translucent lithophane/relief-print set, confirmed to exist via elegoo.com<sup>[[12]](#src-12)</sup>. None of the 4 have confirmed hex — a genuine dead end, not borrowed from any other brand's published CMYK values for a similar bundle concept. Cardboard spool, Adapter Ring required.
 - Tier: C — line confirmed but hex entirely unresolved
 
 ---
@@ -420,7 +426,7 @@ The most demanding PETG in this catalog — runs significantly hotter than typic
 - Tier: B
 
 **Elegoo — Rapid PETG**
-12 colors, confirmed via elegoo.com. 8 of 12 have resolved hex; Yellow is a deliberate exception — two manufacturer-sourced listings gave conflicting hex for that exact color, left unresolved pending a physical-spool tiebreaker rather than guessed. Cardboard spool, Adapter Ring required like every other Elegoo line.
+12 colors, confirmed via elegoo.com<sup>[[12]](#src-12)</sup>. 8 of 12 have resolved hex; Yellow is a deliberate exception — two manufacturer-sourced listings gave conflicting hex for that exact color, left unresolved pending a physical-spool tiebreaker rather than guessed. Cardboard spool, Adapter Ring required like every other Elegoo line.
 - Print temp: 240–270°C
 - AMS: ⚠ all variants — cardboard spool requires Adapter Ring 📦
 - Tier: A (confirmed colors) / C (Yellow — unresolved)
@@ -432,7 +438,7 @@ The most demanding PETG in this catalog — runs significantly hotter than typic
 - Tier: A
 
 **Elegoo — PETG Translucent**
-11 colors per a dedicated third-party translucent-material listing (elegoo.com's own storefront didn't surface a static color list this pass, likely JS-rendered — the line count relies on that third-party source rather than a direct manufacturer confirmation). 8 of 11 have resolved hex; Olive Green, Translucent Blue, and Translucent Green each have a dedicated source page with blank color data — a genuine gap, not unresearched.
+11 colors per a dedicated third-party translucent-material listing (elegoo.com<sup>[[12]](#src-12)</sup>'s own storefront didn't surface a static color list this pass, likely JS-rendered — the line count relies on that third-party source rather than a direct manufacturer confirmation). 8 of 11 have resolved hex; Olive Green, Translucent Blue, and Translucent Green each have a dedicated source page with blank color data — a genuine gap, not unresearched.
 - Print temp: 240–270°C
 - AMS: ⚠ all variants — cardboard spool requires Adapter Ring 📦
 - Tier: A (confirmed colors) / C (3 unresolved colors)
@@ -440,7 +446,7 @@ The most demanding PETG in this catalog — runs significantly hotter than typic
 ---
 
 **AzureFilm — PCTG** (new 2026-10-14)
-PCTG is a PETG-family copolyester with better impact strength and clarity. AzureFilm lists 4 colors (Grey, Transparent, White, Black), each as a standard spool or a cheaper spool-less "Refill," so 8 catalog entries. Temperatures are not stated by the retailer (240–260°C nozzle, 70–85°C bed are estimates); no hex published. Black was unavailable at the last check.
+PCTG is a PETG-family copolyester with better impact strength and clarity. AzureFilm lists 4 colors (Grey, Transparent, White, Black), each as a standard spool or a cheaper spool-less "Refill," so 8 catalog entries. Temperatures are not stated by the retailer (240–260°C nozzle, 70–85°C bed are estimates); no hex published. Black was unavailable at the last check.<sup>[[23]](#src-23)[[18]](#src-18)</sup>
 - Tier: C
 
 #### Cross-Brand PETG Comparison
@@ -490,7 +496,7 @@ PCTG is a PETG-family copolyester with better impact strength and clarity. Azure
 #### Brand Analysis: PETG Matte
 
 **Bambu Lab — PETG Matte**
-Launched 2026-09-30 as a genuinely new Bambu first-party line — not a rebrand of PETG Basic. 8 colors: Black, White, Gray, Lime, Avocado Green, Baby Blue, Pink, Violet. All 8 color names and official Bambu color codes are confirmed directly from a physical spool order, but **hex codes remain unconfirmed for all 8 colors** — neither Bambu's own hex-code PDF nor any third-party source has published them yet as of this guide's update. Treat the color swatches in the catalog as placeholders only; this is an honest gap, not a guess, and will be resolved once the ordered spools are measured or Bambu updates its hex PDF.
+Launched 2026-09-30 as a genuinely new Bambu first-party line — not a rebrand of PETG Basic. 8 colors: Black, White, Gray, Lime, Avocado Green, Baby Blue, Pink, Violet. All 8 color names and official Bambu color codes are confirmed directly from a physical spool order, but **hex codes remain unconfirmed for all 8 colors** — neither Bambu's own hex-code PDF<sup>[[1]](#src-1)</sup> nor any third-party source has published them yet as of this guide's update. Treat the color swatches in the catalog as placeholders only; this is an honest gap, not a guess, and will be resolved once the ordered spools are measured or Bambu updates its hex PDF.
 - Print temp: 230–260°C
 - Bed temp: 65–75°C
 - AMS: ✓ all variants
@@ -505,9 +511,9 @@ Launched 2026-09-30 as a genuinely new Bambu first-party line — not a rebrand 
 | SUNLU High Speed Matte | 13 | Not stated | ✓ (assumed) | n/a | C — 12 of 13 hex unpublished |
 | Prusament PETG Matte | 2 | NFC spool | ✓ (per retailer) | ~CHF 32 | C — hex unpublished |
 
-**SUNLU — High Speed Matte PETG:** 13 colors per sunlu.com (Green, White, Grey, Black, Red, Yellow, Sunny Orange, Olive Green, Sky Blue, Coral Pink, Klein Blue, Lavender Purple, Mocha Mousse). Official 240–260°C nozzle, 70–80°C bed, ±0.02mm. The page's speed claims conflict (headline 600mm/s vs spec table ≤400mm/s), so treat both with suspicion. Only Black has a hex.
+**SUNLU — High Speed Matte PETG:** 13 colors per sunlu.com (Green, White, Grey, Black, Red, Yellow, Sunny Orange, Olive Green, Sky Blue, Coral Pink, Klein Blue, Lavender Purple, Mocha Mousse). Official 240–260°C nozzle, 70–80°C bed, ±0.02mm. The page's speed claims conflict (headline 600mm/s vs spec table ≤400mm/s), so treat both with suspicion. Only Black has a hex.<sup>[[13]](#src-13)</sup>
 
-**Prusament — PETG Matte:** a new sub-line announced with Prusa's refill-spool system. Matte Black and Noctua Brown are listed by 3DJake at 250–260°C nozzle and 80–90°C bed; no hex published, and Prusa has said more colors are coming.
+**Prusament — PETG Matte:** a new sub-line announced with Prusa's refill-spool system. Matte Black and Noctua Brown are listed by 3DJake<sup>[[23]](#src-23)</sup> at 250–260°C nozzle and 80–90°C bed; no hex published, and Prusa has said more colors are coming.<sup>[[20]](#src-20)</sup>
 
 Three brands now carry a matte PETG, but hex is unconfirmed everywhere, so no color-accuracy comparison is possible yet.
 
@@ -678,13 +684,13 @@ Outdoor signage, garden hardware, RC car bodies for outdoor use, automotive exte
 - Tier: B
 
 **Elegoo — ASA**
-6 colors (Deep Black, White, Blue, ASA Green, Grey, Red), confirmed via elegoo.com's official product page. 5 of 6 have resolved hex; Deep Black uses a colorimeter-measured value rather than the flat nominal most retailers list. Only Grey remains an unconfirmed placeholder. Cardboard spool, Adapter Ring required; AMS Lite is incompatible (open-frame, no ASA support at all, not just a cardboard-spool issue).
+6 colors (Deep Black, White, Blue, ASA Green, Grey, Red), confirmed via elegoo.com<sup>[[12]](#src-12)</sup>'s official product page. 5 of 6 have resolved hex; Deep Black uses a colorimeter-measured value rather than the flat nominal most retailers list. Only Grey remains an unconfirmed placeholder. Cardboard spool, Adapter Ring required; AMS Lite is incompatible (open-frame, no ASA support at all, not just a cardboard-spool issue).
 - Print temp: 240–260°C
 - AMS: ⚠ X/P, 2 Pro, HT / ✗ Lite — cardboard spool requires Adapter Ring 📦
 - Tier: A (5 confirmed colors) / C (Grey — unconfirmed)
 
 **MatterHackers — PRO Series ASA** (new 2026-10-14)
-7 colors (Black, Gray, Natural, Crimson Red, Jet Gray, White, Yellow), 1kg, 1.75mm or 2.85mm, around $52 — noticeably pricier than most ASA here. Marketing says UV-stable and weather-resistant but gives no print temperatures or hex; 240–260°C / 90–110°C are estimates. Enclosure required.
+7 colors (Black, Gray, Natural, Crimson Red, Jet Gray, White, Yellow), 1kg, 1.75mm or 2.85mm, around $52 — noticeably pricier than most ASA here. Marketing says UV-stable and weather-resistant but gives no print temperatures or hex; 240–260°C / 90–110°C are estimates.<sup>[[19]](#src-19)</sup> Enclosure required.
 - Tier: C
 
 #### Cross-Brand ASA Comparison
@@ -706,7 +712,7 @@ Carbon fiber reinforced ASA. Combines ASA's UV/weather resistance with CF's stif
 
 **Bambu Lab — ASA-CF:** Single color (black). Excellent for structural outdoor brackets. Tier A.
 
-**Elegoo — ASA-CF:** 6 colors (Black, Grey, Blue, Green, Red, Sand), confirmed via elegoo.com — a notably wider color range than Bambu's single-color offering. Only 1 of 6 has confirmed hex (Green); Black, Grey, and Blue each have source pages that explicitly show no color data (a genuine absence, not an unresearched gap), and Red/Sand never surfaced in sourcing at all. Cardboard spool, Adapter Ring required; AMS Lite incompatible.
+**Elegoo — ASA-CF:** 6 colors (Black, Grey, Blue, Green, Red, Sand), confirmed via elegoo.com<sup>[[12]](#src-12)</sup> — a notably wider color range than Bambu's single-color offering. Only 1 of 6 has confirmed hex (Green); Black, Grey, and Blue each have source pages that explicitly show no color data (a genuine absence, not an unresearched gap), and Red/Sand never surfaced in sourcing at all. Cardboard spool, Adapter Ring required; AMS Lite incompatible.
 - Print temp: 240–260°C
 - AMS: ⚠ X/P, 2 Pro, HT / ✗ Lite — cardboard spool requires Adapter Ring 📦
 - Tier: A (Green only) / C (Black, Grey, Blue, Red, Sand — unconfirmed; most colors remain unconfirmed pending further sourcing)
@@ -764,14 +770,14 @@ Overture has expanded to 37 colors across standard and high-speed TPU formulatio
 - Tier: B
 
 **Elegoo — TPU 95A**
-7 colors, confirmed via elegoo.com, but only 4 of 7 have resolved hex (Black, White, Grey, Red) — Blue, Green, and Translucent use different color names than the source swatch's PLA-line entries and were not assumed identical, so they remain unconfirmed. External spool only, same as every third-party TPU here. Cardboard spool.
+7 colors, confirmed via elegoo.com<sup>[[12]](#src-12)</sup>, but only 4 of 7 have resolved hex (Black, White, Grey, Red) — Blue, Green, and Translucent use different color names than the source swatch's PLA-line entries and were not assumed identical, so they remain unconfirmed. External spool only, same as every third-party TPU here. Cardboard spool.
 - AMS: ✗ ext. spool only
 - Tier: B (confirmed colors) / C (Blue, Green, Translucent — unconfirmed)
 
 ---
 
 **AzureFilm — TPU Flexible 95A** (new 2026-10-14)
-A separate grade from the 85A line above: 4 colors (Black, Blue, White, Red) on 3DJake, 1kg, no printing parameters listed and no hex. External spool only. Red was unavailable at the last check.
+A separate grade from the 85A line above: 4 colors (Black, Blue, White, Red) on 3DJake<sup>[[23]](#src-23)</sup>, 1kg, no printing parameters listed and no hex. External spool only. Red was unavailable at the last check.<sup>[[18]](#src-18)</sup>
 - Tier: C
 
 #### Cross-Brand TPU Comparison
@@ -825,15 +831,15 @@ Nylon (polyamide) is one of the toughest FDM materials available — excellent i
 - Tier: B
 
 **AzureFilm — Nylon**
-1 color (Natural). Line existence confirmed via azurefilm.com; full spec not yet manufacturer-verified. Very moisture-sensitive like all PA — dry immediately before printing. External spool preferred.
+1 color (Natural). Line existence confirmed via azurefilm.com<sup>[[18]](#src-18)</sup>; full spec not yet manufacturer-verified. Very moisture-sensitive like all PA — dry immediately before printing. External spool preferred.
 - Tier: C — line confirmed but specs not fully verified
 
 **MatterHackers — PRO Series Nylon** (8 colors)
-Black, White, Gray, Blue, Green, Orange, Red, Yellow, on 0.75kg spools at about $62. No temperatures or hex published; 250–270°C nozzle is an estimate. Only Black had a nominal hex; the other 7 are placeholders.
+Black, White, Gray, Blue, Green, Orange, Red, Yellow, on 0.75kg spools at about $62. No temperatures or hex published; 250–270°C nozzle is an estimate. Only Black had a nominal hex; the other 7 are placeholders.<sup>[[19]](#src-19)</sup>
 - Tier: C
 
 **Bambu Lab — PA6-GF** (new 2026-10-14)
-A standalone glass-fiber-filled nylon 6 line (not a rename of an existing PA), 8 colors (White, Yellow, Lime, Blue, Orange, Brown, Gray, Black), all with hex published on Bambu's store. 260–290°C nozzle, 80–100°C bed with glue; dry 80°C for 8–12h and never above 100°C. Glass fiber is abrasive, so use a hardened nozzle (my assumption, not stated on the page). AMS compatibility flags were copied from PA-CF and are unverified.
+A standalone glass-fiber-filled nylon 6 line (not a rename of an existing PA), 8 colors (White, Yellow, Lime, Blue, Orange, Brown, Gray, Black), all with hex published on Bambu's store. 260–290°C nozzle, 80–100°C bed with glue; dry 80°C for 8–12h and never above 100°C. Glass fiber is abrasive, so use a hardened nozzle (my assumption, not stated on the page). AMS compatibility flags were copied from PA-CF and are unverified.<sup>[[1]](#src-1)</sup>
 - Tier: A (hex and temps published by Bambu)
 
 ### 6.2 PA-CF
@@ -841,7 +847,7 @@ A standalone glass-fiber-filled nylon 6 line (not a rename of an existing PA), 8
 Carbon fiber reinforced nylon. The stiffest, strongest readily-printable FDM material short of continuous fiber systems. Combines nylon's toughness with CF's stiffness and heat resistance. Requires hardened nozzle, immediate pre-print drying, and (on Bambu) AMS HT. All brands in this catalog offer PA-CF in black only.
 
 - **Bambu Lab** — 1 color (Black). AMS HT required. Tier A.
-- **SUNLU** — 1 color (Black), 2 catalog entries: PA6-CF (209°C heat resistance, confirmed via 3DJake and SUNLU's own store) and PA12-CF (175°C heat resistance, confirmed via SUNLU's own store). Sanity-checked 2026-07-30 — these aren't conflicting reports about the same material, they're two different nylon grades (PA6 vs PA12) that naturally have different heat resistance; both figures check out against manufacturer sources. Tier B.
+- **SUNLU** — 1 color (Black), 2 catalog entries: PA6-CF (209°C heat resistance, confirmed via 3DJake<sup>[[23]](#src-23)</sup> and SUNLU's own store<sup>[[13]](#src-13)</sup>) and PA12-CF (175°C heat resistance, confirmed via SUNLU's own store). Sanity-checked 2026-07-30 — these aren't conflicting reports about the same material, they're two different nylon grades (PA6 vs PA12) that naturally have different heat resistance; both figures check out against manufacturer sources. Tier B.
 - **Polymaker** — 1 color (Black). Line existence confirmed; individual specs estimated from sibling materials, not TDS-confirmed. Tier C — verify before high-heat use.
 - **eSUN** — 2 lines: ePA-CF and ePA12-CF, both Black, both specs estimated from sibling materials rather than individually confirmed. Tier C.
 
@@ -886,7 +892,7 @@ All single-color (Natural/White or Black), all running hot (255–280°C) with n
 - Tier: C — usable, but not a first choice for PC if better options are available
 
 **AzureFilm — PC-ABS**
-1 color (Black). A PC/ABS blend rather than pure PC — trades some of PC's heat resistance for easier printing, similar in spirit to Prusament's PC Blend. Line existence confirmed via azurefilm.com; full spec not yet manufacturer-verified. Requires enclosure.
+1 color (Black). A PC/ABS blend rather than pure PC — trades some of PC's heat resistance for easier printing, similar in spirit to Prusament's PC Blend. Line existence confirmed via azurefilm.com<sup>[[18]](#src-18)</sup>; full spec not yet manufacturer-verified. Requires enclosure.
 - Tier: C — line confirmed but specs not fully verified
 
 ---
@@ -928,10 +934,10 @@ Rigid support that fractures cleanly at the interface with the model. Does not r
 |---|---|---|---|
 | Bambu Lab | 1 (Black) | S | RFID profile |
 | eSUN ePLA-CF | 1 (Black) | B | Budget option |
-| Creality Hyper | 1 (Black) | B | High-speed formulation |
+| Creality Hyper | 5 (Black, Dark Green, Ochre, Greyish Yellow, Purple) | B (Black) / C (other 4) | High-speed formulation; the 4 added colors are confirmed on Creality's store page but have no published hex<sup>[[21]](#src-21)</sup> |
 | Polymaker | 1 (Black) | C | Line confirmed; specs estimated, not individually TDS-confirmed |
 | SUNLU | 1 (Black) | C | Budget option |
-| AzureFilm | 1 (Black) | C | Line confirmed via azurefilm.com; specs not manufacturer-verified |
+| AzureFilm | 1 (Black) | C | Line confirmed via azurefilm.com<sup>[[18]](#src-18)</sup>; specs not manufacturer-verified |
 | Elegoo | 7 | C | 0/7 hex resolved — genuine dead end confirmed against source directly, not unresearched; cardboard spool + adapter 📦 |
 
 For PLA-CF, Bambu's RFID-profiled version is the most convenient. Budget options work but require manual profile creation. Elegoo's PLA-CF line is unusual in offering 7 colors rather than the typical black-only CF selection, but none of the 7 have confirmed hex, so color accuracy should be treated as unknown until verified against a physical spool.
@@ -947,7 +953,7 @@ Wood-fill PLA blends genuine wood particles (typically 20–40% by weight) into 
 | SUNLU | PLA Wood | 1 | B | Budget option |
 | eSUN | ePLA-Wood | 1 | B | Consistent with eSUN's other lines |
 | Prusament | Woodfill | 1 | A | PRO Series-level QC applies |
-| AzureFilm | LumberLay Wood PLA | 1 (Bamboo) | C | Line confirmed via azurefilm.com; specs not manufacturer-verified |
+| AzureFilm | LumberLay Wood PLA | 1 (Bamboo) | C | Line confirmed via azurefilm.com<sup>[[18]](#src-18)</sup>; specs not manufacturer-verified |
 
 **A note on Elegoo:** Elegoo does not currently have an entry in this table. Its "PLA Wood" line (4 colors — see Part 1.4) is a wood-*toned* PLA with no actual wood particles, which is a different product category from the genuinely wood-filled filaments above. Elegoo also sells a separately-named "PLA Walnut Wood," which does appear to be true wood-particle-filled per its product description — but that line is not yet in this catalog's data, so it is intentionally left out here rather than assumed to match the specs of any brand above.
 
@@ -957,7 +963,7 @@ Wood-fill PLA blends genuine wood particles (typically 20–40% by weight) into 
 
 ### AzureFilm — Additional Newer Lines
 
-A few AzureFilm lines exist in the catalog as confirmed-but-not-fully-verified additions from a 2026-07-19 deep-dive pass — line existence is confirmed via azurefilm.com navigation, but full specs (temps, complete color lists) haven't been individually TDS-confirmed:
+A few AzureFilm lines exist in the catalog as confirmed-but-not-fully-verified additions from a 2026-07-19 deep-dive pass — line existence is confirmed via azurefilm.com<sup>[[18]](#src-18)</sup> navigation, but full specs (temps, complete color lists) haven't been individually TDS-confirmed:
 
 - **PLA Glitter** — 2 colors (Blue, Red). Glitter-fill, similar concept to Bambu PLA Sparkle. 0.4mm+ nozzle recommended. Tier C.
 - **PLA Pastel** — 2 colors (Baby Blue, Mint). Standard pastel PLA. Tier B.
@@ -1020,6 +1026,21 @@ Across all material types, here is how each brand ranks holistically for Bambu p
 🔧 = hardened nozzle required
 Note: P1P has no enclosure — ABS, ASA, PC, PA are technically printable but warping risk is high. Not recommended.
 Note: Elegoo's ASA and ASA-CF are not available on P1P/A1/A1 mini for the same enclosure reasons as every other brand's ASA.
+
+The material logic in Parts 9 and 10 (open-frame versus enclosed printers, which materials AMS and AMS Lite can load) follows Bambu's own filament guide table.<sup>[[2]](#src-2)</sup> This guide simplifies that table and adds brand-specific cautions from the catalog.
+
+### 9.1 Newer Bambu printers
+
+Bambu has released printers since the matrix above was built. They are summarized here from the cited sources and are **not** filled into the matrix, because the compatibility sources found do not classify them model by model.
+
+| Printer | What the sources say | Source |
+|---|---|---|
+| P2S | $549 alone or $799 as a combo with AMS 2 Pro. Described as bringing H-series features to a compact printer; the P1S continues to be sold alongside it. The article mentions shatter-safe front glass and heat-preserving airflow but does not state "enclosed" outright. | <sup>[[5]](#src-5)</sup> |
+| X2D | Enclosed chamber with HEPA H12 and activated-carbon filtration. Nozzle to 300°C, chamber to 65°C, bed to 120°C. $649 alone or $899 with AMS. Launched April 2026. | <sup>[[6]](#src-6)</sup><sup>[[7]](#src-7)</sup> |
+| A2L | Large-format printer at $489 alone or $569 bundled with an AMS Lite. Nozzle 300°C, bed 80°C. Works with up to four AMS units plus one AMS Lite. Bambu calls it an "H2S lite". The source does not say whether it is enclosed. Launched June 2026. | <sup>[[8]](#src-8)</sup> |
+| H2S | Bambu's page lists which filaments suit each nozzle. Stainless steel nozzle: PLA, PETG HF, TPU 95A HF, ABS, ASA, PC, PC FR, PVA. Hardened steel adds PLA Glow, PLA-CF, PETG-CF, ABS-GF, ASA-CF, PA6-CF, PA6-GF, PAHT-CF, PET-CF, PPA-CF, PPS-CF and TPU 85A/90A. TPU 95A HF and PET-CF are listed as not AMS (Lite) compatible. | <sup>[[3]](#src-3)</sup> |
+
+Bambu's own guide table groups printers only as open-frame (A1 mini, A1, original P1P) or enclosed (X1C, X1, X1E, P1S, enclosed P1P) and does not mention the newer models.<sup>[[2]](#src-2)</sup> For ABS, ASA, PC and PA on a newer printer, check that printer's own specification page before relying on this guide; where this guide and Bambu's page disagree, Bambu's page wins.
 
 ---
 
@@ -1601,14 +1622,26 @@ One of the most practical reference questions in this catalog is: "I want a spec
 
 ### 20.1 Hex Code Reliability by Brand
 
-| Brand | Hex Source | Reliability |
-|---|---|---|
-| Bambu Lab (PLA Basic, Matte, PETG, ABS, PLA Trans.) | Official Bambu hex PDF | ✓ Confirmed |
-| Polymaker PolyLite PLA | Official shop.polymaker.com | ✓ Confirmed |
-| Prusament | Prusa website product pages | ✓ Confirmed |
-| All other brands in catalog | Approximate from product images | ⚠ Visual estimate |
+The table counts catalog entries by whether they carry a real hex value or the `#999999` placeholder (the catalog's marker for "unconfirmed"). A real hex value is not always manufacturer-published: some are community or measured values, and each entry's rationale in the catalog says which.
 
-For confirmed hex codes, the color chips in the spreadsheets accurately represent the filament color. For approximate brands, treat the hex as a visual reference — the actual swatch color may vary by 5–20% in any channel.
+| Brand | Catalog entries | With a hex value | Placeholders | Main hex sources recorded in the catalog |
+|---|---|---|---|---|
+| Bambu Lab | 155 | 146 | 9 | Bambu's published hex list and store swatches<sup>[[1]](#src-1)</sup> |
+| Polymaker | 162 | 155 | 7 | shop.polymaker.com<sup>[[14]](#src-14)</sup> |
+| Prusament | 44 | 42 | 2 | Prusa product pages<sup>[[20]](#src-20)</sup> |
+| Overture | 344 | 304 | 40 | Overture's published hex-code list<sup>[[16]](#src-16)</sup> |
+| Creality Hyper | 36 | 31 | 5 | Mostly untagged per entry; some via 3dfilamentprofiles.com<sup>[[9]](#src-9)</sup> |
+| VoxelPLA | 54 | 45 | 9 | Mostly untagged per entry; 4 flagged unconfirmed<sup>[[22]](#src-22)</sup> |
+| SUNLU | 220 | 165 | 55 | Manufacturer TDS and hex tables for most; 36 entries marked approximate<sup>[[13]](#src-13)</sup> |
+| AzureFilm | 58 | 37 | 21 | Mostly untagged per entry<sup>[[18]](#src-18)</sup> |
+| MatterHackers | 48 | 34 | 14 | Mostly untagged per entry<sup>[[19]](#src-19)</sup> |
+| Hatchbox | 94 | 58 | 36 | Mostly untagged per entry; all 36 newest additions are placeholders<sup>[[17]](#src-17)</sup> |
+| Elegoo | 230 | 117 | 113 | 3dfilamentprofiles.com per-color pages<sup>[[9]](#src-9)</sup>, community MakerWorld swatches<sup>[[10]](#src-10)</sup>, one colorimeter-measured value<sup>[[11]](#src-11)</sup> |
+| eSUN | 154 | 25 | 129 | Rarely published; most entries are placeholders<sup>[[15]](#src-15)</sup> |
+
+"Mostly untagged per entry" means the catalog does not record a hex source for those entries; their tier rationales describe how the color or line was confirmed. Counts are from the catalog as of November 2026.
+
+For entries with a real hex value, the swatches in the spreadsheets are a good guide to the filament color. For placeholders, the swatch is gray and tells you nothing about the real color. Even manufacturer-published hex can differ from the printed result by 5–20% in any channel.
 
 ### 20.2 Finding Specific Shades
 
@@ -1857,4 +1890,63 @@ Signs that filament is past its useful life even after drying attempts:
 
 ---
 
-*This guide covers the full catalog as of the filament reference system v3 generation date. Brand formulations, product lines, and pricing change — verify current specifications at manufacturer sites before purchasing. The cross-brand comparisons are based on documented catalog data and known technical properties; individual batch variation means real-world performance may differ from stated tiers.*
+*This guide covers the full catalog as of the filament reference system v3 generation date (updated November 2026). Sources are credited in Part 25. Brand formulations, product lines, and pricing change — verify current specifications at manufacturer sites before purchasing. The cross-brand comparisons are based on documented catalog data and known technical properties; individual batch variation means real-world performance may differ from stated tiers.*
+
+---
+
+## Part 25 — Sources and Credits
+
+This part credits the outside sources behind the facts in this guide. Numbers in the text, such as <sup>[[9]](#src-9)</sup>, point to the matching entry here. Thank you to the manufacturers, retailers, writers and community members who publish this information.
+
+**How to read the citations.** The catalog behind this guide records most sources by site name and date, not by individual page address, so older claims can only be credited to the site, not the exact page. Pages consulted in October and November 2026 are cited by their exact address. Web pages change, so details such as prices and availability may differ today. Where a source did not give a fact (for example, print temperatures for a new filament), the guide says so instead of filling it in.
+
+**Not cited.** General explanations of how materials behave (strength, heat resistance, moisture sensitivity, drying practice) are standard industry knowledge. Prices in Part 19 are approximate and not tied to a single source. Hex values the project owner measured personally with a colorimeter are the owner's own data.
+
+<a id="src-1"></a>**[1] Bambu Lab — store and product pages, published hex-code list.** <https://bambulab.com> — Color lists, store swatch hex, temperatures and drying for PLA Wood, PA6-GF and PLA Metal (pages: us.store.bambulab.com/products/pla-wood, /pa6-gf, /pla-metal, consulted 2026-10-14). The earlier hex-code PDF used for Bambu PLA Basic, Matte and similar lines is named in catalog notes but its web address was not recorded.
+
+<a id="src-2"></a>**[2] Bambu Lab Wiki — Filament Guide: Material Table.** <https://wiki.bambulab.com/en/general/filament-guide-material-table> — Open-frame versus enclosed printer groupings and AMS loading rules behind Parts 9 and 10. Consulted 2026-11-02.
+
+<a id="src-3"></a>**[3] Bambu Lab — H2S filament compatibility page.** <https://bambulab.com/en/filament/printers/h2s> — Filaments compatible with each H2S nozzle and the AMS (Lite) exclusions. Consulted 2026-11-02.
+
+<a id="src-4"></a>**[4] Tom's Hardware — Bambu Lab launches PLA Pure filament (June 18, 2026).** <https://www.tomshardware.com/3d-printing/bambu-lab-launches-pla-pure-filament-new-material-boasts-kid-safe-toy-certifications-and-asbestos-free-talc> — PLA Pure colors, prices, certifications, ingredients and usage limits. Consulted 2026-11-02.
+
+<a id="src-5"></a>**[5] Creative Bloq — Bambu Lab unveils new P2S 3D printer (October 14, 2025).** <https://www.creativebloq.com/3d/3d-printing/bambu-lab-unveils-new-p2s-3d-printer> — P2S pricing, AMS 2 Pro combo and relationship to the P1S. Consulted 2026-11-02.
+
+<a id="src-6"></a>**[6] Notebookcheck — Bambu Lab X2D (April 16, 2026).** <https://www.notebookcheck.net/Bambu-Lab-s-new-3D-printer-brings-dual-nozzles-and-multistage-filtration.1275497.0.html> — X2D enclosure, filtration, temperatures and pricing. Consulted 2026-11-02.
+
+<a id="src-7"></a>**[7] Pulse — Bambu Lab launches X2D (April 20, 2026).** <https://www.pulse.bot/hardware/news/bambu-lab-launches-x2d-dual-extrusion-3d-printer-3959e917-b81e-492b-9c96-73f7112cf025/> — X2D enclosed chamber with HEPA H12 filtration and starting price. Consulted 2026-11-02.
+
+<a id="src-8"></a>**[8] 3DPrint.com — Bambu launches A2L (June 1, 2026).** <https://3dprint.com/326389/d-embargo-june-1-2026-1000-am-edt-bambu-launches-a2l-analysis/> — A2L pricing, temperatures and AMS support. Consulted 2026-11-02.
+
+<a id="src-9"></a>**[9] 3D Filament Profiles.** <https://3dfilamentprofiles.com> — Per-color hex values and listed specs for many SUNLU, Elegoo, Creality and other entries. Community-maintained; used below manufacturer sources in this project's reliability order.
+
+<a id="src-10"></a>**[10] MakerWorld — community swatch sets.** <https://makerworld.com> — Community-sourced hex values for a number of Elegoo colors. Not manufacturer-confirmed.
+
+<a id="src-11"></a>**[11] FilamentColors.xyz.** <https://filamentcolors.xyz> — Colorimeter-measured swatch for Elegoo Rapid PLA Plus Grey (#838889). A measured value, not published by the manufacturer.
+
+<a id="src-12"></a>**[12] Elegoo — official store.** <https://www.elegoo.com> — Product lines, color lists and specs for the Elegoo catalog (for example us.elegoo.com/products/paht-cf-filament-1-75mm-colored-1kg). Consulted July–October 2026.
+
+<a id="src-13"></a>**[13] SUNLU — official sites.** <https://www.sunlu.com> — Specs, hex tables and color lists (including www.sunlu.com/products/high-speed-matte-petg-filament, consulted 2026-10-14, and store.sunlu.com). Consulted July–October 2026.
+
+<a id="src-14"></a>**[14] Polymaker — official shop.** <https://shop.polymaker.com> — Hex values and specs for PolyLite and other Polymaker lines. Consulted July 2026 onward.
+
+<a id="src-15"></a>**[15] eSUN — official sites.** <https://www.esun3d.com> — Product lines and specs for eSUN entries (also esun3dstore.com). Most eSUN colors have no published hex.
+
+<a id="src-16"></a>**[16] Overture — published Hex Code List (PDF).** <https://cdn.shopify.com/s/files/1/0207/3624/5824/files/Overture_Hex_Code_List.pdf> — Manufacturer hex values for most Overture colors; consulted 2026-10-14 for Shimmer, Glow and TPU colors.
+
+<a id="src-17"></a>**[17] Hatchbox — official site.** <https://hatchbox3d.com> — Color lists and prices for PLA MAX, PLA PRO+, Matte and TPU (collections such as /collections/pla-max and /collections/all-filaments/matte, consulted 2026-10-14).
+
+<a id="src-18"></a>**[18] AzureFilm — official site.** <https://azurefilm.com> — Product-line confirmation for AzureFilm entries.
+
+<a id="src-19"></a>**[19] MatterHackers — store collections.** <https://www.matterhackers.com> — PRO Series ASA (/store/c/pro-series-asa) and PRO Series Nylon (/store/c/pro-series-nylon) color lists and prices. Consulted 2026-10-14.
+
+<a id="src-20"></a>**[20] Prusa Research — Prusament.** <https://www.prusa3d.com> — Prusament product pages and specs.
+
+<a id="src-21"></a>**[21] Creality — store.** <https://store.creality.com/jp/products/hyper-series-pla-cf-3d-printing-filament-1kg> — Hyper Series PLA-CF color list. Consulted 2026-10-14.
+
+<a id="src-22"></a>**[22] VoxelPLA — official site and datasheets.** <https://voxelpla.com> — Product lines; the technical and safety data sheets for VoxelPLA+ (Pro) and VoxelPETG+ (Pro) are kept in this repository's reference folder.
+
+<a id="src-23"></a>**[23] 3DJake — retailer listings.** <https://www.3djake.com> — Colors, prices and availability used where manufacturer pages could not be read, including AzureFilm PCTG (3djake.ch/en-CH/azurefilm/azurefilm-pctg-filament), AzureFilm TPU 95A (3djake.com/azurefilm/azurefilm-flexible-filament), Prusament PETG Matte (3djake.ch/it-CH/prusa/prusament-petg-matte-black-nfc) and Polymaker PolySonic PLA (3djake.ch/de-CH/polymaker/polysonic-pla-grey). Consulted 2026-10-14.
+
+<a id="src-24"></a>**[24] All3DP — Something's Brewing: eSUN's new PLA smells like your morning coffee.** <https://all3dp.com/4/somethings-brewing-esuns-new-pla-smells-just-like-your-morning-coffee/> — eSUN PLA-Coffee colors, temperatures and price. Consulted 2026-10-14.
+
