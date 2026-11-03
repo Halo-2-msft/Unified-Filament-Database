@@ -7,6 +7,10 @@
 - **`check_sources.py`**: lists entries dated on or after a cutoff (default 2026-11-02) that lack a Source URL. Reminder only.
 - **Guide Part 25 — Sources and Credits**: 24 numbered sources with superscript citations throughout `filament_expert_guide_complete.md`; PDF regenerated.
 
+### Backfilled (2026-11-02)
+- Exact page addresses added to the `notes` of the 122 catalog entries created or annotated in the 2026-10-14 sweep (Bambu PLA Wood / PA6-GF / PLA Metal, MatterHackers ASA and Nylon, SUNLU High Speed Matte PETG, AzureFilm PCTG and TPU 95A, Prusament PETG Matte, Polymaker PolySonic, eSUN PLA-Coffee, Creality PLA-CF, Hatchbox PLA MAX / PRO+ / TPU / Matte / PA / PC). No other field changed (verified field-by-field against the previous version). 5 entries still lack an address because their source was a retailer listing or the site overview with no page address recorded: Hatchbox HX-PERF-01, HX-MAT-GRY, HX-MAT-OLV, HX-MAT-BRN, and Elegoo EL-RPP-GY (filamentcolors.xyz swatch).
+- Rebuilt workbooks: Bambu v3_14, SUNLU v3_18, Polymaker v3_11, eSUN v3_8, Hatchbox v3_11, Prusament v3_11, Creality Hyper v3_12, MatterHackers v3_10, AzureFilm v3_9; master index v28 -> `master_index_11_29.xlsx` (1,599 catalog rows).
+
 ### Changed
 - Guide Part 20.1 rebuilt from real catalog hex counts; new section 9.1 on newer Bambu printers; PLA Pure added (not yet in catalog — awaiting published colors/hex/temps).
 
